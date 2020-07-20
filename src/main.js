@@ -18,6 +18,7 @@ const components = [
   'HomePage/mobile-header',
   'HomePage/welcome',
   'HomePage/tab-item',
+  'HomePage/event-summary',
 ];
 components.forEach(register(Vue));
 

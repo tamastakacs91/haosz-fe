@@ -1,8 +1,11 @@
 <template>
-  <v-container>
-    <mobile-header></mobile-header>
-    <welcome></welcome>
-  </v-container>
+  <div>
+    <v-container fluid>
+      <mobile-header></mobile-header>
+      <welcome></welcome>
+      <event-summary></event-summary>
+    </v-container>
+  </div>
 </template>
 
 <script>
