@@ -15,6 +15,9 @@ const components = [
   'Navbar/navbar',
   'Navbar/navbar-desktop',
   'Navbar/navbar-mobile',
+  'HomePage/mobile-header',
+  'HomePage/welcome',
+  'HomePage/tab-item',
 ];
 components.forEach(register(Vue));
 

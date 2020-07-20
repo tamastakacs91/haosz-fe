@@ -1,5 +1,5 @@
 <template>
-  <v-row class="hidden-sm-and-down mt-5">
+  <v-row class="hidden-sm-and-down mt-5 mb-5">
     <div class="d-flex align-center">
       <v-img
         alt="HAOSZ logo"

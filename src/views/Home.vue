@@ -1,7 +1,8 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-  </div>
+  <v-container>
+    <mobile-header></mobile-header>
+    <welcome></welcome>
+  </v-container>
 </template>
 
 <script>

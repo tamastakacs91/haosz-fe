@@ -1,5 +1,17 @@
 <template>
   <v-row class="justify-end hidden-md-and-up">
+    <div class="d-flex align-center">
+      <v-img
+        alt="HAOSZ logo"
+        class="shrink mr-2"
+        contain
+        src="/haosz-logo.png"
+        transition="scale-transition"
+        width="40"
+      />
+    </div>
+
+    <v-spacer></v-spacer>
     <v-menu left bottom>
       <template v-slot:activator="{ on, attrs }">
         <v-btn icon v-bind="attrs" v-on="on">

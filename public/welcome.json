@@ -1,0 +1,59 @@
+{
+    "greeting": {
+        "doctor": "Kedves Kollégák!",
+        "exhibitor": "Tisztelt Hölgyem, tisztelt Uram!"
+    },
+    "invitation": {
+        "doctor": "Sok szeretettel hívunk és várunk Benneteket idén is, a Háziorvosok Online Szervezetének soron következő országos konferenciájára, mely idén a COVID-19 pandémia miatt online keretek között kerül megrendezésre 2020. október 15-18. között. Bár a helyszín speciális, szeretnénk ezen a téren is innovatívak lenni, és a személyes találkozással járó konferenciák hangulatát visszaidézni.",
+        "exhibitor": "Sok szeretettel hívjuk Önöket a Háziorvosok Online Szervezetének soron következő, III. országos konferenciájára, mely idén a COVID-19 pandémia miatt online keretek között kerül megrendezésre 2020. október 15-18. között. Bár a helyszín speciális, szeretnénk ezen a téren is innovatívak lenni, és a személyes találkozással járó konferenciák hangulatát visszaidézni."
+    },
+    "listing": "Amivel készülünk:",
+    "programs": {
+        "doctor": [
+            {
+                "title": "Orvosszakmai, orvostechnikai előadások",
+                "icon": "mdi-teach"
+            },
+            {
+                "title": "Nemzetközi kitekintés, háziorvosok Európában",
+                "icon": "mdi-earth"
+            },
+            {
+                "title": "Cégbemutatók, orvostechnikai bemutatók",
+                "icon": "mdi-presentation-play"
+            },
+            {
+                "title": "Szakmapolitikai előadások",
+                "icon": "mdi-medical-bag"
+            },
+            {
+                "title": "Szakmapolitikai fórum, kerekasztalbeszélgetés",
+                "icon": "mdi-account-group"
+            },
+            {
+                "title": "Jazzpresszó",
+                "icon": "mdi-music-circle",
+                "description": "Meghatározott témákban folyamatos résztvevői beszélgetés, kellemes jazz zene mellett."
+            }
+        ],
+        "exhibitor": [
+            {
+                "title": "Orvosszakmai-, orvostechnikai előadások, cégbemutatók, orvostechnikai bemutatók",
+                "icon": "mdi-teach"
+            },
+            {
+                "title": "Nemzetközi kitekintés, háziorvosok Európában",
+                "icon": "mdi-earth"
+            },
+            {
+                "title": "Szakmapolitikai előadások, szakmapolitikai fórum - kerekasztalbeszélgetés",
+                "icon": "mdi-account-group"
+            },
+            {
+                "title": "Jazzpresszó",
+                "icon": "mdi-music-circle",
+                "description": "Meghatározott témákban folyamatos résztvevői beszélgetés, kellemes jazz zene mellett."
+            }
+        ]
+    }
+}
