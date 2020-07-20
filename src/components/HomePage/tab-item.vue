@@ -2,11 +2,11 @@
   <v-tab-item>
     <v-card flat>
       <v-list-item-content>
-        <v-list-item-title class="headline mb-5 mt-3 text-center">
-          {{ greeting }}
-        </v-list-item-title>
-        <div class="pr-10 pl-10">{{ invitation }}</div>
-        <div class="pr-10 pl-10 mt-5 text-center">{{ listing }}</div>
+        <v-list-item-title class="headline mb-5 mt-3 text-center">{{
+          greeting
+        }}</v-list-item-title>
+        <div>{{ invitation }}</div>
+        <div class="mt-5 text-center">{{ listing }}</div>
         <div class="d-flex flex-wrap justify-center text-center">
           <v-card
             v-for="(program, index) in programs"

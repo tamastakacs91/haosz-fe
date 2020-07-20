@@ -16,7 +16,7 @@ const components = [
   'Navbar/navbar-desktop',
   'Navbar/navbar-mobile',
   'HomePage/mobile-header',
-  'HomePage/welcome',
+  'HomePage/tabs',
   'HomePage/tab-item',
   'HomePage/event-summary',
 ];
