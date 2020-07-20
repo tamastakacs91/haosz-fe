@@ -11,7 +11,11 @@ const register = (Vue) => (path) => {
   Vue.component(name(path), component(path));
 };
 
-const components = ['HelloWorld', 'HelloI18n'];
+const components = [
+  'Navbar/navbar',
+  'Navbar/navbar-desktop',
+  'Navbar/navbar-mobile',
+];
 components.forEach(register(Vue));
 
 Vue.config.productionTip = false;

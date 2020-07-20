@@ -1,0 +1,40 @@
+<template>
+  <v-row class="justify-end hidden-md-and-up">
+    <v-menu left bottom>
+      <template v-slot:activator="{ on, attrs }">
+        <v-btn icon v-bind="attrs" v-on="on">
+          <v-icon>mdi-dots-vertical</v-icon>
+        </v-btn>
+      </template>
+
+      <v-list>
+        <v-list-item>
+          <v-list-item-title>
+            <v-icon class="mr-1" size="20px"
+              >mdi-account-arrow-right-outline</v-icon
+            >Belépés
+          </v-list-item-title>
+        </v-list-item>
+        <v-menu left bottom>
+          <template v-slot:activator="{ on, attrs }">
+            <v-list-item>
+              <v-list-item-title v-bind="attrs" v-on="on">
+                <v-icon class="mr-1" size="20px"
+                  >mdi-account-check-outline</v-icon
+                >Regisztráció
+              </v-list-item-title>
+            </v-list-item>
+          </template>
+          <v-list>
+            <v-list-item>
+              <v-list-item-title>Orvosoknak</v-list-item-title>
+            </v-list-item>
+            <v-list-item>
+              <v-list-item-title>Kiállítóknak</v-list-item-title>
+            </v-list-item>
+          </v-list>
+        </v-menu>
+      </v-list>
+    </v-menu>
+  </v-row>
+</template>
