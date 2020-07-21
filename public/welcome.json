@@ -55,5 +55,37 @@
                 "description": "Meghatározott témákban folyamatos résztvevői beszélgetés, kellemes jazz zene mellett."
             }
         ]
+    },
+    "summary": {
+        "doctor": {
+            "p1": "A háziorvoslás és házi gyermekorvoslás jövőjét továbbra is kérdések sokasága övezi, így idén is szeretnénk górcső alá venni azokat a problémákat, melyeket mindennapi munkánk során saját bőrünkön tapasztalunk. Szeretnénk továbbra is abban a szellemben folytatni a rendezvényszervezést, hogy a HAOSZ aktuális konferenciája ne egy megszokott termékismertető ankét legyen, sokkal inkább szolgálja a kollégák részéről felmerülő kérdések feltárását, megválaszolását – ha kell, online körülmények között.",
+            "p2": "A HAOSZ továbbra is elkötelezett támogatója az alapellátás megreformálásának, hiszünk a változás szükségességében, az egységes álláspont képviseletének jelentőségében, a jó minőségű alapellátás értékében.",
+            "p3": "A fenti sorok szellemében szeretettel várunk Benneteket idén online konferenciánkon. Sorsunkat alapvetően meghatározó témából idén is bővelkedni fogunk. Mindazon túl, hogy konferenciánkon kiemelt figyelmet szeretnénk szentelni a deklarációban megfogalmazott kérdések",
+            "p4": "megválaszolására, természetesen idén sem maradnak el az orvosszakmai, orvostechnológiai előadások, élő bemutatók sem. Kiemelt jelentőségűnek tartjuk, hogy a résztvevők az előttünk álló változásokról első kézből értesüljenek konferenciánkon.",
+            "p3_4": "A fenti sorok szellemében szeretettel várunk Benneteket idén online konferenciánkon. Sorsunkat alapvetően meghatározó témából idén is bővelkedni fogunk. Mindazon túl, hogy konferenciánkon kiemelt figyelmet szeretnénk szentelni a deklarációban megfogalmazott kérdések megválaszolására, természetesen idén sem maradnak el az orvosszakmai, orvostechnológiai előadások, élő bemutatók sem. Kiemelt jelentőségűnek tartjuk, hogy a résztvevők az előttünk álló változásokról első kézből értesüljenek konferenciánkon."
+        },
+        "exhibitor": {
+            "p1": "Szervezetünk mára már több mint 1000 háziorvos és házi gyermekorvos kollégát tömörít, hírleveleink a jelenleg Magyaroroszágon praktizáló kollégák széles köréhez eljutnak, így az alapellátás mindennapjait és jövőjét meghatározó hangsúlyos kérdésekben folyamatos kommunikációs csatornát tudunk biztosítani kollégáink felé. Tavalyi konferenciánkon több mint 250 kollégát köszönthettünk. A nagy érdeklődésre, a háziorvoslást jövőjét érintő kérdések sokaságára, valamint a hallgatóság részéről fennálló igényre való tekintettel, illetve a COVID-19 járvány miatt a korábbi két napos rendezvény helyett idén egy négy napos innovatív konferenciára készülünk, melyben lesz lehetősége az előadóknak, a hallgatóságnak és termék ismertetőknek a mindannyiunk számára nélkülözhetetlen információ, valamint szakmai tapasztalatcserére, illetve a legújabb szakmai ismeretanyagok befogadására.",
+            "p2": "Az alapellátó orvosok részére szervezett konferenciák hiányszámba mennek Magyarországon. Elsődleges célunk, hogy ezt a hiányt pótoljuk. Rendezvényünk az alapellátásra fókuszál, mindazonáltal az orvosszakmai előadások mellett, idén is nagy hangsúlyt fektetünk a programterv összeállítása során az alapellátásban hasznosítható innovatív megoldások bemutatására, az alapellátás minőségi átalakításának hangsúlyozására. A legtöbb gyógyszergyártó egyre inkább keresi a lehetőségét mindannak, hogyan lehetne a háziorvos kollégák és a gyártók közötti kapcsolatokat szorosabbra fűzni a minőségibb betegellátás érdekében. Egyre többen nyitnak ennek megfelelően azon innovatív lehetőségek felé, melyekből az ellátórendszer, a beteg és a gyógyszercég egyaránt profitál.",
+            "p3": "Az orvostechnikai cégek szerepe a jövő alapellátásában megkérdőjelezhetetlen. A digitalizáció világát éljük, a technikai fejlődés mellett az egészségügy sem mehet el szó nélkül. Számos civil kezdeményezés, kormányzati program, európai uniós fejlesztés abba az irányba mutat, hogy a digitális eszközök felhasználásával miként javíthatnánk az alapellátás hatékonyságát.",
+            "p4": "A gyógyszerek-, gyógyászati segédeszközök-, gyógyhatású készítmények-, orvostechnikai felszerelések promóciójával foglalkozó vállalkozások által szponzorált előadások mellett egy szakmapolitikai kerekasztal beszélgetésnek, valamint egy, az alapellátás jelenével és jövőjével kapcsolatos kérdéseket feltáró előadói blokknak is helyet adtunk idén is.",
+            "p3_4": "Az orvostechnikai cégek szerepe a jövő alapellátásában megkérdőjelezhetetlen. A digitalizáció világát éljük, a technikai fejlődés mellett az egészségügy sem mehet el szó nélkül. Számos civil kezdeményezés, kormányzati program, európai uniós fejlesztés abba az irányba mutat, hogy a digitális eszközök felhasználásával miként javíthatnánk az alapellátás hatékonyságát. A gyógyszerek-, gyógyászati segédeszközök-, gyógyhatású készítmények-, orvostechnikai felszerelések promóciójával foglalkozó vállalkozások által szponzorált előadások mellett egy szakmapolitikai kerekasztal beszélgetésnek, valamint egy, az alapellátás jelenével és jövőjével kapcsolatos kérdéseket feltáró előadói blokknak is helyet adtunk idén is."
+        }
+    },
+    "outro": {
+        "doctor": {
+            "p1": "Részletes programtervvel hamarosan jelentkezünk, az előadóinkkal történő egyeztetések folyamatban vannak.",
+            "p2": "Bízunk benne, hogy rendezvényünk felkeltette az érdeklődésed, és hamarosan a résztvevők között köszönthetünk!"
+        },
+        "exhibitor": {
+            "p1": "Tekintettel arra, hogy olyan online rendezvénnyel készülünk, amivel mások még nem próbálkoztak, kérjük mihamarabbi visszajelzésüket, jelentkezésüket – ezzel is segítsék elő a kezdeményezés sikerességét.",
+            "p2": "A programterv összeállítása is folyamatban van, így szakmai előadással kapcsolatos igényeiket is kérjük, mihamarabb jelezzék.",
+            "p3": "Bízunk benne, hogy invitáló soraink felkeltették érdeklődésüket és idén is rendezvényünk támogatói körében tudhatjuk Önöket."
+        }
+    },
+    "signature": {
+        "doctorText": "Megtisztelő részvételedben bízva, a szervező bizottság nevében:",
+        "exhibitorText": "Megtisztelő részvételükben bízva, a szervező bizottság nevében:",
+        "name": "dr. Békássy Szabolcs és dr. Cserni István - Háziorvosok Online Szervezete"
     }
 }

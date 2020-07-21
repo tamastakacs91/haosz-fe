@@ -16,9 +16,12 @@ const components = [
   'Navbar/navbar-desktop',
   'Navbar/navbar-mobile',
   'HomePage/mobile-header',
-  'HomePage/tabs',
-  'HomePage/tab-item',
-  'HomePage/event-summary',
+  'HomePage/Tabs/tabs',
+  'HomePage/Tabs/tab-item',
+  'HomePage/Tabs/Children/event-summary',
+  'HomePage/Tabs/Children/event-summary2',
+  'HomePage/Tabs/Children/outro',
+  'HomePage/Tabs/Children/signature',
 ];
 components.forEach(register(Vue));
 

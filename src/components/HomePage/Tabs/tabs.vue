@@ -16,19 +16,39 @@
         <v-tab>Kiállítóknak</v-tab>
       </v-tabs>
     </v-row>
-    <v-container>
+    <v-container fluid class="pa-0">
       <v-tabs-items v-model="tab">
         <tab-item
           :greeting="data.greeting.doctor"
           :invitation="data.invitation.doctor"
           :listing="data.listing"
           :programs="data.programs.doctor"
+          :p1="data.summary.doctor.p1"
+          :p2="data.summary.doctor.p2"
+          :p3="data.summary.doctor.p3"
+          :p4="data.summary.doctor.p4"
+          :p3_4="data.summary.doctor.p3_4"
+          :outP1="data.outro.doctor.p1"
+          :outP2="data.outro.doctor.p2"
+          :outP3="data.outro.doctor.p3"
+          :text="data.signature.doctorText"
+          :name="data.signature.name"
         ></tab-item>
         <tab-item
           :greeting="data.greeting.exhibitor"
           :invitation="data.invitation.exhibitor"
           :listing="data.listing"
           :programs="data.programs.exhibitor"
+          :p1="data.summary.exhibitor.p1"
+          :p2="data.summary.exhibitor.p2"
+          :p3="data.summary.exhibitor.p3"
+          :p4="data.summary.exhibitor.p4"
+          :p3_4="data.summary.exhibitor.p3_4"
+          :outP1="data.outro.exhibitor.p1"
+          :outP2="data.outro.exhibitor.p2"
+          :outP3="data.outro.exhibitor.p3"
+          :text="data.signature.exhibitorText"
+          :name="data.signature.name"
         ></tab-item>
       </v-tabs-items>
     </v-container>

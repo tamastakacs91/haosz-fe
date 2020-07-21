@@ -3,7 +3,6 @@
     <v-container fluid>
       <mobile-header></mobile-header>
       <tabs :data="welcome"></tabs>
-      <event-summary></event-summary>
     </v-container>
   </div>
 </template>
