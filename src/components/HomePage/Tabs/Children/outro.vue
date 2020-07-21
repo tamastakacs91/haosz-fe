@@ -11,7 +11,7 @@
       <v-row class="mr-3 ml-3 mt-n4 mb-n8">
         <v-col cols="12" class="text-center pa-0">{{ outP1 }}</v-col>
         <v-col cols="12" class="text-center pa-0 pt-5 pb-5">{{ outP2 }}</v-col>
-        <v-col cols="12" class="text-center pa-0">{{ outP3 }}</v-col>
+        <v-col cols="12" class="text-center pa-0 pb-2">{{ outP3 }}</v-col>
       </v-row>
     </v-container>
     <v-container fluid class="pa-0">
