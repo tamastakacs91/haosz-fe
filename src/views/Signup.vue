@@ -4,7 +4,9 @@
     <doctor
       v-if="$route.params.type === 'doktor'"
       :validationRules="rules"
-      @validatePassword="setDoctorPasswordToValidate"
+      :doctor="doctor"
+      @input="setDoctorData"
+      @validated="submitDoctorData"
     >
       <template v-slot:terms>
         <terms></terms>
@@ -22,24 +24,52 @@ export default {
   data() {
     return {
       doctorPassword: '',
+      doctor: {
+        data: {
+          name: '',
+          sealNumber: '',
+          workPlace: '',
+          mobile: '',
+          email: '',
+        },
+        billing: {
+          name: '',
+          address: '',
+          taxNumber: '',
+          contact: '',
+          mobile: '',
+          email: '',
+        },
+        password: {
+          password: '',
+          passwordAgain: '',
+        },
+      },
       rules: {
         required: (value) => !!value || 'Kötelező adat',
         mobile: (value) => {
           const pattern = /^[+](36)(20|30|31|50|70)([0-9]{7})$/;
           return pattern.test(value) || 'Érvénytelen formátum';
         },
+        email: (value) => {
+          const pattern = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+          return pattern.test(value) || 'Érvénytelen email formátum';
+        },
         password: (value) => {
           const pattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/;
           return pattern.test(value) || 'Érvénytelen jelszó';
         },
         passwordAgain: (value) =>
-          value === this.doctorPassword || 'A jelszó nem egyezik',
+          value === this.doctor.password.password || 'A jelszó nem egyezik',
       },
     };
   },
   methods: {
-    setDoctorPasswordToValidate(value) {
-      this.doctorPassword = value;
+    setDoctorData(value, nest, field) {
+      this.doctor[nest][field] = value;
+    },
+    submitDoctorData() {
+      console.log(this.doctor);
     },
   },
 };
