@@ -25,6 +25,7 @@
 
 <script>
 export default {
+  name: 'event-summary',
   props: ['p1', 'p2'],
 };
 </script>

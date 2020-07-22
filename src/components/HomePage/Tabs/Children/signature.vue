@@ -18,6 +18,7 @@
 
 <script>
 export default {
+  name: 'signature',
   props: ['text', 'name'],
 };
 </script>

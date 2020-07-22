@@ -26,6 +26,7 @@
 
 <script>
 export default {
+  name: 'outro',
   props: ['outP1', 'outP2', 'outP3'],
 };
 </script>

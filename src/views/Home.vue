@@ -2,19 +2,58 @@
   <div>
     <v-container fluid>
       <mobile-header></mobile-header>
-      <tabs :data="welcome"></tabs>
+      <tabs :data="welcome">
+        <tab-item
+          :greeting="data.greeting.doctor"
+          :invitation="data.invitation.doctor"
+          :listing="data.listing"
+          :programs="data.programs.doctor"
+        >
+          <event-summary :p1="data.summary.doctor.p1" :p2="data.summary.doctor.p2"></event-summary>
+          <event-summary2
+            :p3="data.summary.doctor.p3"
+            :p4="data.summary.doctor.p4"
+            :p3_4="data.summary.doctor.p3_4"
+          ></event-summary2>
+          <outro
+            :outP1="data.outro.doctor.p1"
+            :outP2="data.outro.doctor.p2"
+            :outP3="data.outro.doctor.p3"
+          ></outro>
+          <signature :text="data.signature.doctorText" :name="data.signature.name"></signature>
+        </tab-item>
+        <tab-item
+          :greeting="data.greeting.exhibitor"
+          :invitation="data.invitation.exhibitor"
+          :listing="data.listing"
+          :programs="data.programs.exhibitor"
+        >
+          <event-summary :p1="data.summary.exhibitor.p1" :p2="data.summary.exhibitor.p2"></event-summary>
+          <event-summary2
+            :p3="data.summary.exhibitor.p3"
+            :p4="data.summary.exhibitor.p4"
+            :p3_4="data.summary.exhibitor.p3_4"
+          ></event-summary2>
+          <outro
+            :outP1="data.outro.exhibitor.p1"
+            :outP2="data.outro.exhibitor.p2"
+            :outP3="data.outro.exhibitor.p3"
+          ></outro>
+          <signature :text="data.signature.exhibitorText" :name="data.signature.name"></signature>
+        </tab-item>
+      </tabs>
     </v-container>
   </div>
 </template>
 
 <script>
-import welcome from '../../public/welcome.json';
+import data from '../../public/homePage.json';
 
 export default {
   name: 'Home',
   data() {
     return {
-      welcome,
+      data,
     };
   },
 };
