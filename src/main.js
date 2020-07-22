@@ -15,13 +15,13 @@ const components = [
   'Navbar/navbar',
   'Navbar/navbar-desktop',
   'Navbar/navbar-mobile',
-  'HomePage/mobile-header',
-  'HomePage/Tabs/tabs',
-  'HomePage/Tabs/tab-item',
-  'HomePage/Tabs/Children/event-summary',
-  'HomePage/Tabs/Children/event-summary2',
-  'HomePage/Tabs/Children/outro',
-  'HomePage/Tabs/Children/signature',
+  'Home/mobile-header',
+  'Home/Tabs/tabs',
+  'Home/Tabs/tab-item',
+  'Home/Tabs/Children/event-summary',
+  'Home/Tabs/Children/event-summary2',
+  'Home/Tabs/Children/outro',
+  'Home/Tabs/Children/signature',
 ];
 components.forEach(register(Vue));
 
