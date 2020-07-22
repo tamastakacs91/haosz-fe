@@ -38,10 +38,10 @@
             </v-list-item>
           </template>
           <v-list>
-            <v-list-item>
+            <v-list-item @click="$router.push('/regisztracio/doktor')">
               <v-list-item-title>Orvosoknak</v-list-item-title>
             </v-list-item>
-            <v-list-item>
+            <v-list-item @click="$router.push('/regisztracio/kiallito')">
               <v-list-item-title>Kiállítóknak</v-list-item-title>
             </v-list-item>
           </v-list>

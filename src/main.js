@@ -22,6 +22,10 @@ const components = [
   'Home/Tabs/Children/event-summary2',
   'Home/Tabs/Children/outro',
   'Home/Tabs/Children/signature',
+  'Signup/doctor',
+  'Signup/exhibitor',
+  'Signup/terms',
+  'Signup/more-info',
 ];
 components.forEach(register(Vue));
 

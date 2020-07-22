@@ -3,11 +3,12 @@
     <div class="d-flex align-center">
       <v-img
         alt="HAOSZ logo"
-        class="shrink mr-2"
+        class="shrink mr-2 pointer"
         contain
         src="/haosz-logo.png"
         transition="scale-transition"
         width="50"
+        @click="$router.push('/')"
       />
       <h4 class="text-caption text-md-h5 font-weight-bold">
         Háziorvosok Online Szervezetének
@@ -37,10 +38,22 @@
         </template>
         <v-list class="pa-0">
           <v-list-item class="pa-0">
-            <v-btn text width="100%" height="50px">Orvosoknak</v-btn>
+            <v-btn
+              text
+              width="100%"
+              height="50px"
+              @click="$router.push('/regisztracio/doktor')"
+              >Orvosoknak</v-btn
+            >
           </v-list-item>
           <v-list-item class="pa-0">
-            <v-btn text width="100%" height="50px">Kiállítóknak</v-btn>
+            <v-btn
+              text
+              width="100%"
+              height="50px"
+              @click="$router.push('/regisztracio/kiallito')"
+              >Kiállítóknak</v-btn
+            >
           </v-list-item>
         </v-list>
       </v-menu>
