@@ -14,7 +14,7 @@
               ref="name"
               filled
               class="mt-4"
-              :rules="[validationRules.required]"
+              :rules="[rules.required]"
               validate-on-blur
               @input="$emit('input', $event, 'data', 'name')"
             ></v-text-field>
@@ -22,7 +22,7 @@
               label="ORVOSI PECSÉTSZÁM"
               ref="sealNumber"
               filled
-              :rules="[validationRules.required]"
+              :rules="[rules.required]"
               validate-on-blur
               @input="$emit('input', $event, 'data', 'sealNumber')"
             ></v-text-field>
@@ -39,7 +39,7 @@
                 filled
                 class="mr-md-5"
                 hint="Formátum: +36 20/30/70 xxxxxxx"
-                :rules="[validationRules.required, validationRules.mobile]"
+                :rules="[rules.required, rules.mobile]"
                 validate-on-blur
                 @input="$emit('input', $event, 'data', 'mobile')"
               ></v-text-field>
@@ -48,7 +48,7 @@
                 ref="email"
                 filled
                 type="email"
-                :rules="[validationRules.required, validationRules.email]"
+                :rules="[rules.required, rules.email]"
                 validate-on-blur
                 @input="$emit('input', $event, 'data', 'email')"
               ></v-text-field>
@@ -95,7 +95,7 @@
               ref="password"
               filled
               :hint="'Legalább 8 karakter, tartalmaznia kell kisbetűt, nagybetűt, számot és egy különleges karaktert.'"
-              :rules="[validationRules.required, validationRules.password]"
+              :rules="[rules.required, rules.password]"
               validate-on-blur
               :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'"
               :type="show1 ? 'text' : 'password'"
@@ -107,7 +107,7 @@
               label="JELSZÓ ISMÉT"
               ref="passwordAgain"
               filled
-              :rules="[validationRules.required, validationRules.passwordAgain]"
+              :rules="[rules.required, rules.passwordAgainDoctor]"
               validate-on-blur
               :append-icon="show2 ? 'mdi-eye' : 'mdi-eye-off'"
               :type="show2 ? 'text' : 'password'"
@@ -119,7 +119,10 @@
       </v-col>
       <v-row>
         <v-col cols="12" md="8" offset="md-2" class="text-center">
-          <v-btn color="primary" width="50%" @click="validate"
+          <v-btn
+            color="primary"
+            width="50%"
+            @click="validate(doctor.data, doctor.password)"
             >Regisztráció</v-btn
           >
         </v-col>
@@ -131,28 +134,17 @@
 </template>
 
 <script>
+import { validationCheck } from '@/mixins/validationCheck';
+
 export default {
-  props: ['validationRules', 'doctor'],
+  props: ['doctor'],
+  mixins: [validationCheck],
   data() {
     return {
       show1: false,
       show2: false,
       errors: false,
     };
-  },
-  methods: {
-    checkFieldValidity(data) {
-      Object.keys(data).forEach((field) => {
-        if (this.$refs[field].validate() === false) this.errors = true;
-      });
-    },
-    validate() {
-      this.errors = false;
-      this.checkFieldValidity(this.doctor.data);
-      this.checkFieldValidity(this.doctor.password);
-      if (this.errors === true) return console.log('Hibás kitöltés!');
-      this.$emit('validated');
-    },
   },
 };
 </script>
