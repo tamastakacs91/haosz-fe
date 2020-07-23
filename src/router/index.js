@@ -11,8 +11,8 @@ const routes = [
   },
   {
     path: '/regisztracio/:type',
-    name: 'Signup',
-    component: () => import('../views/Signup.vue'),
+    name: 'Registration',
+    component: () => import('../views/Registration.vue'),
   },
 ];
 

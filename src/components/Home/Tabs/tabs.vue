@@ -1,7 +1,7 @@
 <template>
   <div>
-    <v-row class="d-flex justify-center mt-10">
-      <div class="text-h4 text-md-h3">Köszöntő</div>
+    <v-row class="d-flex justify-center mt-7">
+      <div class="text-h4 text-md-h3 mb-7">Köszöntő</div>
 
       <v-tabs
         v-model="tab"

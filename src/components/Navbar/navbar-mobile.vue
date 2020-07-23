@@ -8,11 +8,12 @@
         src="/haosz-logo.png"
         transition="scale-transition"
         width="40"
+        @click="$router.push('/')"
       />
     </div>
 
     <v-spacer></v-spacer>
-    <v-menu left bottom>
+    <v-menu left bottom v-model="mainMenu">
       <template v-slot:activator="{ on, attrs }">
         <v-btn icon v-bind="attrs" v-on="on">
           <v-icon>mdi-dots-vertical</v-icon>
@@ -38,10 +39,10 @@
             </v-list-item>
           </template>
           <v-list>
-            <v-list-item @click="$router.push('/regisztracio/doktor')">
+            <v-list-item @click="goToRegistration('doktor')">
               <v-list-item-title>Orvosoknak</v-list-item-title>
             </v-list-item>
-            <v-list-item @click="$router.push('/regisztracio/kiallito')">
+            <v-list-item @click="goToRegistration('kiallito')">
               <v-list-item-title>Kiállítóknak</v-list-item-title>
             </v-list-item>
           </v-list>
@@ -50,3 +51,19 @@
     </v-menu>
   </v-row>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      mainMenu: false,
+    };
+  },
+  methods: {
+    goToRegistration(type) {
+      this.$router.push(`/regisztracio/${type}`);
+      this.mainMenu = false;
+    },
+  },
+};
+</script>

@@ -3,17 +3,20 @@
     <div class="d-flex align-center">
       <v-img
         alt="HAOSZ logo"
-        class="shrink mr-2 pointer"
+        class="shrink mr-4 pointer"
         contain
         src="/haosz-logo.png"
         transition="scale-transition"
-        width="50"
+        width="60"
         @click="$router.push('/')"
       />
-      <h4 class="text-caption text-md-h5 font-weight-bold">
-        Háziorvosok Online Szervezetének
-        <br />III. országos konferenciája
-      </h4>
+      <div class="d-flex flex-column">
+        <h5 class="text-caption text-md-h5 font-weight-bold">
+          Háziorvosok Online Szervezetének
+          <br />III. országos konferenciája
+        </h5>
+        <div>2020. október 15-18.</div>
+      </div>
     </div>
 
     <v-spacer></v-spacer>
