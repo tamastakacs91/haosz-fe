@@ -1,6 +1,7 @@
 export const validationCheck = {
   data() {
     return {
+      erros: false,
       rules: {
         required: (value) => !!value || 'Kötelező adat',
         mobile: (value) => {
@@ -28,12 +29,12 @@ export const validationCheck = {
         if (this.$refs[field].validate(true) === false) this.errors = true;
       });
     },
-    validate(fieldSet1, fieldSet2) {
+    validate(fieldSet1, fieldSet2, userType) {
       this.errors = false;
       this.checkFieldValidity(fieldSet1);
       this.checkFieldValidity(fieldSet2);
       if (this.errors === true) return console.log('Hibás kitöltés!');
-      this.$emit('validated');
+      this.$emit('validated', { userType });
     },
   },
 };

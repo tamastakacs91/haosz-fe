@@ -16,7 +16,14 @@
               class="mt-4"
               :rules="[rules.required]"
               validate-on-blur
-              @input="$emit('input', $event, 'data', 'name')"
+              @input="
+                $emit('input', {
+                  value: $event,
+                  nest: 'data',
+                  field: 'name',
+                  dataSet: 'exhibitor',
+                })
+              "
             ></v-text-field>
             <v-text-field
               label="CÍME"
@@ -24,7 +31,14 @@
               filled
               :rules="[rules.required]"
               validate-on-blur
-              @input="$emit('input', $event, 'data', 'address')"
+              @input="
+                $emit('input', {
+                  value: $event,
+                  nest: 'data',
+                  field: 'address',
+                  dataSet: 'exhibitor',
+                })
+              "
             ></v-text-field>
             <v-text-field
               label="ADÓSZÁMA"
@@ -32,7 +46,14 @@
               filled
               :rules="[rules.required]"
               validate-on-blur
-              @input="$emit('input', $event, 'data', 'taxNumber')"
+              @input="
+                $emit('input', {
+                  value: $event,
+                  nest: 'data',
+                  field: 'taxNumber',
+                  dataSet: 'exhibitor',
+                })
+              "
             ></v-text-field>
             <v-text-field
               label="KAPCSOLATTARTÓ NEVE"
@@ -40,7 +61,14 @@
               filled
               :rules="[rules.required]"
               validate-on-blur
-              @input="$emit('input', $event, 'data', 'contact')"
+              @input="
+                $emit('input', {
+                  value: $event,
+                  nest: 'data',
+                  field: 'contact',
+                  dataSet: 'exhibitor',
+                })
+              "
             ></v-text-field>
             <div class="d-flex flex-wrap">
               <v-text-field
@@ -51,7 +79,14 @@
                 hint="Formátum: +36 20/30/70 xxxxxxx"
                 :rules="[rules.required, rules.mobile]"
                 validate-on-blur
-                @input="$emit('input', $event, 'data', 'mobile')"
+                @input="
+                  $emit('input', {
+                    value: $event,
+                    nest: 'data',
+                    field: 'mobile',
+                    dataSet: 'exhibitor',
+                  })
+                "
               ></v-text-field>
               <v-text-field
                 label="E-MAIL"
@@ -60,7 +95,14 @@
                 type="email"
                 :rules="[rules.required, rules.email]"
                 validate-on-blur
-                @input="$emit('input', $event, 'data', 'email')"
+                @input="
+                  $emit('input', {
+                    value: $event,
+                    nest: 'data',
+                    field: 'email',
+                    dataSet: 'exhibitor',
+                  })
+                "
               ></v-text-field>
             </div>
             <div class="mt-4 mb-4">Jelszó:</div>
@@ -71,10 +113,17 @@
               :hint="'Legalább 8 karakter, tartalmaznia kell kisbetűt, nagybetűt, számot és egy különleges karaktert.'"
               :rules="[rules.required, rules.password]"
               validate-on-blur
-              :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'"
-              :type="show1 ? 'text' : 'password'"
-              @click:append="show1 = !show1"
-              @input="$emit('input', $event, 'password', 'password')"
+              :append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
+              :type="showPassword ? 'text' : 'password'"
+              @click:append="$emit('togglePassword')"
+              @input="
+                $emit('input', {
+                  value: $event,
+                  nest: 'password',
+                  field: 'password',
+                  dataSet: 'exhibitor',
+                })
+              "
             ></v-text-field>
             <div class="mb-4">Jelszó ismét:</div>
             <v-text-field
@@ -83,10 +132,17 @@
               filled
               :rules="[rules.required, rules.passwordAgainExhibitor]"
               validate-on-blur
-              :append-icon="show2 ? 'mdi-eye' : 'mdi-eye-off'"
-              :type="show2 ? 'text' : 'password'"
-              @click:append="show2 = !show2"
-              @input="$emit('input', $event, 'password', 'passwordAgain')"
+              :append-icon="showPasswordAgain ? 'mdi-eye' : 'mdi-eye-off'"
+              :type="showPasswordAgain ? 'text' : 'password'"
+              @click:append="$emit('togglePasswordAgain')"
+              @input="
+                $emit('input', {
+                  value: $event,
+                  nest: 'password',
+                  field: 'passwordAgain',
+                  dataSet: 'exhibitor',
+                })
+              "
             ></v-text-field>
           </v-col>
         </v-card>
@@ -96,7 +152,7 @@
           <v-btn
             color="primary"
             width="50%"
-            @click="validate(exhibitor.data, exhibitor.password)"
+            @click="validate(exhibitor.data, exhibitor.password, 'exhibitor')"
             >Regisztráció</v-btn
           >
         </v-col>
@@ -111,14 +167,7 @@
 import { validationCheck } from '@/mixins/validationCheck';
 
 export default {
-  props: ['exhibitor'],
+  props: ['exhibitor', 'showPassword', 'showPasswordAgain'],
   mixins: [validationCheck],
-  data() {
-    return {
-      show1: false,
-      show2: false,
-      errors: false,
-    };
-  },
 };
 </script>
