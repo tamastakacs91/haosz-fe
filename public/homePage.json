@@ -38,8 +38,12 @@
         ],
         "exhibitor": [
             {
-                "title": "Orvosszakmai-, orvostechnikai előadások, cégbemutatók, orvostechnikai bemutatók",
+                "title": "Orvosszakmai-, orvostechnikai előadások",
                 "icon": "mdi-teach"
+            },
+            {
+                "title": "Cégbemutatók, orvostechnikai bemutatók",
+                "icon": "mdi-presentation-play"
             },
             {
                 "title": "Nemzetközi kitekintés, háziorvosok Európában",
