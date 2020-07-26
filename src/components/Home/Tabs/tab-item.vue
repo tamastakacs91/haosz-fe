@@ -13,7 +13,7 @@
           <v-row v-if="type === 'doctor'">
             <v-col cols="12" md="4" v-for="(program, index) in programs" :key="index">
               <v-row align="center" justify="center" class="text-center ma-1">
-                <v-card width="300" height="160" outlined shaped>
+                <v-card width="300" height="200" outlined shaped>
                   <v-container fill-height>
                     <v-row justify="center" align="center">
                       <div>
@@ -28,9 +28,9 @@
             </v-col>
           </v-row>
           <v-row v-if="type === 'exhibitor'">
-            <v-col cols="12" md="6" v-for="(program, index) in programs" :key="index">
+            <v-col cols="12" md="3" v-for="(program, index) in programs" :key="index">
               <v-row align="center" justify="center" class="text-center ma-1">
-                <v-card width="350" height="200" outlined shaped>
+                <v-card width="350" height="280" outlined shaped>
                   <v-container fill-height>
                     <v-row justify="center" align="center">
                       <div>
