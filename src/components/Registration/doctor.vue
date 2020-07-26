@@ -211,6 +211,7 @@
       <v-row>
         <v-col cols="12" md="8" offset="md-2" class="text-center">
           <v-btn
+            rounded
             color="primary"
             width="50%"
             @click="validate(doctor.data, doctor.password, 'doctor')"
