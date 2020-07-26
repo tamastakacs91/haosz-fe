@@ -3,7 +3,13 @@
     <v-row class="d-flex justify-center mt-7">
       <div class="text-h4 text-md-h3 mb-7">Köszöntő</div>
 
-      <v-tabs v-model="tab" background-color="primary" class="elevation-2" dark centered>
+      <v-tabs
+        v-model="tab"
+        background-color="primary"
+        class="elevation-2"
+        dark
+        centered
+      >
         <v-tabs-slider></v-tabs-slider>
 
         <v-tab>Orvosoknak</v-tab>

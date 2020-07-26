@@ -10,7 +10,10 @@
           :programs="data.programs.doctor"
           :type="'doctor'"
         >
-          <event-summary :p1="data.summary.doctor.p1" :p2="data.summary.doctor.p2"></event-summary>
+          <event-summary
+            :p1="data.summary.doctor.p1"
+            :p2="data.summary.doctor.p2"
+          ></event-summary>
           <event-summary2
             :p3="data.summary.doctor.p3"
             :p4="data.summary.doctor.p4"
@@ -21,7 +24,10 @@
             :outP2="data.outro.doctor.p2"
             :outP3="data.outro.doctor.p3"
           ></outro>
-          <signature :text="data.signature.doctorText" :name="data.signature.name"></signature>
+          <signature
+            :text="data.signature.doctorText"
+            :name="data.signature.name"
+          ></signature>
         </tab-item>
         <tab-item
           :greeting="data.greeting.exhibitor"
@@ -30,7 +36,10 @@
           :programs="data.programs.exhibitor"
           :type="'exhibitor'"
         >
-          <event-summary :p1="data.summary.exhibitor.p1" :p2="data.summary.exhibitor.p2"></event-summary>
+          <event-summary
+            :p1="data.summary.exhibitor.p1"
+            :p2="data.summary.exhibitor.p2"
+          ></event-summary>
           <event-summary2
             :p3="data.summary.exhibitor.p3"
             :p4="data.summary.exhibitor.p4"
@@ -41,7 +50,10 @@
             :outP2="data.outro.exhibitor.p2"
             :outP3="data.outro.exhibitor.p3"
           ></outro>
-          <signature :text="data.signature.exhibitorText" :name="data.signature.name"></signature>
+          <signature
+            :text="data.signature.exhibitorText"
+            :name="data.signature.name"
+          ></signature>
         </tab-item>
       </tabs>
     </v-container>

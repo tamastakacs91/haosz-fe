@@ -12,7 +12,7 @@
     </div>
     <h3 class="text-center mt-4">
       Háziorvosok Online Szervezetének
-      <br />III. országos konferenciája
+      <br />III. Országos Konferenciája
     </h3>
     <div class="text-center">2020. október 15-18.</div>
   </div>
