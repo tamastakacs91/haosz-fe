@@ -1,6 +1,6 @@
 <template>
   <v-row>
-    <v-col class="text-center">
+    <v-col class="text-left">
       Jelentkezési lap kitöltésével elfogadja, hogy a megjelölt tételt
       megrendelte, és azt a megküldött számla ellenében határidőre kiegyenlíti.
       Amennyiben határidőre a kiállított számla nem kerül kiegyenlítésre, a

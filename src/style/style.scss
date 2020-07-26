@@ -1,5 +1,9 @@
 @import './color.scss';
 
+body{
+  box-sizing: border-box !important;
+}
+
 .secondary-bg {
   background-color: $secondary-color;
 }
@@ -10,4 +14,14 @@
 
 .pointer:hover {
   cursor: pointer;
+}
+
+.columned{
+  column-count: 2;
+}
+
+@media screen and (max-width: 959px) {
+  .columned {
+    column-count: 1;
+  }
 }

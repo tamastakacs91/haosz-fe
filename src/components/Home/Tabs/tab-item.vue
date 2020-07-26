@@ -3,29 +3,47 @@
     <v-container>
       <v-card flat>
         <v-list-item-content>
-          <v-list-item-title class="mb-5 mt-3 text-center text-h6 text-md-h5">{{
+          <v-list-item-title class="mb-5 mt-3 text-center text-h6 text-md-h5">
+            {{
             greeting
-          }}</v-list-item-title>
-          <div class="text-center">{{ invitation }}</div>
+            }}
+          </v-list-item-title>
+          <div class="text-left">{{ invitation }}</div>
           <div class="mt-5 text-center">{{ listing }}</div>
-          <div class="d-flex flex-wrap justify-center text-center">
-            <v-card
-              v-for="(program, index) in programs"
-              :key="index"
-              max-width="300"
-              class="pa-2 ma-3"
-              outlined
-              shaped
-            >
-              <div>
-                <v-icon size="50" color="primary">{{ program.icon }}</v-icon>
-              </div>
-              <div class="headline black-text normal-break">
-                {{ program.title }}
-              </div>
-              <v-card-subtitle>{{ program.description }}</v-card-subtitle>
-            </v-card>
-          </div>
+          <v-row v-if="type === 'doctor'">
+            <v-col cols="12" md="4" v-for="(program, index) in programs" :key="index">
+              <v-row align="center" justify="center" class="text-center ma-1">
+                <v-card width="300" height="160" outlined shaped>
+                  <v-container fill-height>
+                    <v-row justify="center" align="center">
+                      <div>
+                        <v-icon size="50" color="primary">{{ program.icon }}</v-icon>
+                      </div>
+                      <div class="headline black-text normal-break">{{ program.title }}</div>
+                      <v-card-subtitle v-if="program.description">{{ program.description }}</v-card-subtitle>
+                    </v-row>
+                  </v-container>
+                </v-card>
+              </v-row>
+            </v-col>
+          </v-row>
+          <v-row v-if="type === 'exhibitor'">
+            <v-col cols="12" md="6" v-for="(program, index) in programs" :key="index">
+              <v-row align="center" justify="center" class="text-center ma-1">
+                <v-card width="350" height="200" outlined shaped>
+                  <v-container fill-height>
+                    <v-row justify="center" align="center">
+                      <div>
+                        <v-icon size="50" color="primary">{{ program.icon }}</v-icon>
+                      </div>
+                      <div class="headline black-text normal-break">{{ program.title }}</div>
+                      <v-card-subtitle v-if="program.description">{{ program.description }}</v-card-subtitle>
+                    </v-row>
+                  </v-container>
+                </v-card>
+              </v-row>
+            </v-col>
+          </v-row>
         </v-list-item-content>
       </v-card>
     </v-container>
@@ -36,6 +54,6 @@
 <script>
 export default {
   name: 'tab-items',
-  props: ['greeting', 'invitation', 'listing', 'programs'],
+  props: ['greeting', 'invitation', 'listing', 'programs', 'type'],
 };
 </script>

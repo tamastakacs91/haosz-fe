@@ -8,7 +8,7 @@
       </v-row>
     </v-container>
     <v-container class="pt-0">
-      <v-row class="mr-3 ml-3 text-center mt-n4 mb-n10">
+      <v-row class="mr-3 ml-3 text-left mt-n4 mb-n10">
         <p>{{ p1 }}</p>
         <p>{{ p2 }}</p>
       </v-row>
