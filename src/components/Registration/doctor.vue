@@ -207,40 +207,28 @@
             ></v-text-field>
           </v-col>
         </v-card>
-        <v-card outlined ref="tickets" class="mt-4">
+        <!-- <v-card outlined ref="tickets" class="mt-4">
           <v-col cols="12" md="10" offset="md-1">
-            <div class="text-h6 mb-4 mt-6 font-weight-bold">
-              Regisztrációs díj:
-            </div>
+            <div class="text-h6 mb-4 mt-6 font-weight-bold">Regisztrációs díj:</div>
             <v-radio-group :messages="errorMessage">
               <div v-if="date < 20200915">
                 <v-row>
                   <v-col cols="10">
-                    <div>
-                      Rezidens, szakdolgozó (09.15-ig): 3.000 Ft + Áfa/fő
-                    </div>
+                    <div>Rezidens, szakdolgozó (09.15-ig): 3.000 Ft + Áfa/fő</div>
                   </v-col>
                   <v-col cols="2">
                     <div class="d-flex flex-row-reverse">
-                      <v-radio
-                        value="1"
-                        @change="emitSelectedValue(3000)"
-                      ></v-radio>
+                      <v-radio value="1" @change="emitSelectedValue(3000)"></v-radio>
                     </div>
                   </v-col>
                 </v-row>
                 <v-row>
                   <v-col cols="10">
-                    <div>
-                      Háziorvos - HaOSz tag (09.15-ig): 3.000 Ft + Áfa/fő
-                    </div>
+                    <div>Háziorvos - HaOSz tag (09.15-ig): 3.000 Ft + Áfa/fő</div>
                   </v-col>
                   <v-col cols="2">
                     <div class="d-flex flex-row-reverse">
-                      <v-radio
-                        value="2"
-                        @change="emitSelectedValue(3000)"
-                      ></v-radio>
+                      <v-radio value="2" @change="emitSelectedValue(3000)"></v-radio>
                     </div>
                   </v-col>
                 </v-row>
@@ -250,28 +238,20 @@
                   </v-col>
                   <v-col cols="2">
                     <div class="d-flex flex-row-reverse">
-                      <v-radio
-                        value="3"
-                        @change="emitSelectedValue(5000)"
-                      ></v-radio>
+                      <v-radio value="3" @change="emitSelectedValue(5000)"></v-radio>
                     </div>
                   </v-col>
                 </v-row>
               </div>
               <div v-if="date > 20200915">
-                <div class="mb-4 mt-4 font-weight-bold">
-                  Szeptember 15. után
-                </div>
+                <div class="mb-4 mt-4 font-weight-bold">Szeptember 15. után</div>
                 <v-row>
                   <v-col cols="10">
                     <div>HaOSZ támogatói jegy: 10.000 Ft + Áfa/fő</div>
                   </v-col>
                   <v-col cols="2">
                     <div class="d-flex flex-row-reverse">
-                      <v-radio
-                        value="4"
-                        @change="emitSelectedValue(10000)"
-                      ></v-radio>
+                      <v-radio value="4" @change="emitSelectedValue(10000)"></v-radio>
                     </div>
                   </v-col>
                 </v-row>
@@ -281,13 +261,19 @@
             <v-row v-if="doctor.registrationCost != 0">
               <v-col class="font-weight-black">Összesen</v-col>
               <v-col>
-                <div class="d-flex flex-row-reverse font-weight-black">
-                  {{ doctor.registrationCost }} Ft + Áfa
-                </div>
+                <div
+                  class="d-flex flex-row-reverse font-weight-black"
+                >{{ doctor.registrationCost }} Ft + Áfa</div>
               </v-col>
             </v-row>
           </v-col>
-        </v-card>
+        </v-card> -->
+        <doctor-payables
+          :errorMessage="errorMessage"
+          :date="date"
+          :cost="doctor.registrationCost"
+          @selected="emitSelectedValue"
+        ></doctor-payables>
       </v-col>
       <v-row>
         <v-col cols="12" md="8" offset="md-2" class="text-center">

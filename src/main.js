@@ -26,6 +26,8 @@ const components = [
   'Registration/exhibitor',
   'Registration/terms',
   'Registration/more-info',
+  'Registration/doctor-payables',
+  'Registration/sponsor-payables',
   'Registration/error-snackbar',
 ];
 components.forEach(register(Vue));

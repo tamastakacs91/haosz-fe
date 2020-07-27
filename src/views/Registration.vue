@@ -83,6 +83,7 @@ export default {
     },
     setSponsorCosts({ value, field }) {
       this.updateSponsorRegistrationCosts({ value, field });
+      console.log(this.exhibitor);
     },
   },
 };
