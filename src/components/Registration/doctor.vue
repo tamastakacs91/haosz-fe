@@ -294,6 +294,7 @@
       <slot name="terms"></slot>
     </v-container>
     <slot name="more-info"></slot>
+    <error-snackbar :errors="errors" @resetError="resetError"></error-snackbar>
   </div>
 </template>
 
@@ -307,6 +308,9 @@ export default {
     emitSelectedValue(value) {
       this.errorMessage = '';
       this.$emit('selected', value);
+    },
+    resetError(value) {
+      this.errors = value;
     },
   },
 };

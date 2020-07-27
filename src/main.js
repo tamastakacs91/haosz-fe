@@ -26,6 +26,7 @@ const components = [
   'Registration/exhibitor',
   'Registration/terms',
   'Registration/more-info',
+  'Registration/error-snackbar',
 ];
 components.forEach(register(Vue));
 

@@ -149,7 +149,16 @@
               </v-col>
               <v-col cols="2">
                 <div class="d-flex flex-row-reverse">
-                  <v-checkbox hide-details class="ma-0 pa-0"></v-checkbox>
+                  <v-checkbox
+                    hide-details
+                    class="ma-0 pa-0"
+                    @change="
+                      $emit('selected', {
+                        value: $event,
+                        field: 'isMainSponsore',
+                      })
+                    "
+                  ></v-checkbox>
                 </div>
               </v-col>
               <v-col cols="11">
@@ -170,7 +179,13 @@
               </v-col>
               <v-col cols="2">
                 <div class="d-flex flex-row-reverse">
-                  <v-checkbox hide-details class="ma-0 pa-0"></v-checkbox>
+                  <v-checkbox
+                    hide-details
+                    class="ma-0 pa-0"
+                    @change="
+                      $emit('selected', { value: $event, field: 'isThirtyMin' })
+                    "
+                  ></v-checkbox>
                 </div>
               </v-col>
               <v-col cols="11">
@@ -187,7 +202,13 @@
               </v-col>
               <v-col cols="2">
                 <div class="d-flex flex-row-reverse">
-                  <v-checkbox hide-details class="ma-0 pa-0"></v-checkbox>
+                  <v-checkbox
+                    hide-details
+                    class="ma-0 pa-0"
+                    @change="
+                      $emit('selected', { value: $event, field: 'isFiveMin' })
+                    "
+                  ></v-checkbox>
                 </div>
               </v-col>
               <v-col cols="11">
@@ -204,7 +225,16 @@
               </v-col>
               <v-col cols="2">
                 <div class="d-flex flex-row-reverse">
-                  <v-checkbox hide-details class="ma-0 pa-0"></v-checkbox>
+                  <v-checkbox
+                    hide-details
+                    class="ma-0 pa-0"
+                    @change="
+                      $emit('selected', {
+                        value: $event,
+                        field: 'isExhibitionPlace',
+                      })
+                    "
+                  ></v-checkbox>
                 </div>
               </v-col>
             </v-row>
@@ -232,6 +262,9 @@
                   value="0"
                   hide-details
                   class="pa-0 centered"
+                  @input="
+                    $emit('selected', { value: $event, field: 'ticketCounts' })
+                  "
                 ></v-text-field>
               </v-col>
             </v-row>
@@ -252,6 +285,7 @@
       <slot name="terms"></slot>
     </v-container>
     <slot name="more-info"></slot>
+    <error-snackbar :errors="errors" @resetError="resetError"></error-snackbar>
   </div>
 </template>
 
@@ -261,5 +295,10 @@ import { validationCheck } from '@/mixins/validationCheck';
 export default {
   props: ['exhibitor', 'showPassword', 'showPasswordAgain'],
   mixins: [validationCheck],
+  methods: {
+    resetError(value) {
+      this.errors = value;
+    },
+  },
 };
 </script>

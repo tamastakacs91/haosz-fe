@@ -1,7 +1,7 @@
 export const validationCheck = {
   data() {
     return {
-      erros: false,
+      errors: false,
       errorMessage: '',
       rules: {
         required: (value) => !!value || 'Kötelező adat',

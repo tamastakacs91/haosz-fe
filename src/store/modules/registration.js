@@ -48,6 +48,11 @@ const mutations = {
   UPDATE_DOCTOR_REGISTRATION_COST(state, value) {
     state.doctor.registrationCost = value;
   },
+  UPDATE_SPONSOR_REGISTRATION_COSTS(state, { value, field }) {
+    let data = value;
+    if (field === 'ticketCounts') data = parseInt(value);
+    state.exhibitor[field] = data;
+  },
   TOGGLE_PASSWORD_SHOWN(state, to) {
     if (to) {
       state.passwordShown = to;
@@ -83,6 +88,9 @@ const actions = {
   },
   updateDoctorRegistrationCost(context, value) {
     context.commit('UPDATE_DOCTOR_REGISTRATION_COST', value);
+  },
+  updateSponsorRegistrationCosts(context, { value, field }) {
+    context.commit('UPDATE_SPONSOR_REGISTRATION_COSTS', { value, field });
   },
   sendRegistrationData(context, { userType }) {
     let user;

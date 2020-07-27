@@ -27,9 +27,24 @@ body {
 }
 
 .theme--light.v-messages {
-  color: #ff5252 !important;
+  color: $error-color !important;
 }
 
 .centered input {
   text-align: center !important;
+}
+
+.error-text {
+  color: $error-color;
+}
+
+.v-snack__content {
+  text-align: center !important;
+}
+
+.v-snack__wrapper {
+  max-height: 36px !important;
+  max-width: 250px !important;
+  min-height: 36px !important;
+  min-width: 250px !important;
 }
