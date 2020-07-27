@@ -11,7 +11,7 @@
           <v-col cols="12" md="10" offset="md-1">
             <v-text-field
               label="CÉG NEVE"
-              ref="name"
+              ref="companyName"
               filled
               class="mt-4"
               :rules="[rules.required]"
@@ -19,53 +19,49 @@
               @input="
                 $emit('input', {
                   value: $event,
-                  nest: 'data',
-                  field: 'name',
+                  field: 'companyName',
                   dataSet: 'exhibitor',
                 })
               "
             ></v-text-field>
             <v-text-field
               label="CÍME"
-              ref="address"
+              ref="companyAddress"
               filled
               :rules="[rules.required]"
               validate-on-blur
               @input="
                 $emit('input', {
                   value: $event,
-                  nest: 'data',
-                  field: 'address',
+                  field: 'companyAddress',
                   dataSet: 'exhibitor',
                 })
               "
             ></v-text-field>
             <v-text-field
               label="ADÓSZÁMA"
-              ref="taxNumber"
+              ref="companyTaxNumber"
               filled
               :rules="[rules.required]"
               validate-on-blur
               @input="
                 $emit('input', {
                   value: $event,
-                  nest: 'data',
-                  field: 'taxNumber',
+                  field: 'companyTaxNumber',
                   dataSet: 'exhibitor',
                 })
               "
             ></v-text-field>
             <v-text-field
               label="KAPCSOLATTARTÓ NEVE"
-              ref="contact"
+              ref="companyContact"
               filled
               :rules="[rules.required]"
               validate-on-blur
               @input="
                 $emit('input', {
                   value: $event,
-                  nest: 'data',
-                  field: 'contact',
+                  field: 'companyContact',
                   dataSet: 'exhibitor',
                 })
               "
@@ -73,7 +69,7 @@
             <div class="d-flex flex-wrap">
               <v-text-field
                 label="MOBIL"
-                ref="mobile"
+                ref="companyMobile"
                 filled
                 class="mr-md-5"
                 hint="Formátum: +36 20/30/70 xxxxxxx"
@@ -82,15 +78,14 @@
                 @input="
                   $emit('input', {
                     value: $event,
-                    nest: 'data',
-                    field: 'mobile',
+                    field: 'companyMobile',
                     dataSet: 'exhibitor',
                   })
                 "
               ></v-text-field>
               <v-text-field
                 label="E-MAIL"
-                ref="email"
+                ref="companyEmail"
                 filled
                 type="email"
                 :rules="[rules.required, rules.email]"
@@ -98,8 +93,7 @@
                 @input="
                   $emit('input', {
                     value: $event,
-                    nest: 'data',
-                    field: 'email',
+                    field: 'companyEmail',
                     dataSet: 'exhibitor',
                   })
                 "
@@ -119,7 +113,6 @@
               @input="
                 $emit('input', {
                   value: $event,
-                  nest: 'password',
                   field: 'password',
                   dataSet: 'exhibitor',
                 })
@@ -138,12 +131,74 @@
               @input="
                 $emit('input', {
                   value: $event,
-                  nest: 'password',
                   field: 'passwordAgain',
                   dataSet: 'exhibitor',
                 })
               "
             ></v-text-field>
+          </v-col>
+        </v-card>
+        <v-card outlined ref="tickets" class="mt-4">
+          <v-col cols="12" md="10" offset="md-1">
+            <div class="text-h6 mb-4 mt-6 font-weight-bold">
+              Hirdetési, cégmegjelenési lehetőségek:
+            </div>
+            <v-radio-group :messages="errorMessage">
+              <v-row>
+                <v-col cols="10">
+                  <div>Rezidens, szakdolgozó (09.15-ig): 3000 Ft + áfa/fő</div>
+                </v-col>
+                <v-col cols="2">
+                  <div class="d-flex flex-row-reverse">
+                    <v-radio
+                      value="1"
+                      @change="emitSelectedValue(3000)"
+                    ></v-radio>
+                  </div>
+                </v-col>
+              </v-row>
+              <v-row>
+                <v-col cols="10">
+                  <div>Háziorvos - HaOSz tag (09.15-ig): 3.000 Ft + áfa/fő</div>
+                </v-col>
+                <v-col cols="2">
+                  <div class="d-flex flex-row-reverse">
+                    <v-radio
+                      value="2"
+                      @change="emitSelectedValue(3000)"
+                    ></v-radio>
+                  </div>
+                </v-col>
+              </v-row>
+              <v-row>
+                <v-col cols="10">
+                  <div>Egyéb érdeklődő (09.15-ig): 5.000 Ft + áfa/fő</div>
+                </v-col>
+                <v-col cols="2">
+                  <div class="d-flex flex-row-reverse">
+                    <v-radio
+                      value="3"
+                      @change="emitSelectedValue(5000)"
+                    ></v-radio>
+                  </div>
+                </v-col>
+              </v-row>
+
+              <div class="mb-4 mt-4 font-weight-bold">Szeptember 15. után</div>
+              <v-row>
+                <v-col cols="10">
+                  <div>HaOSZ támogatói jegy: 10.000 Ft + áfa/fő</div>
+                </v-col>
+                <v-col cols="2">
+                  <div class="d-flex flex-row-reverse">
+                    <v-radio
+                      value="4"
+                      @change="emitSelectedValue(10000)"
+                    ></v-radio>
+                  </div>
+                </v-col>
+              </v-row>
+            </v-radio-group>
           </v-col>
         </v-card>
       </v-col>
@@ -153,7 +208,7 @@
             rounded
             color="primary"
             width="50%"
-            @click="validate(exhibitor.data, exhibitor.password, 'exhibitor')"
+            @click="validate(exhibitor, 'exhibitor')"
             >Regisztráció</v-btn
           >
         </v-col>

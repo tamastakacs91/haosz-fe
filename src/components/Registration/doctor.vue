@@ -19,7 +19,6 @@
               @input="
                 $emit('input', {
                   value: $event,
-                  nest: 'data',
                   field: 'name',
                   dataSet: 'doctor',
                 })
@@ -34,7 +33,6 @@
               @input="
                 $emit('input', {
                   value: $event,
-                  nest: 'data',
                   field: 'sealNumber',
                   dataSet: 'doctor',
                 })
@@ -44,10 +42,10 @@
               label="MUNKAHELY"
               ref="workPlace"
               filled
+              :rules="[rules.required]"
               @input="
                 $emit('input', {
                   value: $event,
-                  nest: 'data',
                   field: 'workPlace',
                   dataSet: 'doctor',
                 })
@@ -65,7 +63,6 @@
                 @input="
                   $emit('input', {
                     value: $event,
-                    nest: 'data',
                     field: 'mobile',
                     dataSet: 'doctor',
                   })
@@ -81,7 +78,6 @@
                 @input="
                   $emit('input', {
                     value: $event,
-                    nest: 'data',
                     field: 'email',
                     dataSet: 'doctor',
                   })
@@ -91,48 +87,52 @@
             <div class="mt-4 mb-4">Számlázási Adatok:</div>
             <v-text-field
               label="CÉG NEVE"
+              ref="billingName"
               filled
+              :rules="[rules.required]"
               @input="
                 $emit('input', {
                   value: $event,
-                  nest: 'billing',
-                  field: 'name',
+                  field: 'billingName',
                   dataSet: 'doctor',
                 })
               "
             ></v-text-field>
             <v-text-field
               label="CÍM"
+              ref="billingAddress"
               filled
+              :rules="[rules.required]"
               @input="
                 $emit('input', {
                   value: $event,
-                  nest: 'billing',
-                  field: 'address',
+                  field: 'billingAddress',
                   dataSet: 'doctor',
                 })
               "
             ></v-text-field>
             <v-text-field
               label="ADÓSZÁM"
+              ref="billingTaxNumber"
               filled
+              :rules="[rules.required]"
               @input="
                 $emit('input', {
                   value: $event,
-                  nest: 'billing',
-                  field: 'taxNumber',
+                  field: 'billingTaxNumber',
                   dataSet: 'doctor',
                 })
               "
             ></v-text-field>
             <v-text-field
               label="KAPCSOLATTARTÓ NEVE"
+              ref="billingContact"
               filled
+              :rules="[rules.required]"
               @input="
                 $emit('input', {
                   value: $event,
-                  nest: 'billing',
-                  field: 'contact',
+                  field: 'billingContact',
                   dataSet: 'doctor',
                 })
               "
@@ -140,27 +140,29 @@
             <div class="d-flex flex-wrap">
               <v-text-field
                 label="MOBIL"
+                ref="billingMobile"
                 filled
-                class="mr-md-5"
                 hint="Formátum: +36 20/30/70 xxxxxxx"
+                :rules="[rules.required, rules.mobile]"
+                class="mr-md-5"
                 @input="
                   $emit('input', {
                     value: $event,
-                    nest: 'billing',
-                    field: 'mobile',
+                    field: 'billingMobile',
                     dataSet: 'doctor',
                   })
                 "
               ></v-text-field>
               <v-text-field
                 label="E-MAIL"
+                ref="billingEmail"
                 filled
+                :rules="[rules.required, rules.email]"
                 type="email"
                 @input="
                   $emit('input', {
                     value: $event,
-                    nest: 'billing',
-                    field: 'email',
+                    field: 'billingEmail',
                     dataSet: 'doctor',
                   })
                 "
@@ -180,7 +182,6 @@
               @input="
                 $emit('input', {
                   value: $event,
-                  nest: 'password',
                   field: 'password',
                   dataSet: 'doctor',
                 })
@@ -199,12 +200,83 @@
               @input="
                 $emit('input', {
                   value: $event,
-                  nest: 'password',
                   field: 'passwordAgain',
                   dataSet: 'doctor',
                 })
               "
             ></v-text-field>
+          </v-col>
+        </v-card>
+        <v-card outlined ref="tickets" class="mt-4">
+          <v-col cols="12" md="10" offset="md-1">
+            <div class="text-h6 mb-4 mt-6 font-weight-bold">
+              Regisztrációs díj:
+            </div>
+            <v-radio-group :messages="errorMessage">
+              <div v-if="date < 20200915">
+                <v-row>
+                  <v-col cols="10">
+                    <div>
+                      Rezidens, szakdolgozó (09.15-ig): 3000 Ft + áfa/fő
+                    </div>
+                  </v-col>
+                  <v-col cols="2">
+                    <div class="d-flex flex-row-reverse">
+                      <v-radio
+                        value="1"
+                        @change="emitSelectedValue(3000)"
+                      ></v-radio>
+                    </div>
+                  </v-col>
+                </v-row>
+                <v-row>
+                  <v-col cols="10">
+                    <div>
+                      Háziorvos - HaOSz tag (09.15-ig): 3.000 Ft + áfa/fő
+                    </div>
+                  </v-col>
+                  <v-col cols="2">
+                    <div class="d-flex flex-row-reverse">
+                      <v-radio
+                        value="2"
+                        @change="emitSelectedValue(3000)"
+                      ></v-radio>
+                    </div>
+                  </v-col>
+                </v-row>
+                <v-row>
+                  <v-col cols="10">
+                    <div>Egyéb érdeklődő (09.15-ig): 5.000 Ft + áfa/fő</div>
+                  </v-col>
+                  <v-col cols="2">
+                    <div class="d-flex flex-row-reverse">
+                      <v-radio
+                        value="3"
+                        @change="emitSelectedValue(5000)"
+                      ></v-radio>
+                    </div>
+                  </v-col>
+                </v-row>
+              </div>
+              <div v-if="date > 20200915">
+                <div class="mb-4 mt-4 font-weight-bold">
+                  Szeptember 15. után
+                </div>
+                <v-row>
+                  <v-col cols="10">
+                    <div>HaOSZ támogatói jegy: 10.000 Ft + áfa/fő</div>
+                  </v-col>
+                  <v-col cols="2">
+                    <div class="d-flex flex-row-reverse">
+                      <v-radio
+                        value="4"
+                        @change="emitSelectedValue(10000)"
+                      ></v-radio>
+                    </div>
+                  </v-col>
+                </v-row>
+              </div>
+            </v-radio-group>
           </v-col>
         </v-card>
       </v-col>
@@ -214,7 +286,7 @@
             rounded
             color="primary"
             width="50%"
-            @click="validate(doctor.data, doctor.password, 'doctor')"
+            @click="validate(doctor, 'doctor')"
             >Regisztráció</v-btn
           >
         </v-col>
@@ -229,7 +301,13 @@
 import { validationCheck } from '@/mixins/validationCheck';
 
 export default {
-  props: ['doctor', 'showPassword', 'showPasswordAgain'],
+  props: ['doctor', 'showPassword', 'showPasswordAgain', 'date'],
   mixins: [validationCheck],
+  methods: {
+    emitSelectedValue(value) {
+      this.errorMessage = '';
+      this.$emit('selected', value);
+    },
+  },
 };
 </script>

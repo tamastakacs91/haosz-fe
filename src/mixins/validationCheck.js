@@ -2,6 +2,7 @@ export const validationCheck = {
   data() {
     return {
       erros: false,
+      errorMessage: '',
       rules: {
         required: (value) => !!value || 'Kötelező adat',
         mobile: (value) => {
@@ -25,15 +26,37 @@ export const validationCheck = {
   },
   methods: {
     checkFieldValidity(data) {
+      const fieldsToSkip = [
+        'registrationCost',
+        'isMainSponsore',
+        'isThirtyMin',
+        'isFiveMin',
+        'isExhibitionPlace',
+        'ticketCounts',
+        'totalPrice',
+      ];
+
       Object.keys(data).forEach((field) => {
-        if (this.$refs[field].validate(true) === false) this.errors = true;
+        if (
+          !fieldsToSkip.includes(field) &&
+          this.$refs[field].validate(true) === false
+        )
+          this.errors = true;
       });
     },
-    validate(fieldSet1, fieldSet2, userType) {
+    checkDoctorRegistration() {
+      if (this.doctor.registrationCost === 0) {
+        this.errors = true;
+        this.errorMessage = 'Kötelező adat';
+      }
+    },
+    validate(data, userType) {
       this.errors = false;
-      this.checkFieldValidity(fieldSet1);
-      this.checkFieldValidity(fieldSet2);
-      if (this.errors === true) return console.log('Hibás kitöltés!');
+      this.checkFieldValidity(data);
+      if (userType === 'doctor') {
+        this.checkDoctorRegistration();
+      }
+      if (this.errors === true) return;
       this.$emit('validated', { userType });
     },
   },

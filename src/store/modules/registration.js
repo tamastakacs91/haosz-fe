@@ -2,51 +2,51 @@ const namespaced = true;
 
 const state = () => ({
   doctor: {
-    data: {
-      name: '',
-      sealNumber: '',
-      workPlace: '',
-      mobile: '',
-      email: '',
-    },
-    billing: {
-      name: null,
-      address: null,
-      taxNumber: null,
-      contact: null,
-      mobile: null,
-      email: null,
-    },
-    password: {
-      password: '',
-      passwordAgain: '',
-    },
+    name: '',
+    sealNumber: '',
+    workPlace: '',
+    mobile: '',
+    email: '',
+    billingName: null,
+    billingAddress: null,
+    billingTaxNumber: null,
+    billingContact: null,
+    billingMobile: null,
+    billingEmail: null,
+    registrationCost: 0,
+    password: '',
+    passwordAgain: '',
   },
   exhibitor: {
-    data: {
-      name: '',
-      address: '',
-      taxNumber: '',
-      contact: '',
-      mobile: '',
-      email: '',
-    },
-    password: {
-      password: '',
-      passwordAgain: '',
-    },
+    companyName: '',
+    companyAddress: '',
+    companyTaxNumber: '',
+    companyContact: '',
+    companyMobile: '',
+    companyEmail: '',
+    isMainSponsore: false,
+    isThirtyMin: false,
+    isFiveMin: false,
+    isExhibitionPlace: false,
+    ticketCounts: 0,
+    totalPrice: 0,
+    password: '',
+    passwordAgain: '',
   },
   passwordShown: false,
   passwordAgainShown: false,
 });
 
 const mutations = {
-  UPDATE_REGISTRATION_DATA(state, { value, nest, field, dataSet }) {
+  UPDATE_REGISTRATION_DATA(state, { value, field, dataSet }) {
     if (dataSet === 'doctor') {
-      state.doctor[nest][field] = value;
+      state.doctor[field] = value;
     } else {
-      state.exhibitor[nest][field] = value;
+      state.exhibitor[field] = value;
     }
+  },
+  UPDATE_DOCTOR_REGISTRATION_COST(state, value) {
+    state.doctor.registrationCost = value;
   },
   TOGGLE_PASSWORD_SHOWN(state, to) {
     if (to) {
@@ -78,8 +78,11 @@ const actions = {
   togglePasswordAgainShown(context) {
     context.commit('TOGGLE_PASSWORD_AGAIN_SHOWN');
   },
-  updateRegistrationData(context, { value, nest, field, dataSet }) {
-    context.commit('UPDATE_REGISTRATION_DATA', { value, nest, field, dataSet });
+  updateRegistrationData(context, { value, field, dataSet }) {
+    context.commit('UPDATE_REGISTRATION_DATA', { value, field, dataSet });
+  },
+  updateDoctorRegistrationCost(context, value) {
+    context.commit('UPDATE_DOCTOR_REGISTRATION_COST', value);
   },
   sendRegistrationData(context, { userType }) {
     let user;

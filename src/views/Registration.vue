@@ -6,10 +6,12 @@
       :doctor="doctor"
       :showPassword="passwordShown"
       :showPasswordAgain="passwordAgainShown"
+      :date="dateToday"
       @input="updateRegistrationData"
       @togglePassword="togglePasswordShown"
       @togglePasswordAgain="togglePasswordAgainShown"
       @validated="sendRegistrationData"
+      @selected="selectDoctorCost"
     >
       <template v-slot:terms>
         <terms></terms>
@@ -52,12 +54,18 @@ export default {
       'passwordShown',
       'passwordAgainShown',
     ]),
+    dateToday() {
+      const splitDate = new Date().toISOString().split('-');
+      const date = splitDate[2].split('T');
+      return splitDate[0] + splitDate[1] + date[0];
+    },
   },
   methods: {
     ...mapActions('registration', [
       'togglePasswordShown',
       'togglePasswordAgainShown',
       'updateRegistrationData',
+      'updateDoctorRegistrationCost',
       'sendRegistrationData',
     ]),
     submitDoctorData() {
@@ -65,6 +73,9 @@ export default {
     },
     submitExhibitorData() {
       console.log(this.exhibitor);
+    },
+    selectDoctorCost(value) {
+      this.updateDoctorRegistrationCost(value);
     },
   },
 };
