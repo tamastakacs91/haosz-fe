@@ -59,6 +59,9 @@ const mutations = {
     if (field === 'ticketCounts') data = parseInt(value);
     state.exhibitor[field] = data;
   },
+  UPDATE_SPONSOR_TOTAL_PRICE(state, value) {
+    state.exhibitor.totalPrice = value;
+  },
   TOGGLE_PASSWORD_SHOWN(state, to) {
     if (to) {
       state.passwordShown = to;
@@ -122,6 +125,10 @@ const actions = {
     if (userType === 'doctor') {
       user = context.getters['doctor'];
     } else {
+      context.commit(
+        'UPDATE_SPONSOR_TOTAL_PRICE',
+        context.getters['exhibitorFees']
+      );
       user = context.getters['exhibitor'];
     }
     console.log(user);

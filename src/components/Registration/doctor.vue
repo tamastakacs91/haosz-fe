@@ -277,6 +277,15 @@
                 </v-row>
               </div>
             </v-radio-group>
+            <hr v-if="doctor.registrationCost != 0" class="mt-5" />
+            <v-row v-if="doctor.registrationCost != 0">
+              <v-col class="font-weight-black">Összesen</v-col>
+              <v-col>
+                <div class="d-flex flex-row-reverse font-weight-black">
+                  {{ doctor.registrationCost }} Ft + Áfa
+                </div>
+              </v-col>
+            </v-row>
           </v-col>
         </v-card>
       </v-col>

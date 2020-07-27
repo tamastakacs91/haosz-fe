@@ -253,12 +253,14 @@
                 </div>
               </v-col>
               <v-col
-                cols="1"
-                offset="1"
+                cols="2"
+                md="1"
+                offset-md="1"
                 class="d-flex flex-row-reverse pa-0 pr-3 mt-n1"
               >
                 <v-text-field
                   type="number"
+                  min="0"
                   value="0"
                   hide-details
                   class="pa-0 centered"
@@ -266,6 +268,15 @@
                     $emit('selected', { value: $event, field: 'ticketCounts' })
                   "
                 ></v-text-field>
+              </v-col>
+            </v-row>
+            <hr v-if="fees != 0" class="mt-5" />
+            <v-row v-if="fees != 0">
+              <v-col class="font-weight-black">Összesen</v-col>
+              <v-col>
+                <div class="d-flex flex-row-reverse font-weight-black">
+                  {{ fees }} Ft + Áfa
+                </div>
               </v-col>
             </v-row>
           </v-col>
@@ -282,6 +293,7 @@
           >
         </v-col>
       </v-row>
+
       <slot name="terms"></slot>
     </v-container>
     <slot name="more-info"></slot>
