@@ -33,6 +33,12 @@ const state = () => ({
     password: '',
     passwordAgain: '',
   },
+  fees: {
+    isMainSponsore: 500000,
+    isThirtyMin: 150000,
+    isFiveMin: 50000,
+    isExhibitionPlace: 100000,
+  },
   passwordShown: false,
   passwordAgainShown: false,
 });
@@ -74,6 +80,25 @@ const getters = {
   exhibitor: (state) => state.exhibitor,
   passwordShown: (state) => state.passwordShown,
   passwordAgainShown: (state) => state.passwordAgainShown,
+  exhibitorFees: (state) => {
+    const isPayable = [
+      'isMainSponsore',
+      'isThirtyMin',
+      'isFiveMin',
+      'isExhibitionPlace',
+      'ticketCounts',
+    ];
+    let totalCost = 0;
+    isPayable.forEach((item) => {
+      if (state.exhibitor[item] === true) {
+        totalCost += state.fees[item];
+      }
+      if (item === 'ticketCounts') {
+        totalCost += state.exhibitor[item] * 5000;
+      }
+    });
+    return totalCost;
+  },
 };
 
 const actions = {

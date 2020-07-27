@@ -18,9 +18,9 @@ export const validationCheck = {
           return pattern.test(value) || 'Érvénytelen jelszó';
         },
         passwordAgainDoctor: (value) =>
-          value === this.doctor.password.password || 'A jelszó nem egyezik',
+          value === this.doctor.password || 'A jelszó nem egyezik',
         passwordAgainExhibitor: (value) =>
-          value === this.exhibitor.password.password || 'A jelszó nem egyezik',
+          value === this.exhibitor.password || 'A jelszó nem egyezik',
       },
     };
   },

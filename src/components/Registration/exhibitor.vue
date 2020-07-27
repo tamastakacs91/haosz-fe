@@ -293,7 +293,7 @@
 import { validationCheck } from '@/mixins/validationCheck';
 
 export default {
-  props: ['exhibitor', 'showPassword', 'showPasswordAgain'],
+  props: ['exhibitor', 'showPassword', 'showPasswordAgain', 'fees'],
   mixins: [validationCheck],
   methods: {
     resetError(value) {

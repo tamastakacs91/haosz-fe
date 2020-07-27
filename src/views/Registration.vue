@@ -30,6 +30,7 @@
       @togglePasswordAgain="togglePasswordAgainShown"
       @validated="sendRegistrationData"
       @selected="setSponsorCosts"
+      :fees="exhibitorFees"
     >
       <template v-slot:terms>
         <terms></terms>
@@ -54,6 +55,7 @@ export default {
       'exhibitor',
       'passwordShown',
       'passwordAgainShown',
+      'exhibitorFees',
     ]),
     dateToday() {
       const splitDate = new Date().toISOString().split('-');
@@ -81,7 +83,6 @@ export default {
     },
     setSponsorCosts({ value, field }) {
       this.updateSponsorRegistrationCosts({ value, field });
-      console.log(this.exhibitor);
     },
   },
 };
