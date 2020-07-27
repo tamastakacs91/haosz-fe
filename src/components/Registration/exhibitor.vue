@@ -143,62 +143,98 @@
             <div class="text-h6 mb-4 mt-6 font-weight-bold">
               Hirdetési, cégmegjelenési lehetőségek:
             </div>
-            <v-radio-group :messages="errorMessage">
-              <v-row>
-                <v-col cols="10">
-                  <div>Rezidens, szakdolgozó (09.15-ig): 3000 Ft + áfa/fő</div>
-                </v-col>
-                <v-col cols="2">
-                  <div class="d-flex flex-row-reverse">
-                    <v-radio
-                      value="1"
-                      @change="emitSelectedValue(3000)"
-                    ></v-radio>
-                  </div>
-                </v-col>
-              </v-row>
-              <v-row>
-                <v-col cols="10">
-                  <div>Háziorvos - HaOSz tag (09.15-ig): 3.000 Ft + áfa/fő</div>
-                </v-col>
-                <v-col cols="2">
-                  <div class="d-flex flex-row-reverse">
-                    <v-radio
-                      value="2"
-                      @change="emitSelectedValue(3000)"
-                    ></v-radio>
-                  </div>
-                </v-col>
-              </v-row>
-              <v-row>
-                <v-col cols="10">
-                  <div>Egyéb érdeklődő (09.15-ig): 5.000 Ft + áfa/fő</div>
-                </v-col>
-                <v-col cols="2">
-                  <div class="d-flex flex-row-reverse">
-                    <v-radio
-                      value="3"
-                      @change="emitSelectedValue(5000)"
-                    ></v-radio>
-                  </div>
-                </v-col>
-              </v-row>
-
-              <div class="mb-4 mt-4 font-weight-bold">Szeptember 15. után</div>
-              <v-row>
-                <v-col cols="10">
-                  <div>HaOSZ támogatói jegy: 10.000 Ft + áfa/fő</div>
-                </v-col>
-                <v-col cols="2">
-                  <div class="d-flex flex-row-reverse">
-                    <v-radio
-                      value="4"
-                      @change="emitSelectedValue(10000)"
-                    ></v-radio>
-                  </div>
-                </v-col>
-              </v-row>
-            </v-radio-group>
+            <v-row>
+              <v-col cols="10">
+                <div>Főszponzori csomag: 500.000 Ft + Áfa</div>
+              </v-col>
+              <v-col cols="2">
+                <div class="d-flex flex-row-reverse">
+                  <v-checkbox hide-details class="ma-0 pa-0"></v-checkbox>
+                </div>
+              </v-col>
+              <v-col cols="11">
+                <div class="caption mt-n5">
+                  Fix Banner/Link elhelyezése a konferencia összes weboldalán,
+                  30 perces előadás az Előadóteremben, 5 perces cégbemutató a
+                  Bemutatóteremben kiemelt helyen, kiemelt hely az Élő
+                  kiállítóteremben, főszponzor logója, jelmondata a
+                  hírlevelekben
+                </div>
+              </v-col>
+            </v-row>
+            <v-row>
+              <v-col cols="10">
+                <div>
+                  30 perces felvett előadás az Előadóteremben: 150.000 Ft + Áfa
+                </div>
+              </v-col>
+              <v-col cols="2">
+                <div class="d-flex flex-row-reverse">
+                  <v-checkbox hide-details class="ma-0 pa-0"></v-checkbox>
+                </div>
+              </v-col>
+              <v-col cols="11">
+                <div class="caption mt-n5">
+                  Az előadás elkészítését a díj nem tartalmazza
+                </div>
+              </v-col>
+            </v-row>
+            <v-row>
+              <v-col cols="10">
+                <div>
+                  5 perces videó elhelyezése a Bemutatóteremben: 50.000 Ft + Áfa
+                </div>
+              </v-col>
+              <v-col cols="2">
+                <div class="d-flex flex-row-reverse">
+                  <v-checkbox hide-details class="ma-0 pa-0"></v-checkbox>
+                </div>
+              </v-col>
+              <v-col cols="11">
+                <div class="caption mt-n5">
+                  A cég-/termékbemutató vieó elkészítését a díj nem tartalmazza
+                </div>
+              </v-col>
+            </v-row>
+            <v-row>
+              <v-col cols="10">
+                <div>
+                  Kiállítói hely az Éló kiállítóteremben: 100.000 Ft + Áfa
+                </div>
+              </v-col>
+              <v-col cols="2">
+                <div class="d-flex flex-row-reverse">
+                  <v-checkbox hide-details class="ma-0 pa-0"></v-checkbox>
+                </div>
+              </v-col>
+            </v-row>
+            <v-row>
+              <v-col cols="11">
+                <div class="font-weight-black">
+                  Minden regisztrált kiállító 5 regisztrációs jegyet (belépési
+                  kódot) kap a kiállítói státuszhoz.
+                </div>
+              </v-col>
+            </v-row>
+            <v-row>
+              <v-col cols="10">
+                <div>
+                  További regisztrációs jegyek vásárlása: 5.000 Ft + Áfa/fő
+                </div>
+              </v-col>
+              <v-col
+                cols="1"
+                offset="1"
+                class="d-flex flex-row-reverse pa-0 pr-3 mt-n1"
+              >
+                <v-text-field
+                  type="number"
+                  value="0"
+                  hide-details
+                  class="pa-0 centered"
+                ></v-text-field>
+              </v-col>
+            </v-row>
           </v-col>
         </v-card>
       </v-col>

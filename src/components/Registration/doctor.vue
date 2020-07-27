@@ -217,7 +217,7 @@
                 <v-row>
                   <v-col cols="10">
                     <div>
-                      Rezidens, szakdolgozó (09.15-ig): 3000 Ft + áfa/fő
+                      Rezidens, szakdolgozó (09.15-ig): 3.000 Ft + Áfa/fő
                     </div>
                   </v-col>
                   <v-col cols="2">
@@ -232,7 +232,7 @@
                 <v-row>
                   <v-col cols="10">
                     <div>
-                      Háziorvos - HaOSz tag (09.15-ig): 3.000 Ft + áfa/fő
+                      Háziorvos - HaOSz tag (09.15-ig): 3.000 Ft + Áfa/fő
                     </div>
                   </v-col>
                   <v-col cols="2">
@@ -246,7 +246,7 @@
                 </v-row>
                 <v-row>
                   <v-col cols="10">
-                    <div>Egyéb érdeklődő (09.15-ig): 5.000 Ft + áfa/fő</div>
+                    <div>Egyéb érdeklődő (09.15-ig): 5.000 Ft + Áfa/fő</div>
                   </v-col>
                   <v-col cols="2">
                     <div class="d-flex flex-row-reverse">
@@ -264,7 +264,7 @@
                 </div>
                 <v-row>
                   <v-col cols="10">
-                    <div>HaOSZ támogatói jegy: 10.000 Ft + áfa/fő</div>
+                    <div>HaOSZ támogatói jegy: 10.000 Ft + Áfa/fő</div>
                   </v-col>
                   <v-col cols="2">
                     <div class="d-flex flex-row-reverse">
