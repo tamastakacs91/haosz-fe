@@ -282,8 +282,7 @@
             color="primary"
             width="50%"
             @click="validate(doctor, 'doctor')"
-            >Regisztráció</v-btn
-          >
+            >Regisztráció</v-btn>
         </v-col>
       </v-row>
       <slot name="terms"></slot>
