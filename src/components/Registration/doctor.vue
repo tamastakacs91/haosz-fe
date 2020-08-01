@@ -2,9 +2,7 @@
   <div>
     <v-container>
       <v-row>
-        <v-col class="text-center text-h5 text-md-h4 mt-5"
-          >Regisztráció Orvosoknak</v-col
-        >
+        <v-col class="text-center text-h5 text-md-h4 mt-5">Regisztráció Orvosoknak</v-col>
       </v-row>
       <v-col cols="12" md="8" offset="md-2">
         <v-card outlined ref="form">
@@ -267,7 +265,7 @@
               </v-col>
             </v-row>
           </v-col>
-        </v-card> -->
+        </v-card>-->
         <doctor-payables
           :errorMessage="errorMessage"
           :date="date"
@@ -282,7 +280,7 @@
             color="primary"
             width="50%"
             @click="validate(doctor, 'doctor')"
-            >Regisztráció</v-btn>
+          >Regisztráció</v-btn>
         </v-col>
       </v-row>
       <slot name="terms"></slot>
