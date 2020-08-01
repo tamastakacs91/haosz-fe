@@ -100,7 +100,7 @@ const getters = {
         totalCost += state.exhibitor[item] * 5000;
       }
     });
-    return totalCost;
+    return totalCost.toString();
   },
 };
 
@@ -120,18 +120,58 @@ const actions = {
   updateSponsorRegistrationCosts(context, { value, field }) {
     context.commit('UPDATE_SPONSOR_REGISTRATION_COSTS', { value, field });
   },
-  sendRegistrationData(context, { userType }) {
-    let user;
-    if (userType === 'doctor') {
-      user = context.getters['doctor'];
-    } else {
-      context.commit(
-        'UPDATE_SPONSOR_TOTAL_PRICE',
-        context.getters['exhibitorFees']
-      );
-      user = context.getters['exhibitor'];
-    }
-    console.log(user);
+
+  async signUpDoctor(context) {
+    let user = context.getters['doctor'];
+    const result = await this.$api.signUpService.initialSignup({
+      email: user.email,
+      password: user.password,
+      role: 'DOCTOR',
+    });
+    user.userId = result;
+    await this.$api.signUpService.signupDoctor({
+      name: user.name,
+      sealNumber: user.sealNumber,
+      workplace: user.workPlace,
+      mobile: user.mobile,
+      billingName: user.billingName,
+      billingAddress: user.billingAddress,
+      billingTaxNumber: user.billingTaxNumber,
+      billingContact: user.billingContact,
+      billingMobile: user.billingMobile,
+      billingEmail: user.billingEmail,
+      registrationCost: user.registrationCost,
+      userId: result,
+    });
+  },
+
+  async signUpSponsore(context) {
+    context.commit(
+      'UPDATE_SPONSOR_TOTAL_PRICE',
+      context.getters['exhibitorFees']
+    );
+    let user = context.getters['exhibitor'];
+    const result = await this.$api.signUpService.initialSignup({
+      email: user.email,
+      password: user.password,
+      role: 'SPONSORE',
+    });
+    user.userId = result;
+    await this.$api.signUpService.signupSponsore({
+      companyName: user.companyName,
+      companyAddress: user.companyAddress,
+      companyTaxNumber: user.companyTaxNumber,
+      companyContact: user.companyContact,
+      companyMobile: user.companyMobile,
+      companyEmail: user.companyEmail,
+      isMainSponsore: user.isMainSponsore,
+      isThirtyMin: user.isThirtyMin,
+      isFiveMin: user.isFiveMin,
+      isExhibitionPlace: user.isExhibitionPlace,
+      ticketCounts: user.ticketCounts,
+      totalPrice: user.totalPrice,
+      userId: result,
+    });
   },
 };
 

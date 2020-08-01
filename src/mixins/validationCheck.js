@@ -14,7 +14,7 @@ export const validationCheck = {
           return pattern.test(value) || 'Érvénytelen email formátum';
         },
         password: (value) => {
-          const pattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/;
+          const pattern = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/;
           return pattern.test(value) || 'Érvénytelen jelszó';
         },
         passwordAgainDoctor: (value) =>

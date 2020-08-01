@@ -10,7 +10,7 @@
       @input="updateRegistrationData"
       @togglePassword="togglePasswordShown"
       @togglePasswordAgain="togglePasswordAgainShown"
-      @validated="sendRegistrationData"
+      @validated="signUpDoctor"
       @selected="selectDoctorCost"
     >
       <template v-slot:terms>
@@ -28,7 +28,7 @@
       @input="updateRegistrationData"
       @togglePassword="togglePasswordShown"
       @togglePasswordAgain="togglePasswordAgainShown"
-      @validated="sendRegistrationData"
+      @validated="signUpSponsore"
       @selected="setSponsorCosts"
       :fees="exhibitorFees"
     >
@@ -70,20 +70,14 @@ export default {
       'updateRegistrationData',
       'updateDoctorRegistrationCost',
       'updateSponsorRegistrationCosts',
-      'sendRegistrationData',
+      'signUpDoctor',
+      'signUpSponsore',
     ]),
-    submitDoctorData() {
-      console.log(this.doctor);
-    },
-    submitExhibitorData() {
-      console.log(this.exhibitor);
-    },
     selectDoctorCost(value) {
       this.updateDoctorRegistrationCost(value);
     },
     setSponsorCosts({ value, field }) {
       this.updateSponsorRegistrationCosts({ value, field });
-      console.log(this.exhibitor);
     },
   },
 };

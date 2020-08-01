@@ -21,13 +21,13 @@
       </template>
 
       <v-list>
-        <v-list-item>
+        <!-- <v-list-item>
           <v-list-item-title>
             <v-icon class="mr-1" size="20px"
               >mdi-account-arrow-right-outline</v-icon
             >Belépés
           </v-list-item-title>
-        </v-list-item>
+        </v-list-item> -->
         <v-menu left bottom>
           <template v-slot:activator="{ on, attrs }">
             <v-list-item>
