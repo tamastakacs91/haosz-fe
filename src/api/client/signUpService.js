@@ -12,7 +12,7 @@ export default class SignUpService extends Service {
   signupDoctor({
     name,
     sealNumber,
-    workplace,
+    workPlace,
     mobile,
     billingName,
     billingAddress,
@@ -26,7 +26,7 @@ export default class SignUpService extends Service {
     return this.http.post('/doctor', {
       name,
       sealNumber,
-      workplace,
+      workPlace,
       mobile,
       billingName,
       billingAddress,

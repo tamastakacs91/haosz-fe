@@ -39,6 +39,31 @@
         <more-info></more-info>
       </template>
     </exhibitor>
+
+    <v-snackbar
+      right
+      color="error"
+      rounded="pill"
+      timeout="2000"
+      min-width="5"
+      max-width="20"
+      v-model="signupFailPresent"
+    >
+      <div>
+        <v-icon>mdi-exclamation</v-icon>Valami hiba történt
+      </div>
+    </v-snackbar>
+    <v-snackbar
+      right
+      color="success"
+      rounded="pill"
+      timeout="2000"
+      min-width="5"
+      max-width="20"
+      v-model="signupSuccessPresent"
+    >
+      <div>Sikeres regisztráció</div>
+    </v-snackbar>
   </v-container>
 </template>
 
@@ -56,6 +81,8 @@ export default {
       'passwordShown',
       'passwordAgainShown',
       'exhibitorFees',
+      'signupSuccessPresent',
+      'signupFailPresent',
     ]),
     dateToday() {
       const splitDate = new Date().toISOString().split('-');
