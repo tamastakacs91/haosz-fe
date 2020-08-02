@@ -39,7 +39,6 @@
         <more-info></more-info>
       </template>
     </exhibitor>
-
     <v-snackbar
       class="reg-snackbar"
       right
@@ -51,20 +50,9 @@
       v-model="signupFailPresent"
     >
       <div class="snackbar-text">
-        <v-icon>mdi-exclamation</v-icon>Valami hiba történt
+        <v-icon>mdi-exclamation</v-icon>
+        {{ errorMessage }}
       </div>
-    </v-snackbar>
-    <v-snackbar
-      class="reg-snackbar"
-      right
-      color="success"
-      rounded="pill"
-      timeout="2000"
-      min-width="5"
-      max-width="20"
-      v-model="signupSuccessPresent"
-    >
-      <div class="snackbar-text">Sikeres regisztráció</div>
     </v-snackbar>
   </v-container>
 </template>
@@ -73,9 +61,6 @@
 import { mapGetters, mapActions } from 'vuex';
 
 export default {
-  data() {
-    return {};
-  },
   computed: {
     ...mapGetters('registration', [
       'doctor',
@@ -83,8 +68,8 @@ export default {
       'passwordShown',
       'passwordAgainShown',
       'exhibitorFees',
-      'signupSuccessPresent',
       'signupFailPresent',
+      'errorMessage',
     ]),
     dateToday() {
       const splitDate = new Date().toISOString().split('-');

@@ -43,6 +43,7 @@ const state = () => ({
   passwordAgainShown: false,
   signupSuccessPresent: false,
   signupFailPresent: false,
+  errorMessage: '',
 });
 
 const mutations = {
@@ -116,6 +117,9 @@ const mutations = {
     state.exhibitor.password = '';
     state.exhibitor.passwordAgain = '';
   },
+  SET_ERROR_MESSAGE(state, to) {
+    state.errorMessage = to;
+  },
 };
 
 const getters = {
@@ -144,6 +148,7 @@ const getters = {
   },
   signupSuccessPresent: (state) => state.signupSuccessPresent,
   signupFailPresent: (state) => state.signupFailPresent,
+  errorMessage: (state) => state.errorMessage,
 };
 
 const actions = {
@@ -187,6 +192,7 @@ const actions = {
           registrationCost: user.registrationCost.toString(),
           userId: user.userId.toString(),
         });
+        this.$router.push('/');
         context.commit('TOGGLE_SIGNUP_SUCCESS_PRESENT', true);
         setTimeout(
           () => context.commit('TOGGLE_SIGNUP_SUCCESS_PRESENT', false),
@@ -194,6 +200,10 @@ const actions = {
         );
         context.commit('RESET_DOCTOR_DATA');
       } catch (error) {
+        context.commit(
+          'SET_ERROR_MESSAGE',
+          'Hiba történt, ellenőrizze a mezőket'
+        );
         context.commit('TOGGLE_SIGNUP_FAIL_PRESENT', true);
         setTimeout(
           () => context.commit('TOGGLE_SIGNUP_FAIL_PRESENT', false),
@@ -201,6 +211,7 @@ const actions = {
         );
       }
     } catch (error) {
+      context.commit('SET_ERROR_MESSAGE', 'Az email cím már regisztrálva van');
       context.commit('TOGGLE_SIGNUP_FAIL_PRESENT', true);
       setTimeout(
         () => context.commit('TOGGLE_SIGNUP_FAIL_PRESENT', false),
@@ -238,6 +249,7 @@ const actions = {
           totalPrice: user.totalPrice,
           userId: user.userId.toString(),
         });
+        this.$router.push('/');
         context.commit('TOGGLE_SIGNUP_SUCCESS_PRESENT', true);
         setTimeout(
           () => context.commit('TOGGLE_SIGNUP_SUCCESS_PRESENT', false),
@@ -245,6 +257,10 @@ const actions = {
         );
         context.commit('RESET_SPONSOR_DATA');
       } catch (error) {
+        context.commit(
+          'SET_ERROR_MESSAGE',
+          'Hiba történt, ellenőrizze a mezőket'
+        );
         context.commit('TOGGLE_SIGNUP_FAIL_PRESENT', true);
         setTimeout(
           () => context.commit('TOGGLE_SIGNUP_FAIL_PRESENT', false),
@@ -252,6 +268,7 @@ const actions = {
         );
       }
     } catch (error) {
+      context.commit('SET_ERROR_MESSAGE', 'Az email cím már regisztrálva van');
       context.commit('TOGGLE_SIGNUP_FAIL_PRESENT', true);
       setTimeout(
         () => context.commit('TOGGLE_SIGNUP_FAIL_PRESENT', false),

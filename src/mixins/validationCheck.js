@@ -65,6 +65,7 @@ export const validationCheck = {
         'isExhibitionPlace',
         'ticketCounts',
         'totalPrice',
+        'userId',
       ];
   
       Object.keys(data).forEach((field) => {
@@ -93,12 +94,12 @@ export const validationCheck = {
         this.checkDoctorRegistration();
       }
       if (this.errors === true) return;
+      this.$emit('validated', { userType });
       if (userType === 'doctor') {
         this.resetData(this.doc);
       } else {
         this.resetData(this.sponsor);
       }
-      this.$emit('validated', { userType });
     },
   },
 };
