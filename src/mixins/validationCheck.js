@@ -65,10 +65,13 @@ export const validationCheck = {
         'isExhibitionPlace',
         'ticketCounts',
         'totalPrice',
+        'userId'
       ];
 
       Object.keys(data).forEach((field) => {
         if (!fieldsToSkip.includes(field)) {
+          console.log('field:', field);
+          console.log('validation prop:', this.$refs[field].validate);
           if (this.$refs[field].validate(true) === false) {
             this.errors = true;
           }
@@ -93,12 +96,12 @@ export const validationCheck = {
         this.checkDoctorRegistration();
       }
       if (this.errors === true) return;
+      this.$emit('validated', { userType });
       if (userType === 'doctor') {
         this.resetData(this.doc);
       } else {
         this.resetData(this.sponsor);
       }
-      this.$emit('validated', { userType });
     },
   },
 };
