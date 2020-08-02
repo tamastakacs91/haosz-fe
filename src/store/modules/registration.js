@@ -42,8 +42,9 @@ const state = () => ({
   passwordShown: false,
   passwordAgainShown: false,
   signupSuccessPresent: false,
+  signupSuccess: false,
   signupFailPresent: false,
-  errorMessage: '',
+  signupErrorMessage: '',
 });
 
 const mutations = {
@@ -82,6 +83,9 @@ const mutations = {
   TOGGLE_SIGNUP_SUCCESS_PRESENT(state, to) {
     state.signupSuccessPresent = to;
   },
+  TOGGLE_SIGNUP_SUCCESS(state, to) {
+    state.signupSuccess = to;
+  },
   TOGGLE_SIGNUP_FAIL_PRESENT(state, to) {
     state.signupFailPresent = to;
   },
@@ -118,7 +122,7 @@ const mutations = {
     state.exhibitor.passwordAgain = '';
   },
   SET_ERROR_MESSAGE(state, to) {
-    state.errorMessage = to;
+    state.signupErrorMessage = to;
   },
 };
 
@@ -147,8 +151,9 @@ const getters = {
     return totalCost.toString();
   },
   signupSuccessPresent: (state) => state.signupSuccessPresent,
+  signupSuccess: (state) => state.signupSuccess,
   signupFailPresent: (state) => state.signupFailPresent,
-  errorMessage: (state) => state.errorMessage,
+  signupErrorMessage: (state) => state.signupErrorMessage,
 };
 
 const actions = {
@@ -170,6 +175,7 @@ const actions = {
 
   async signUpDoctor(context) {
     let user = context.getters['doctor'];
+    context.commit('TOGGLE_SIGNUP_SUCCESS', false);
     try {
       const result = await this.$api.signUpService.initialSignup({
         email: user.email,
@@ -192,6 +198,7 @@ const actions = {
           registrationCost: user.registrationCost.toString(),
           userId: user.userId.toString(),
         });
+        context.commit('TOGGLE_SIGNUP_SUCCESS', true);
         this.$router.push('/');
         context.commit('TOGGLE_SIGNUP_SUCCESS_PRESENT', true);
         setTimeout(
@@ -226,6 +233,7 @@ const actions = {
       context.getters['exhibitorFees']
     );
     let user = context.getters['exhibitor'];
+    context.commit('TOGGLE_SIGNUP_SUCCESS', false);
     try {
       const result = await this.$api.signUpService.initialSignup({
         email: user.companyEmail,
@@ -249,6 +257,7 @@ const actions = {
           totalPrice: user.totalPrice,
           userId: user.userId.toString(),
         });
+        context.commit('TOGGLE_SIGNUP_SUCCESS', true);
         this.$router.push('/');
         context.commit('TOGGLE_SIGNUP_SUCCESS_PRESENT', true);
         setTimeout(

@@ -95,11 +95,6 @@ export const validationCheck = {
       }
       if (this.errors === true) return;
       this.$emit('validated', { userType });
-      if (userType === 'doctor') {
-        this.resetData(this.doc);
-      } else {
-        this.resetData(this.sponsor);
-      }
     },
   },
 };
