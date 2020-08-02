@@ -41,6 +41,7 @@
     </exhibitor>
 
     <v-snackbar
+      class="reg-snackbar"
       right
       color="error"
       rounded="pill"
@@ -49,11 +50,12 @@
       max-width="20"
       v-model="signupFailPresent"
     >
-      <div>
+      <div class="snackbar-text">
         <v-icon>mdi-exclamation</v-icon>Valami hiba történt
       </div>
     </v-snackbar>
     <v-snackbar
+      class="reg-snackbar"
       right
       color="success"
       rounded="pill"
@@ -62,7 +64,7 @@
       max-width="20"
       v-model="signupSuccessPresent"
     >
-      <div>Sikeres regisztráció</div>
+      <div class="snackbar-text">Sikeres regisztráció</div>
     </v-snackbar>
   </v-container>
 </template>

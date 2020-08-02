@@ -21,6 +21,9 @@ export const validationCheck = {
           value === this.doctor.password || 'A jelszó nem egyezik',
         passwordAgainExhibitor: (value) =>
           value === this.exhibitor.password || 'A jelszó nem egyezik',
+        minFive: (value) => value.length >= 5 || 'Legalább 5 karakter',
+        minTen: value => value.length >= 10 || 'Legalább 10 karakter',
+        minEigth: (value) => value.length >= 8 || 'Legalább 8 karakter',
       },
     };
   },
@@ -38,10 +41,12 @@ export const validationCheck = {
 
       Object.keys(data).forEach((field) => {
         if (
-          !fieldsToSkip.includes(field) &&
-          this.$refs[field].validate(true) === false
-        )
-          this.errors = true;
+          !fieldsToSkip.includes(field)
+        ) {
+          if (this.$refs[field].validate(true) === false) {
+            this.errors = true;
+          }
+        }
       });
     },
     checkDoctorRegistration() {

@@ -2,9 +2,7 @@
   <div>
     <v-container>
       <v-row>
-        <v-col class="text-center text-h5 text-md-h4 mt-5"
-          >Regisztráció Orvosoknak</v-col
-        >
+        <v-col class="text-center text-h5 text-md-h4 mt-5">Regisztráció Orvosoknak</v-col>
       </v-row>
       <v-col cols="12" md="8" offset="md-2">
         <v-card outlined ref="form">
@@ -14,7 +12,8 @@
               ref="name"
               filled
               class="mt-4"
-              :rules="[rules.required]"
+              :rules="[rules.required, rules.minFive]"
+              v-model="doc.name"
               validate-on-blur
               @input="
                 $emit('input', {
@@ -42,7 +41,8 @@
               label="MUNKAHELY"
               ref="workPlace"
               filled
-              :rules="[rules.required]"
+              :rules="[rules.required, rules.minFive]"
+              v-model="doc.work"
               validate-on-blur
               @input="
                 $emit('input', {
@@ -90,7 +90,8 @@
               label="CÉG NEVE"
               ref="billingName"
               filled
-              :rules="[rules.required]"
+              :rules="[rules.required, rules.minFive]"
+              v-model="doc.billingName"
               validate-on-blur
               @input="
                 $emit('input', {
@@ -104,7 +105,8 @@
               label="CÍM"
               ref="billingAddress"
               filled
-              :rules="[rules.required]"
+              :rules="[rules.required, rules.minTen]"
+              v-model="doc.billingAddress"
               validate-on-blur
               @input="
                 $emit('input', {
@@ -118,7 +120,8 @@
               label="ADÓSZÁM"
               ref="billingTaxNumber"
               filled
-              :rules="[rules.required]"
+              :rules="[rules.required, rules.minEigth]"
+              v-model="doc.billingTax"
               validate-on-blur
               @input="
                 $emit('input', {
@@ -132,7 +135,8 @@
               label="KAPCSOLATTARTÓ NEVE"
               ref="billingContact"
               filled
-              :rules="[rules.required]"
+              :rules="[rules.required, rules.minFive]"
+              v-model="doc.billingContact"
               validate-on-blur
               @input="
                 $emit('input', {
@@ -228,8 +232,7 @@
             color="primary"
             width="50%"
             @click="validate(doctor, 'doctor')"
-            >Regisztráció</v-btn
-          >
+          >Regisztráció</v-btn>
         </v-col>
       </v-row>
       <slot name="terms"></slot>
@@ -245,6 +248,18 @@ import { validationCheck } from '@/mixins/validationCheck';
 export default {
   props: ['doctor', 'showPassword', 'showPasswordAgain', 'date'],
   mixins: [validationCheck],
+  data() {
+    return {
+      doc: {
+        name: '',
+        work: '',
+        billingName: '',
+        billingAddress: '',
+        billingTax: '',
+        billingContact: '',
+      },
+    };
+  },
   methods: {
     emitSelectedValue(value) {
       this.errorMessage = '';

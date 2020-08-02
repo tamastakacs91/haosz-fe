@@ -1,5 +1,6 @@
 <template>
   <v-snackbar
+    id="error-snackbar"
     bottom
     color="error"
     rounded="pill"
@@ -8,7 +9,9 @@
     max-width="20"
     v-model="error"
   >
-    <div><v-icon>mdi-exclamation</v-icon>Kötelező adatok hiányoznak!</div>
+    <div>
+      <v-icon>mdi-exclamation</v-icon>Kötelező adatok hiányoznak!
+    </div>
   </v-snackbar>
 </template>
 
