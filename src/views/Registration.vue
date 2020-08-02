@@ -39,7 +39,7 @@
         <more-info></more-info>
       </template>
     </exhibitor>
-
+    {{ errorMessage }}
     <v-snackbar
       class="reg-snackbar"
       right
@@ -51,7 +51,8 @@
       v-model="signupFailPresent"
     >
       <div class="snackbar-text">
-        <v-icon>mdi-exclamation</v-icon>Valami hiba történt
+        <v-icon>mdi-exclamation</v-icon>
+        {{ errorMessage }}
       </div>
     </v-snackbar>
     <v-snackbar
@@ -85,6 +86,7 @@ export default {
       'exhibitorFees',
       'signupSuccessPresent',
       'signupFailPresent',
+      'errorMessage',
     ]),
     dateToday() {
       const splitDate = new Date().toISOString().split('-');
