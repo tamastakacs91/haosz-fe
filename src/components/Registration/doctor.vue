@@ -14,7 +14,8 @@
               ref="name"
               filled
               class="mt-4"
-              :rules="[rules.required]"
+              :rules="[rules.required, rules.minFive]"
+              v-model="doc.name"
               validate-on-blur
               @input="
                 $emit('input', {
@@ -29,6 +30,7 @@
               ref="sealNumber"
               filled
               :rules="[rules.required]"
+              v-model="doc.seal"
               validate-on-blur
               @input="
                 $emit('input', {
@@ -42,7 +44,8 @@
               label="MUNKAHELY"
               ref="workPlace"
               filled
-              :rules="[rules.required]"
+              :rules="[rules.required, rules.minFive]"
+              v-model="doc.work"
               validate-on-blur
               @input="
                 $emit('input', {
@@ -60,6 +63,7 @@
                 class="mr-md-5"
                 hint="Formátum: +36 20/30/70 xxxxxxx"
                 :rules="[rules.required, rules.mobile]"
+                v-model="doc.mobile"
                 validate-on-blur
                 @input="
                   $emit('input', {
@@ -75,6 +79,7 @@
                 filled
                 type="email"
                 :rules="[rules.required, rules.email]"
+                v-model="doc.email"
                 validate-on-blur
                 @input="
                   $emit('input', {
@@ -90,7 +95,8 @@
               label="CÉG NEVE"
               ref="billingName"
               filled
-              :rules="[rules.required]"
+              :rules="[rules.required, rules.minFive]"
+              v-model="doc.billingName"
               validate-on-blur
               @input="
                 $emit('input', {
@@ -104,7 +110,8 @@
               label="CÍM"
               ref="billingAddress"
               filled
-              :rules="[rules.required]"
+              :rules="[rules.required, rules.minTen]"
+              v-model="doc.billingAddress"
               validate-on-blur
               @input="
                 $emit('input', {
@@ -118,7 +125,8 @@
               label="ADÓSZÁM"
               ref="billingTaxNumber"
               filled
-              :rules="[rules.required]"
+              :rules="[rules.required, rules.minEigth]"
+              v-model="doc.billingTax"
               validate-on-blur
               @input="
                 $emit('input', {
@@ -132,7 +140,8 @@
               label="KAPCSOLATTARTÓ NEVE"
               ref="billingContact"
               filled
-              :rules="[rules.required]"
+              :rules="[rules.required, rules.minFive]"
+              v-model="doc.billingContact"
               validate-on-blur
               @input="
                 $emit('input', {
@@ -149,6 +158,7 @@
                 filled
                 hint="Formátum: +36 20/30/70 xxxxxxx"
                 :rules="[rules.required, rules.mobile]"
+                v-model="doc.billingMobile"
                 validate-on-blur
                 class="mr-md-5"
                 @input="
@@ -164,6 +174,7 @@
                 ref="billingEmail"
                 filled
                 :rules="[rules.required, rules.email]"
+                v-model="doc.billingEmail"
                 validate-on-blur
                 type="email"
                 @input="
@@ -182,6 +193,7 @@
               filled
               :hint="'Legalább 8 karakter, tartalmaznia kell kisbetűt, nagybetűt, számot és egy különleges karaktert.'"
               :rules="[rules.required, rules.password]"
+              v-model="doc.password"
               validate-on-blur
               :append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
               :type="showPassword ? 'text' : 'password'"
@@ -200,6 +212,7 @@
               ref="passwordAgain"
               filled
               :rules="[rules.required, rules.passwordAgainDoctor]"
+              v-model="doc.passwordAgain"
               validate-on-blur
               :append-icon="showPasswordAgain ? 'mdi-eye' : 'mdi-eye-off'"
               :type="showPasswordAgain ? 'text' : 'password'"

@@ -1,5 +1,5 @@
 <template>
-  <v-card outlined ref="sponsorTickets" class="mt-4">
+  <v-card outlined class="mt-4">
     <v-col cols="12" md="10" offset="md-1">
       <div class="text-h6 mb-4 mt-6 font-weight-bold">
         Hirdetési, cégmegjelenési lehetőségek:

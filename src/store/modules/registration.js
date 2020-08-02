@@ -7,12 +7,12 @@ const state = () => ({
     workPlace: '',
     mobile: '',
     email: '',
-    billingName: null,
-    billingAddress: null,
-    billingTaxNumber: null,
-    billingContact: null,
-    billingMobile: null,
-    billingEmail: null,
+    billingName: '',
+    billingAddress: '',
+    billingTaxNumber: '',
+    billingContact: '',
+    billingMobile: '',
+    billingEmail: '',
     registrationCost: 0,
     password: '',
     passwordAgain: '',
@@ -42,7 +42,7 @@ const state = () => ({
   passwordShown: false,
   passwordAgainShown: false,
   signupSuccessPresent: false,
-  signupFailPresent: false
+  signupFailPresent: false,
 });
 
 const mutations = {
@@ -79,10 +79,42 @@ const mutations = {
     }
   },
   TOGGLE_SIGNUP_SUCCESS_PRESENT(state, to) {
-    state.signupSuccessPresent = to
+    state.signupSuccessPresent = to;
   },
   TOGGLE_SIGNUP_FAIL_PRESENT(state, to) {
-    state.signupFailPresent = to
+    state.signupFailPresent = to;
+  },
+  RESET_DOCTOR_DATA(state) {
+    state.doctor.name = '';
+    state.doctor.sealNumber = '';
+    state.doctor.workPlace = '';
+    state.doctor.mobile = '';
+    state.doctor.email = '';
+    state.doctor.billingName = '';
+    state.doctor.billingAddress = '';
+    state.doctor.billingTaxNumber = '';
+    state.doctor.billingContact = '';
+    state.doctor.billingMobile = '';
+    state.doctor.billingEmail = '';
+    state.doctor.registrationCost = 0;
+    state.doctor.password = '';
+    state.doctor.passwordAgain = '';
+  },
+  RESET_SPONSOR_DATA(state) {
+    state.exhibitor.companyName = '';
+    state.exhibitor.companyAddress = '';
+    state.exhibitor.companyTaxNumber = '';
+    state.exhibitor.companyContact = '';
+    state.exhibitor.companyMobile = '';
+    state.exhibitor.companyEmail = '';
+    state.exhibitor.isMainSponsore = false;
+    state.exhibitor.isThirtyMin = false;
+    state.exhibitor.isFiveMin = false;
+    state.exhibitor.isExhibitionPlace = false;
+    state.exhibitor.ticketCounts = 0;
+    state.exhibitor.totalPrice = 0;
+    state.exhibitor.password = '';
+    state.exhibitor.passwordAgain = '';
   },
 };
 
@@ -111,7 +143,7 @@ const getters = {
     return totalCost.toString();
   },
   signupSuccessPresent: (state) => state.signupSuccessPresent,
-  signupFailPresent: (state) => state.signupFailPresent
+  signupFailPresent: (state) => state.signupFailPresent,
 };
 
 const actions = {
@@ -153,23 +185,27 @@ const actions = {
           billingMobile: user.billingMobile,
           billingEmail: user.billingEmail,
           registrationCost: user.registrationCost.toString(),
-          userId: user.userId.toString()
+          userId: user.userId.toString(),
         });
-        context.commit('TOGGLE_SIGNUP_SUCCESS_PRESENT', true)
+        context.commit('TOGGLE_SIGNUP_SUCCESS_PRESENT', true);
         setTimeout(
-          () => context.commit('TOGGLE_SIGNUP_SUCCESS_PRESENT', false), 3000
-        )
+          () => context.commit('TOGGLE_SIGNUP_SUCCESS_PRESENT', false),
+          4000
+        );
+        context.commit('RESET_DOCTOR_DATA');
       } catch (error) {
-        context.commit('TOGGLE_SIGNUP_FAIL_PRESENT', true)
+        context.commit('TOGGLE_SIGNUP_FAIL_PRESENT', true);
         setTimeout(
-          () => context.commit('TOGGLE_SIGNUP_FAIL_PRESENT', false), 3000
-        )
+          () => context.commit('TOGGLE_SIGNUP_FAIL_PRESENT', false),
+          4000
+        );
       }
     } catch (error) {
-      context.commit('TOGGLE_SIGNUP_FAIL_PRESENT', true)
+      context.commit('TOGGLE_SIGNUP_FAIL_PRESENT', true);
       setTimeout(
-        () => context.commit('TOGGLE_SIGNUP_FAIL_PRESENT', false), 3000
-      )
+        () => context.commit('TOGGLE_SIGNUP_FAIL_PRESENT', false),
+        4000
+      );
     }
   },
 
@@ -200,26 +236,28 @@ const actions = {
           isExhibitionPlace: user.isExhibitionPlace.toString(),
           ticketCounts: user.ticketCounts.toString(),
           totalPrice: user.totalPrice,
-          userId: user.userId.toString()
+          userId: user.userId.toString(),
         });
-        context.commit('TOGGLE_SIGNUP_SUCCESS_PRESENT', true)
+        context.commit('TOGGLE_SIGNUP_SUCCESS_PRESENT', true);
         setTimeout(
-          () => context.commit('TOGGLE_SIGNUP_SUCCESS_PRESENT', false), 3000
-        )
+          () => context.commit('TOGGLE_SIGNUP_SUCCESS_PRESENT', false),
+          4000
+        );
+        context.commit('RESET_SPONSOR_DATA');
       } catch (error) {
-        context.commit('TOGGLE_SIGNUP_FAIL_PRESENT', true)
+        context.commit('TOGGLE_SIGNUP_FAIL_PRESENT', true);
         setTimeout(
-          () => context.commit('TOGGLE_SIGNUP_FAIL_PRESENT', false), 3000
-        )
+          () => context.commit('TOGGLE_SIGNUP_FAIL_PRESENT', false),
+          4000
+        );
       }
     } catch (error) {
-      context.commit('TOGGLE_SIGNUP_FAIL_PRESENT', true)
+      context.commit('TOGGLE_SIGNUP_FAIL_PRESENT', true);
       setTimeout(
-        () => context.commit('TOGGLE_SIGNUP_FAIL_PRESENT', false), 3000
-      )
+        () => context.commit('TOGGLE_SIGNUP_FAIL_PRESENT', false),
+        4000
+      );
     }
-
-
   },
 };
 

@@ -1,6 +1,31 @@
 export const validationCheck = {
   data() {
     return {
+      doc: {
+        name: '',
+        seal: '',
+        work: '',
+        mobile: '',
+        email: '',
+        billingName: '',
+        billingAddress: '',
+        billingTax: '',
+        billingContact: '',
+        billingMobile: '',
+        billingEmail: '',
+        password: '',
+        passwordAgain: '',
+      },
+      sponsor: {
+        name: '',
+        address: '',
+        tax: '',
+        contact: '',
+        mobile: '',
+        email: '',
+        password: '',
+        passwordAgain: '',
+      },
       errors: false,
       errorMessage: '',
       rules: {
@@ -21,6 +46,12 @@ export const validationCheck = {
           value === this.doctor.password || 'A jelszó nem egyezik',
         passwordAgainExhibitor: (value) =>
           value === this.exhibitor.password || 'A jelszó nem egyezik',
+        minFive: (value) =>
+          (value && value.length >= 5) || 'Legalább 5 karakter',
+        minTen: (value) =>
+          (value && value.length >= 10) || 'Legalább 10 karakter',
+        minEigth: (value) =>
+          (value && value.length >= 8) || 'Legalább 8 karakter',
       },
     };
   },
@@ -37,17 +68,22 @@ export const validationCheck = {
       ];
 
       Object.keys(data).forEach((field) => {
-        if (
-          !fieldsToSkip.includes(field) &&
-          this.$refs[field].validate(true) === false
-        )
-          this.errors = true;
+        if (!fieldsToSkip.includes(field)) {
+          if (this.$refs[field].validate(true) === false) {
+            this.errors = true;
+          }
+        }
       });
     },
     checkDoctorRegistration() {
       if (this.doctor.registrationCost === 0) {
         this.errors = true;
         this.errorMessage = 'Kötelező adat';
+      }
+    },
+    resetData(data) {
+      for (const prop in data) {
+        data[prop] = '';
       }
     },
     validate(data, userType) {
@@ -57,6 +93,11 @@ export const validationCheck = {
         this.checkDoctorRegistration();
       }
       if (this.errors === true) return;
+      if (userType === 'doctor') {
+        this.resetData(this.doc);
+      } else {
+        this.resetData(this.sponsor);
+      }
       this.$emit('validated', { userType });
     },
   },

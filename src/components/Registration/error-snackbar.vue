@@ -1,5 +1,6 @@
 <template>
   <v-snackbar
+    id="error-snackbar"
     bottom
     color="error"
     rounded="pill"

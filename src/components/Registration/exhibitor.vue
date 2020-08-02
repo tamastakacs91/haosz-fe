@@ -14,7 +14,8 @@
               ref="companyName"
               filled
               class="mt-4"
-              :rules="[rules.required]"
+              :rules="[rules.required, rules.minFive]"
+              v-model="sponsor.name"
               validate-on-blur
               @input="
                 $emit('input', {
@@ -28,7 +29,8 @@
               label="CÍME"
               ref="companyAddress"
               filled
-              :rules="[rules.required]"
+              :rules="[rules.required, rules.minFive]"
+              v-model="sponsor.address"
               validate-on-blur
               @input="
                 $emit('input', {
@@ -42,7 +44,8 @@
               label="ADÓSZÁMA"
               ref="companyTaxNumber"
               filled
-              :rules="[rules.required]"
+              :rules="[rules.required, rules.minEigth]"
+              v-model="sponsor.tax"
               validate-on-blur
               @input="
                 $emit('input', {
@@ -56,7 +59,8 @@
               label="KAPCSOLATTARTÓ NEVE"
               ref="companyContact"
               filled
-              :rules="[rules.required]"
+              :rules="[rules.required, rules.minFive]"
+              v-model="sponsor.contact"
               validate-on-blur
               @input="
                 $emit('input', {
@@ -74,6 +78,7 @@
                 class="mr-md-5"
                 hint="Formátum: +36 20/30/70 xxxxxxx"
                 :rules="[rules.required, rules.mobile]"
+                v-model="sponsor.mobile"
                 validate-on-blur
                 @input="
                   $emit('input', {
@@ -89,6 +94,7 @@
                 filled
                 type="email"
                 :rules="[rules.required, rules.email]"
+                v-model="sponsor.email"
                 validate-on-blur
                 @input="
                   $emit('input', {
@@ -106,6 +112,7 @@
               filled
               :hint="'Legalább 8 karakter, tartalmaznia kell kisbetűt, nagybetűt, számot és egy különleges karaktert.'"
               :rules="[rules.required, rules.password]"
+              v-model="sponsor.password"
               validate-on-blur
               :append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
               :type="showPassword ? 'text' : 'password'"
@@ -124,6 +131,7 @@
               ref="passwordAgain"
               filled
               :rules="[rules.required, rules.passwordAgainExhibitor]"
+              v-model="sponsor.passwordAgain"
               validate-on-blur
               :append-icon="showPasswordAgain ? 'mdi-eye' : 'mdi-eye-off'"
               :type="showPasswordAgain ? 'text' : 'password'"
