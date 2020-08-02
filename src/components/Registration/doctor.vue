@@ -2,7 +2,9 @@
   <div>
     <v-container>
       <v-row>
-        <v-col class="text-center text-h5 text-md-h4 mt-5">Regisztráció Orvosoknak</v-col>
+        <v-col class="text-center text-h5 text-md-h4 mt-5"
+          >Regisztráció Orvosoknak</v-col
+        >
       </v-row>
       <v-col cols="12" md="8" offset="md-2">
         <v-card outlined ref="form">
@@ -28,6 +30,7 @@
               ref="sealNumber"
               filled
               :rules="[rules.required]"
+              v-model="doc.seal"
               validate-on-blur
               @input="
                 $emit('input', {
@@ -60,6 +63,7 @@
                 class="mr-md-5"
                 hint="Formátum: +36 20/30/70 xxxxxxx"
                 :rules="[rules.required, rules.mobile]"
+                v-model="doc.mobile"
                 validate-on-blur
                 @input="
                   $emit('input', {
@@ -75,6 +79,7 @@
                 filled
                 type="email"
                 :rules="[rules.required, rules.email]"
+                v-model="doc.email"
                 validate-on-blur
                 @input="
                   $emit('input', {
@@ -153,6 +158,7 @@
                 filled
                 hint="Formátum: +36 20/30/70 xxxxxxx"
                 :rules="[rules.required, rules.mobile]"
+                v-model="doc.billingMobile"
                 validate-on-blur
                 class="mr-md-5"
                 @input="
@@ -168,6 +174,7 @@
                 ref="billingEmail"
                 filled
                 :rules="[rules.required, rules.email]"
+                v-model="doc.billingEmail"
                 validate-on-blur
                 type="email"
                 @input="
@@ -186,6 +193,7 @@
               filled
               :hint="'Legalább 8 karakter, tartalmaznia kell kisbetűt, nagybetűt, számot és egy különleges karaktert.'"
               :rules="[rules.required, rules.password]"
+              v-model="doc.password"
               validate-on-blur
               :append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
               :type="showPassword ? 'text' : 'password'"
@@ -204,6 +212,7 @@
               ref="passwordAgain"
               filled
               :rules="[rules.required, rules.passwordAgainDoctor]"
+              v-model="doc.passwordAgain"
               validate-on-blur
               :append-icon="showPasswordAgain ? 'mdi-eye' : 'mdi-eye-off'"
               :type="showPasswordAgain ? 'text' : 'password'"
@@ -232,7 +241,8 @@
             color="primary"
             width="50%"
             @click="validate(doctor, 'doctor')"
-          >Regisztráció</v-btn>
+            >Regisztráció</v-btn
+          >
         </v-col>
       </v-row>
       <slot name="terms"></slot>
@@ -248,18 +258,6 @@ import { validationCheck } from '@/mixins/validationCheck';
 export default {
   props: ['doctor', 'showPassword', 'showPasswordAgain', 'date'],
   mixins: [validationCheck],
-  data() {
-    return {
-      doc: {
-        name: '',
-        work: '',
-        billingName: '',
-        billingAddress: '',
-        billingTax: '',
-        billingContact: '',
-      },
-    };
-  },
   methods: {
     emitSelectedValue(value) {
       this.errorMessage = '';

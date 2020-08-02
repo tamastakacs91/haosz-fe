@@ -2,7 +2,9 @@
   <div>
     <v-container>
       <v-row>
-        <v-col class="text-center text-h5 text-md-h4 mt-5">Regisztráció Kiállítóknak</v-col>
+        <v-col class="text-center text-h5 text-md-h4 mt-5"
+          >Regisztráció Kiállítóknak</v-col
+        >
       </v-row>
       <v-col cols="12" md="8" offset="md-2">
         <v-card outlined ref="form">
@@ -76,6 +78,7 @@
                 class="mr-md-5"
                 hint="Formátum: +36 20/30/70 xxxxxxx"
                 :rules="[rules.required, rules.mobile]"
+                v-model="sponsor.mobile"
                 validate-on-blur
                 @input="
                   $emit('input', {
@@ -91,6 +94,7 @@
                 filled
                 type="email"
                 :rules="[rules.required, rules.email]"
+                v-model="sponsor.email"
                 validate-on-blur
                 @input="
                   $emit('input', {
@@ -108,6 +112,7 @@
               filled
               :hint="'Legalább 8 karakter, tartalmaznia kell kisbetűt, nagybetűt, számot és egy különleges karaktert.'"
               :rules="[rules.required, rules.password]"
+              v-model="sponsor.password"
               validate-on-blur
               :append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
               :type="showPassword ? 'text' : 'password'"
@@ -126,6 +131,7 @@
               ref="passwordAgain"
               filled
               :rules="[rules.required, rules.passwordAgainExhibitor]"
+              v-model="sponsor.passwordAgain"
               validate-on-blur
               :append-icon="showPasswordAgain ? 'mdi-eye' : 'mdi-eye-off'"
               :type="showPasswordAgain ? 'text' : 'password'"
@@ -149,7 +155,8 @@
             color="primary"
             width="50%"
             @click="validate(exhibitor, 'exhibitor')"
-          >Regisztráció</v-btn>
+            >Regisztráció</v-btn
+          >
         </v-col>
       </v-row>
 
@@ -166,16 +173,6 @@ import { validationCheck } from '@/mixins/validationCheck';
 export default {
   props: ['exhibitor', 'showPassword', 'showPasswordAgain', 'fees'],
   mixins: [validationCheck],
-  data() {
-    return {
-      sponsor: {
-        name: '',
-        address: '',
-        tax: '',
-        contact: ''
-      },
-    };
-  },
   methods: {
     resetError(value) {
       this.errors = value;

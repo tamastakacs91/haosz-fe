@@ -9,9 +9,7 @@
     max-width="20"
     v-model="error"
   >
-    <div>
-      <v-icon>mdi-exclamation</v-icon>Kötelező adatok hiányoznak!
-    </div>
+    <div><v-icon>mdi-exclamation</v-icon>Kötelező adatok hiányoznak!</div>
   </v-snackbar>
 </template>
 
