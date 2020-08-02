@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <v-row class="mt-2 mb-n1">
-      <v-col class="pa-3 text-left columned">
+      <v-col class="pa-3 text-left">
         <p>{{ p3_4 }}</p>
       </v-col>
     </v-row>
