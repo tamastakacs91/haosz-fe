@@ -10,7 +10,7 @@
       @input="updateRegistrationData"
       @togglePassword="togglePasswordShown"
       @togglePasswordAgain="togglePasswordAgainShown"
-      @validated="signUpDoctor"
+      @validated="sendDoctorSignUpData"
       @selected="selectDoctorCost"
     >
       <template v-slot:terms>
@@ -28,7 +28,7 @@
       @input="updateRegistrationData"
       @togglePassword="togglePasswordShown"
       @togglePasswordAgain="togglePasswordAgainShown"
-      @validated="signUpSponsore"
+      @validated="sendSponsoreSignupData"
       @selected="setSponsorCosts"
       :fees="exhibitorFees"
     >
@@ -51,7 +51,7 @@
     >
       <div class="snackbar-text">
         <v-icon>mdi-exclamation</v-icon>
-        {{ errorMessage }}
+        {{ signupErrorMessage }}
       </div>
     </v-snackbar>
   </v-container>
@@ -59,8 +59,10 @@
 
 <script>
 import { mapGetters, mapActions } from 'vuex';
+import { validationCheck } from '@/mixins/validationCheck';
 
 export default {
+  mixins: [validationCheck],
   computed: {
     ...mapGetters('registration', [
       'doctor',
@@ -69,7 +71,8 @@ export default {
       'passwordAgainShown',
       'exhibitorFees',
       'signupFailPresent',
-      'errorMessage',
+      'signupErrorMessage',
+      'signupSuccess',
     ]),
     dateToday() {
       const splitDate = new Date().toISOString().split('-');
@@ -92,6 +95,18 @@ export default {
     },
     setSponsorCosts({ value, field }) {
       this.updateSponsorRegistrationCosts({ value, field });
+    },
+    async sendDoctorSignUpData() {
+      await this.signUpDoctor();
+      if (this.signupSuccess === true) {
+        this.resetData(this.doc);
+      }
+    },
+    async sendSponsoreSignupData() {
+      await this.signUpSponsore();
+      if (this.signupSuccess === true) {
+        this.resetData(this.sponsor);
+      }
     },
   },
 };
