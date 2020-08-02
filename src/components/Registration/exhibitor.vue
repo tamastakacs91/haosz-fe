@@ -76,7 +76,7 @@
                 ref="companyMobile"
                 filled
                 class="mr-md-5"
-                hint="Formátum: +36 20/30/70 xxxxxxx"
+                hint="Formátum: +3620/30/70xxxxxxx"
                 :rules="[rules.required, rules.mobile]"
                 v-model="sponsor.mobile"
                 validate-on-blur

@@ -56,12 +56,25 @@
           ></signature>
         </tab-item>
       </tabs>
+      <v-snackbar
+        class="reg-snackbar"
+        right
+        color="success"
+        rounded="pill"
+        timeout="2000"
+        min-width="5"
+        max-width="20"
+        v-model="signupSuccessPresent"
+      >
+        <div class="snackbar-text">Sikeres regisztráció</div>
+      </v-snackbar>
     </v-container>
   </div>
 </template>
 
 <script>
 import data from '../../public/homePage.json';
+import { mapGetters } from 'vuex';
 
 export default {
   name: 'Home',
@@ -69,6 +82,9 @@ export default {
     return {
       data,
     };
+  },
+  computed: {
+    ...mapGetters('registration', ['signupSuccessPresent']),
   },
 };
 </script>

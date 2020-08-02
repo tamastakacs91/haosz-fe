@@ -192,6 +192,7 @@ const actions = {
           registrationCost: user.registrationCost.toString(),
           userId: user.userId.toString(),
         });
+        this.$router.push('/');
         context.commit('TOGGLE_SIGNUP_SUCCESS_PRESENT', true);
         setTimeout(
           () => context.commit('TOGGLE_SIGNUP_SUCCESS_PRESENT', false),
@@ -199,19 +200,19 @@ const actions = {
         );
         context.commit('RESET_DOCTOR_DATA');
       } catch (error) {
-        context.commit('TOGGLE_SIGNUP_FAIL_PRESENT', true);
         context.commit(
           'SET_ERROR_MESSAGE',
           'Hiba történt, ellenőrizze a mezőket'
         );
+        context.commit('TOGGLE_SIGNUP_FAIL_PRESENT', true);
         setTimeout(
           () => context.commit('TOGGLE_SIGNUP_FAIL_PRESENT', false),
           4000
         );
       }
     } catch (error) {
-      context.commit('TOGGLE_SIGNUP_FAIL_PRESENT', true);
       context.commit('SET_ERROR_MESSAGE', 'Az email cím már regisztrálva van');
+      context.commit('TOGGLE_SIGNUP_FAIL_PRESENT', true);
       setTimeout(
         () => context.commit('TOGGLE_SIGNUP_FAIL_PRESENT', false),
         4000
@@ -248,6 +249,7 @@ const actions = {
           totalPrice: user.totalPrice,
           userId: user.userId.toString(),
         });
+        this.$router.push('/');
         context.commit('TOGGLE_SIGNUP_SUCCESS_PRESENT', true);
         setTimeout(
           () => context.commit('TOGGLE_SIGNUP_SUCCESS_PRESENT', false),
@@ -255,19 +257,19 @@ const actions = {
         );
         context.commit('RESET_SPONSOR_DATA');
       } catch (error) {
-        context.commit('TOGGLE_SIGNUP_FAIL_PRESENT', true);
         context.commit(
           'SET_ERROR_MESSAGE',
           'Hiba történt, ellenőrizze a mezőket'
         );
+        context.commit('TOGGLE_SIGNUP_FAIL_PRESENT', true);
         setTimeout(
           () => context.commit('TOGGLE_SIGNUP_FAIL_PRESENT', false),
           4000
         );
       }
     } catch (error) {
-      context.commit('TOGGLE_SIGNUP_FAIL_PRESENT', true);
       context.commit('SET_ERROR_MESSAGE', 'Az email cím már regisztrálva van');
+      context.commit('TOGGLE_SIGNUP_FAIL_PRESENT', true);
       setTimeout(
         () => context.commit('TOGGLE_SIGNUP_FAIL_PRESENT', false),
         4000

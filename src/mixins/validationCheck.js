@@ -65,13 +65,11 @@ export const validationCheck = {
         'isExhibitionPlace',
         'ticketCounts',
         'totalPrice',
-        'userId'
+        'userId',
       ];
 
       Object.keys(data).forEach((field) => {
         if (!fieldsToSkip.includes(field)) {
-          console.log('field:', field);
-          console.log('validation prop:', this.$refs[field].validate);
           if (this.$refs[field].validate(true) === false) {
             this.errors = true;
           }
