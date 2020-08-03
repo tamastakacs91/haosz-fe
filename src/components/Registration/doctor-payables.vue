@@ -35,15 +35,24 @@
             </v-col>
           </v-row>
         </div>
-        <div v-if="date > 20200915">
-          <div class="mb-4 mt-4 font-weight-bold">Szeptember 15. után</div>
+        <div>
+          <v-row>
+            <v-col cols="10">
+              <div>Szeptember 15. után: 10.000 Ft</div>
+            </v-col>
+            <v-col cols="2">
+              <div class="d-flex flex-row-reverse">
+                <v-radio value="4" @change="$emit('selected', 10000)"></v-radio>
+              </div>
+            </v-col>
+          </v-row>
           <v-row>
             <v-col cols="10">
               <div>HaOSZ támogatói jegy: 10.000 Ft + Áfa/fő</div>
             </v-col>
             <v-col cols="2">
               <div class="d-flex flex-row-reverse">
-                <v-radio value="4" @change="$emit('selected', 10000)"></v-radio>
+                <v-radio value="5" @change="$emit('selected', 10000)"></v-radio>
               </div>
             </v-col>
           </v-row>
