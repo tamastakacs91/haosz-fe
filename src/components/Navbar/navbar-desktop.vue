@@ -23,7 +23,7 @@
     <v-toolbar-items>
       <v-btn text @click="$router.push('/program')">
         <v-icon class="mr-2">mdi-calendar-range-outline</v-icon>
-        <span class="mr-2">Program</span>
+        <span class="mr-2">Programok</span>
       </v-btn>
     </v-toolbar-items>
 

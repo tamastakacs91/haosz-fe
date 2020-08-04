@@ -24,7 +24,7 @@
         <v-list-item @click="$router.push('/program')">
           <v-list-item-title>
             <v-icon class="mr-1" size="20px">mdi-calendar-range-outline</v-icon
-            >Program
+            >Programok
           </v-list-item-title>
         </v-list-item>
         <!-- <v-list-item>
