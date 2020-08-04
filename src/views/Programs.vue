@@ -1,0 +1,57 @@
+<template>
+  <div>
+    <mobile-header class="hidden-md-and-up"></mobile-header>
+    <v-row class="d-flex justify-center mt-7">
+      <div class="text-h4 text-md-h3 mb-7">Programok</div>
+    </v-row>
+    <title-bar :title="'Előadóterem'"></title-bar>
+    <presentation-room :data="data.presentations"></presentation-room>
+
+    <title-bar :title="'Bemutatóterem'"></title-bar>
+    <v-container class="mt-n8">
+      <v-row class="mt-n2 mb-3">
+        <v-col class="text-md-h6">
+          Gyógyszergyártó cégek, orvostechnikai cégek bemutatkozási lehetősége a
+          konferencia teljes ideje alatt.
+        </v-col>
+      </v-row>
+    </v-container>
+
+    <title-bar :title="'Élő kiállítóterem'"></title-bar>
+    <v-container class="mt-n8">
+      <v-row class="mt-n2 mb-3">
+        <v-col class="text-md-h6">
+          Szombati napon 10.00-17.00 óráig 12 fős kiscsoportos élő (online)
+          beszélgetési lehetőség a gyógyszercégek-, orvostechnikai cégek-, egyéb
+          kiállítók képviselőivel.
+        </v-col>
+      </v-row>
+    </v-container>
+
+    <title-bar :title="'Jazzpresszó'"></title-bar>
+    <v-container class="mt-n8">
+      <v-row class="mt-n2 mb-3">
+        <v-col class="text-md-h6"
+          >Kellemes jazz melletti diskurzus az alábbi témákban a konferencia
+          teljes ideje alatt:</v-col
+        >
+      </v-row>
+      <jazzpresso-topics :data="data.jazzPresso"></jazzpresso-topics>
+    </v-container>
+    <more-info></more-info>
+  </div>
+</template>
+
+<script>
+import data from '../../public/programs.json';
+import { mapGetters } from 'vuex';
+
+export default {
+  name: 'Home',
+  data() {
+    return {
+      data,
+    };
+  },
+};
+</script>

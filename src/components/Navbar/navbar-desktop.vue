@@ -20,12 +20,19 @@
     </div>
 
     <v-spacer></v-spacer>
+    <v-toolbar-items>
+      <v-btn text @click="$router.push('/program')">
+        <v-icon class="mr-2">mdi-calendar-range-outline</v-icon>
+        <span class="mr-2">Program</span>
+      </v-btn>
+    </v-toolbar-items>
 
     <v-toolbar-items class="mr-5">
       <!-- <v-btn text>
         <v-icon class="mr-2">mdi-account-arrow-right-outline</v-icon>
         <span class="mr-2">Belépés</span>
-      </v-btn> -->
+      </v-btn>-->
+
       <v-menu left bottom>
         <template v-slot:activator="{ on, attrs }">
           <v-btn
@@ -46,7 +53,7 @@
               width="100%"
               height="50px"
               @click="$router.push('/regisztracio/doktor')"
-              >Orvosoknak</v-btn
+              >Orvosoknak/Érdeklődőknek</v-btn
             >
           </v-list-item>
           <v-list-item class="pa-0">
