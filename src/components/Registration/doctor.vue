@@ -29,9 +29,7 @@
               label="ORVOSI PECSÉTSZÁM"
               ref="sealNumber"
               filled
-              :rules="[rules.required]"
               v-model="doc.seal"
-              validate-on-blur
               @input="
                 $emit('input', {
                   value: $event,

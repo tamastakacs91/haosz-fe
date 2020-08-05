@@ -59,3 +59,33 @@ body {
   min-height: 50px !important;
   min-width: 300px !important;
 }
+
+.program-bar {
+  background-color: $base-color;
+  height: 48px;
+  width: 100%;
+}
+
+.white-text {
+  color: white;
+}
+
+tbody tr:nth-of-type(odd) {
+  background-color: $secondary-color;
+}
+
+tbody tr:nth-of-type(odd):hover {
+  background-color: $secondary-color !important;
+}
+
+tbody tr:nth-of-type(even):hover {
+  background-color: white !important;
+}
+
+tbody tr td:hover {
+  cursor: default;
+}
+
+.mobile-row {
+  height: 95px;
+}

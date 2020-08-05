@@ -29,6 +29,9 @@ const components = [
   'Registration/doctor-payables',
   'Registration/sponsor-payables',
   'Registration/error-snackbar',
+  'Programs/title-bar',
+  'Programs/presentation-room',
+  'Programs/jazzpresso-topics',
 ];
 components.forEach(register(Vue));
 
