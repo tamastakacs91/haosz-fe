@@ -31,10 +31,10 @@
     <title-bar :title="'Jazzpresszó'"></title-bar>
     <v-container class="mt-n8">
       <v-row class="mt-n2 mb-3">
-        <v-col class="text-md-h6"
-          >Kellemes jazz melletti diskurzus az alábbi témákban a konferencia
-          teljes ideje alatt:</v-col
-        >
+        <v-col class="text-md-h6">
+          Kellemes jazz melletti diskurzus az alábbi témákban a konferencia
+          teljes ideje alatt:
+        </v-col>
       </v-row>
       <jazzpresso-topics :data="data.jazzPresso"></jazzpresso-topics>
     </v-container>

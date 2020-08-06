@@ -21,7 +21,7 @@
 
     <v-spacer></v-spacer>
     <v-toolbar-items>
-      <v-btn text @click="$router.push('/program')">
+      <v-btn class="font-weight-bold" text @click="$router.push('/program')">
         <v-icon class="mr-2">mdi-calendar-range-outline</v-icon>
         <span class="mr-2">Programok</span>
       </v-btn>
@@ -36,8 +36,7 @@
       <v-menu left bottom>
         <template v-slot:activator="{ on, attrs }">
           <v-btn
-            class="dropdown-btn"
-            color="light"
+            class="dropdown-btn font-weight-bold"
             text
             v-bind="attrs"
             v-on="on"

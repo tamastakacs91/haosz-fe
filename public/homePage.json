@@ -12,50 +12,61 @@
         "doctor": [
             {
                 "title": "Orvosszakmai, orvostechnikai előadások",
-                "icon": "mdi-teach"
+                "icon": "mdi-teach",
+                "color": "#FFECB3"
             },
             {
                 "title": "Nemzetközi kitekintés, háziorvosok Európában",
-                "icon": "mdi-earth"
+                "icon": "mdi-earth",
+                "color": "#FFE0B2"
             },
             {
                 "title": "Cégbemutatók, orvostechnikai bemutatók",
-                "icon": "mdi-presentation-play"
+                "icon": "mdi-presentation-play",
+                "color": "#F0F4C3"
             },
             {
                 "title": "Szakmapolitikai előadások",
-                "icon": "mdi-medical-bag"
+                "icon": "mdi-medical-bag",
+                "color": "#C5E1A5"
             },
             {
                 "title": "Szakmapolitikai fórum, kerekasztalbeszélgetés",
-                "icon": "mdi-account-group"
+                "icon": "mdi-account-group",
+                "color": "#F3E5F5"
             },
             {
                 "title": "Jazzpresszó",
                 "icon": "mdi-music-circle",
+                "color": "#E1BEE7",
                 "description": "Meghatározott témákban folyamatos résztvevői beszélgetés, kellemes jazz zene mellett."
             }
         ],
         "exhibitor": [
             {
                 "title": "Orvosszakmai-, orvostechnikai előadások",
-                "icon": "mdi-teach"
+                "icon": "mdi-teach",
+                "color": "#FFECB3"
             },
             {
                 "title": "Cégbemutatók, orvostechnikai bemutatók",
-                "icon": "mdi-presentation-play"
+                "icon": "mdi-presentation-play",
+                "color": "#F0F4C3"
             },
             {
                 "title": "Nemzetközi kitekintés, háziorvosok Európában",
-                "icon": "mdi-earth"
+                "icon": "mdi-earth",
+                "color": "#FFE0B2"
             },
             {
                 "title": "Szakmapolitikai előadások, szakmapolitikai fórum - kerekasztalbeszélgetés",
-                "icon": "mdi-account-group"
+                "icon": "mdi-account-group",
+                "color": "#F3E5F5"
             },
             {
                 "title": "Jazzpresszó",
                 "icon": "mdi-music-circle",
+                "color": "#E1BEE7",
                 "description": "Meghatározott témákban folyamatos résztvevői beszélgetés, kellemes jazz zene mellett."
             }
         ]
