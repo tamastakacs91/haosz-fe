@@ -18,22 +18,22 @@
             {
                 "title": "Nemzetközi kitekintés, háziorvosok Európában",
                 "icon": "mdi-earth",
-                "color": "#FFE0B2"
+                "color": "#F0F4C3"
             },
             {
                 "title": "Cégbemutatók, orvostechnikai bemutatók",
                 "icon": "mdi-presentation-play",
-                "color": "#F0F4C3"
+                "color": "#F3E5F5"
             },
             {
                 "title": "Szakmapolitikai előadások",
                 "icon": "mdi-medical-bag",
-                "color": "#C5E1A5"
+                "color": "#FFE0B2"
             },
             {
                 "title": "Szakmapolitikai fórum, kerekasztalbeszélgetés",
                 "icon": "mdi-account-group",
-                "color": "#F3E5F5"
+                "color": "#C5E1A5"
             },
             {
                 "title": "Jazzpresszó",
@@ -56,12 +56,12 @@
             {
                 "title": "Nemzetközi kitekintés, háziorvosok Európában",
                 "icon": "mdi-earth",
-                "color": "#FFE0B2"
+                "color": "#F3E5F5"
             },
             {
                 "title": "Szakmapolitikai előadások, szakmapolitikai fórum - kerekasztalbeszélgetés",
                 "icon": "mdi-account-group",
-                "color": "#F3E5F5"
+                "color": "#C5E1A5"
             },
             {
                 "title": "Jazzpresszó",
