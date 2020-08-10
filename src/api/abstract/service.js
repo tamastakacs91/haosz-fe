@@ -4,13 +4,11 @@ export default class Service {
   constructor(baseURL) {
     this.http = axios.create({ baseURL });
   }
+  authorize(token) {
+    this.http.defaults.headers.common['Authorization'] = `bearer ${token}`;
+  }
+
+  unAuthorize() {
+    delete this.http.defaults.headers.common['Authorization'];
+  }
 }
-
-//for authorizing and unauthorizing requests
-// authorize(sessionToken){
-//     this.http.defaults.headers.common['Authorization'] = sessionToken
-// }
-
-// unauthorize(){
-//     delete this.http.defaults.headers.common['Authorization']
-// }

@@ -70,4 +70,8 @@ export default class SignUpService extends Service {
       userId,
     });
   }
+
+  signIn({ email, password }) {
+    return this.http.post('/auth/signin', { email, password });
+  }
 }

@@ -19,6 +19,11 @@ const routes = [
     name: 'Programs',
     component: () => import('../views/Programs.vue'),
   },
+  {
+    path: '/bejelentkezes',
+    name: 'SignIn',
+    component: () => import('../views/SignIn.vue'),
+  },
 ];
 
 const router = new VueRouter({

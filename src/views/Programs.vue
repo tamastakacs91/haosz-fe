@@ -47,7 +47,7 @@ import data from '../../public/programs.json';
 import { mapGetters } from 'vuex';
 
 export default {
-  name: 'Home',
+  name: 'Programs',
   data() {
     return {
       data,
