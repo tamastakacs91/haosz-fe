@@ -9,6 +9,7 @@
             <v-card outlined ref="form">
               <v-col cols="12" md="10" offset="md-1">
                 <v-text-field
+                  autofocus
                   outlined
                   label="EMAIL CÍM"
                   hide-details
@@ -24,6 +25,7 @@
                   :append-icon="passwordShown ? 'mdi-eye' : 'mdi-eye-off'"
                   :type="passwordShown ? 'text' : 'password'"
                   @click:append="togglePasswordShown"
+                  @keyup.native.enter="signIn"
                 ></v-text-field>
                 <v-card-actions>
                   <v-spacer></v-spacer>

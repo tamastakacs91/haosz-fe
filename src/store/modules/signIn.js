@@ -70,6 +70,10 @@ const actions = {
     context.commit('TOGGLE_SIGNIN_FAIL_PRESENT', to);
   },
 
+  toggleSignInSuccessPresent(context, to) {
+    context.commit('TOGGLE_SIGNIN_SUCCESS_PRESENT', to);
+  },
+
   set(context, { token, redirect }) {
     if (token) {
       context.commit('SET_IS_LOGGED_IN', true);
@@ -86,14 +90,13 @@ const actions = {
   async signIn(context) {
     context.commit('TOGGLE_SIGNIN_SUCCESS_PRESENT', false);
     context.commit('TOGGLE_SIGNIN_LOADING', true);
-    console.log(context.getters['email']);
-    console.log(context.getters['password']);
     try {
       const response = await this.$api.signUpService.signIn({
         email: context.getters['email'],
         password: context.getters['password'],
       });
-      const token = response.data.token;
+      console.log(response);
+      const token = response.data.accessToken;
       context.dispatch('set', { token, redirect: '/' });
       context.commit('TOGGLE_SIGNIN_SUCCESS_PRESENT', true);
       setTimeout(
@@ -102,7 +105,11 @@ const actions = {
       );
       context.dispatch('updateEmail', '');
       context.dispatch('updatePassword', '');
+      console.log(window.sessionStorage.getItem('token'));
+      context.dispatch('admin/getDoctors', null, { root: true });
+      context.dispatch('admin/getSponsors', null, { root: true });
     } catch (error) {
+      console.log(error);
       context.dispatch('set', { token: null, redirect: '/bejelentkezes' });
       context.commit('SET_SIGNIN_FAIL_MESSAGE', 'Hibás email cím, vagy jelszó');
       context.commit('TOGGLE_SIGNIN_FAIL_PRESENT', true);

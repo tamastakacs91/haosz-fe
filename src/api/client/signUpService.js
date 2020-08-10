@@ -74,4 +74,12 @@ export default class SignUpService extends Service {
   signIn({ email, password }) {
     return this.http.post('/auth/signin', { email, password });
   }
+
+  getDoctors() {
+    return this.http.get('/doctor');
+  }
+
+  getSponsors() {
+    return this.http.get('/sponsore');
+  }
 }
