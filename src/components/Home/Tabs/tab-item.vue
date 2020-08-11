@@ -3,9 +3,9 @@
     <v-container>
       <v-card flat>
         <v-list-item-content>
-          <v-list-item-title class="mb-5 mt-3 text-center text-h6 text-md-h5">
-            {{ greeting }}
-          </v-list-item-title>
+          <v-list-item-title class="mb-5 mt-3 text-center text-h6 text-md-h5">{{
+            greeting
+          }}</v-list-item-title>
           <div class="text-left">{{ invitation }}</div>
           <div class="mt-5 text-center">{{ listing }}</div>
           <v-row align="center" justify="center">
@@ -16,7 +16,13 @@
               :key="index"
             >
               <v-row align="center" justify="center" class="text-center ma-1">
-                <v-card width="300" height="190" outlined shaped>
+                <v-card
+                  width="300"
+                  height="190"
+                  outlined
+                  shaped
+                  :color="program.color"
+                >
                   <v-container fill-height>
                     <v-row
                       v-if="program.title != 'Jazzpresszó'"
@@ -24,9 +30,9 @@
                       align="center"
                     >
                       <div>
-                        <v-icon size="50" color="primary">{{
-                          program.icon
-                        }}</v-icon>
+                        <v-icon size="50" color="primary">
+                          {{ program.icon }}
+                        </v-icon>
                       </div>
                       <div class="headline black-text normal-break">
                         {{ program.title }}
@@ -38,9 +44,9 @@
                     <v-row v-else justify="center" align="center">
                       <div class="d-flex flex-column mt-2">
                         <div>
-                          <v-icon size="50" color="primary">{{
-                            program.icon
-                          }}</v-icon>
+                          <v-icon size="50" color="primary">
+                            {{ program.icon }}
+                          </v-icon>
                         </div>
                         <div class="headline black-text normal-break">
                           {{ program.title }}

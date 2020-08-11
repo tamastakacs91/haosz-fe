@@ -21,23 +21,26 @@
 
     <v-spacer></v-spacer>
     <v-toolbar-items>
-      <v-btn text @click="$router.push('/program')">
+      <v-btn class="font-weight-bold" text @click="$router.push('/program')">
         <v-icon class="mr-2">mdi-calendar-range-outline</v-icon>
         <span class="mr-2">Programok</span>
       </v-btn>
+      <v-btn
+        class="font-weight-bold"
+        text
+        @click="$router.push('/admin')"
+        v-if="userRole === 'ADMIN'"
+      >
+        <v-icon class="mr-2">mdi-account-multiple-check-outline</v-icon>
+        <span class="mr-2">Admin</span>
+      </v-btn>
     </v-toolbar-items>
 
-    <v-toolbar-items class="mr-5">
-      <!-- <v-btn text>
-        <v-icon class="mr-2">mdi-account-arrow-right-outline</v-icon>
-        <span class="mr-2">Belépés</span>
-      </v-btn>-->
-
+    <v-toolbar-items class="mr-5" v-if="!isLoggedIn">
       <v-menu left bottom>
         <template v-slot:activator="{ on, attrs }">
           <v-btn
-            class="dropdown-btn"
-            color="light"
+            class="dropdown-btn font-weight-bold"
             text
             v-bind="attrs"
             v-on="on"
@@ -68,5 +71,17 @@
         </v-list>
       </v-menu>
     </v-toolbar-items>
+    <v-toolbar-items v-if="isLoggedIn">
+      <v-btn class="font-weight-bold" text @click="$emit('click')">
+        <v-icon class="mr-2">mdi-logout</v-icon>
+        <span class="mr-2">Kijelentkezés</span>
+      </v-btn>
+    </v-toolbar-items>
   </v-row>
 </template>
+
+<script>
+export default {
+  props: ['isLoggedIn', 'userRole'],
+};
+</script>

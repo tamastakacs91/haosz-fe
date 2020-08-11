@@ -62,6 +62,7 @@ import { mapGetters, mapActions } from 'vuex';
 import { validationCheck } from '@/mixins/validationCheck';
 
 export default {
+  name: 'Registration',
   mixins: [validationCheck],
   computed: {
     ...mapGetters('registration', [

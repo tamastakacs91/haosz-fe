@@ -21,6 +21,16 @@
       </template>
 
       <v-list>
+        <v-list-item
+          @click="$router.push('/admin')"
+          v-if="userRole === 'ADMIN'"
+        >
+          <v-list-item-title>
+            <v-icon class="mr-1" size="20px"
+              >mdi-account-multiple-check-outline</v-icon
+            >Admin
+          </v-list-item-title>
+        </v-list-item>
         <v-list-item @click="$router.push('/program')">
           <v-list-item-title>
             <v-icon class="mr-1" size="20px">mdi-calendar-range-outline</v-icon
@@ -34,7 +44,7 @@
             >Belépés
           </v-list-item-title>
         </v-list-item>-->
-        <v-menu left bottom>
+        <v-menu left bottom v-if="!isLoggedIn">
           <template v-slot:activator="{ on, attrs }">
             <v-list-item>
               <v-list-item-title v-bind="attrs" v-on="on">
@@ -53,6 +63,11 @@
             </v-list-item>
           </v-list>
         </v-menu>
+        <v-list-item @click="$emit('click')" v-if="isLoggedIn">
+          <v-list-item-title>
+            <v-icon class="mr-1" size="20px">mdi-logout</v-icon>Kijelentkezés
+          </v-list-item-title>
+        </v-list-item>
       </v-list>
     </v-menu>
   </v-row>
@@ -60,6 +75,7 @@
 
 <script>
 export default {
+  props: ['isLoggedIn', 'userRole'],
   data() {
     return {
       mainMenu: false,

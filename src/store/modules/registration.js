@@ -16,6 +16,7 @@ const state = () => ({
     registrationCost: 0,
     password: '',
     passwordAgain: '',
+    notes: '',
   },
   exhibitor: {
     companyName: '',
@@ -32,6 +33,7 @@ const state = () => ({
     totalPrice: 0,
     password: '',
     passwordAgain: '',
+    notes: '',
   },
   fees: {
     isMainSponsore: 500000,
@@ -104,6 +106,7 @@ const mutations = {
     state.doctor.registrationCost = 0;
     state.doctor.password = '';
     state.doctor.passwordAgain = '';
+    state.doctor.notes = '';
   },
   RESET_SPONSOR_DATA(state) {
     state.exhibitor.companyName = '';
@@ -120,6 +123,7 @@ const mutations = {
     state.exhibitor.totalPrice = 0;
     state.exhibitor.password = '';
     state.exhibitor.passwordAgain = '';
+    state.exhibitor.notes = '';
   },
   SET_ERROR_MESSAGE(state, to) {
     state.signupErrorMessage = to;
@@ -160,17 +164,25 @@ const actions = {
   togglePasswordShown(context) {
     context.commit('TOGGLE_PASSWORD_SHOWN');
   },
+
   togglePasswordAgainShown(context) {
     context.commit('TOGGLE_PASSWORD_AGAIN_SHOWN');
   },
+
   updateRegistrationData(context, { value, field, dataSet }) {
     context.commit('UPDATE_REGISTRATION_DATA', { value, field, dataSet });
   },
+
   updateDoctorRegistrationCost(context, value) {
     context.commit('UPDATE_DOCTOR_REGISTRATION_COST', value);
   },
+
   updateSponsorRegistrationCosts(context, { value, field }) {
     context.commit('UPDATE_SPONSOR_REGISTRATION_COSTS', { value, field });
+  },
+
+  toggleSignUpSuccessPresent(context, to) {
+    context.commit('TOGGLE_SIGNUP_SUCCESS_PRESENT', to);
   },
 
   async signUpDoctor(context) {
@@ -197,6 +209,7 @@ const actions = {
           billingEmail: user.billingEmail,
           registrationCost: user.registrationCost.toString(),
           userId: user.userId.toString(),
+          notes: user.notes,
         });
         context.commit('TOGGLE_SIGNUP_SUCCESS', true);
         this.$router.push('/');
@@ -256,6 +269,7 @@ const actions = {
           ticketCounts: user.ticketCounts.toString(),
           totalPrice: user.totalPrice,
           userId: user.userId.toString(),
+          notes: user.notes,
         });
         context.commit('TOGGLE_SIGNUP_SUCCESS', true);
         this.$router.push('/');

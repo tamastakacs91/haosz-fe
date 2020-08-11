@@ -22,6 +22,7 @@ export default class SignUpService extends Service {
     billingEmail,
     registrationCost,
     userId,
+    notes,
   }) {
     return this.http.post('/doctor', {
       name,
@@ -36,6 +37,7 @@ export default class SignUpService extends Service {
       billingEmail,
       registrationCost,
       userId,
+      notes,
     });
   }
 
@@ -53,6 +55,7 @@ export default class SignUpService extends Service {
     ticketCounts,
     totalPrice,
     userId,
+    notes,
   }) {
     return this.http.post('/sponsore', {
       companyName,
@@ -68,6 +71,23 @@ export default class SignUpService extends Service {
       ticketCounts,
       totalPrice,
       userId,
+      notes,
     });
+  }
+
+  signIn({ email, password }) {
+    return this.http.post('/auth/signin', { email, password });
+  }
+
+  getUserProfile() {
+    return this.http.get('/user/profile');
+  }
+
+  getDoctors() {
+    return this.http.get('/doctor');
+  }
+
+  getSponsors() {
+    return this.http.get('/sponsore');
   }
 }

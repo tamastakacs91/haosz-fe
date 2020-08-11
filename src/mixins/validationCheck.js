@@ -15,6 +15,7 @@ export const validationCheck = {
         billingEmail: '',
         password: '',
         passwordAgain: '',
+        notes: '',
       },
       sponsor: {
         name: '',
@@ -25,6 +26,7 @@ export const validationCheck = {
         email: '',
         password: '',
         passwordAgain: '',
+        notes: '',
       },
       errors: false,
       errorMessage: '',
@@ -66,6 +68,7 @@ export const validationCheck = {
         'ticketCounts',
         'totalPrice',
         'userId',
+        'notes',
       ];
   
       Object.keys(data).forEach((field) => {
