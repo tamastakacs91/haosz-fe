@@ -64,9 +64,21 @@
         timeout="2000"
         min-width="5"
         max-width="20"
-        v-model="signupSuccessPresent"
+        v-model="signUp"
       >
         <div class="snackbar-text">Sikeres regisztráció</div>
+      </v-snackbar>
+      <v-snackbar
+        class="reg-snackbar"
+        right
+        color="success"
+        rounded="pill"
+        timeout="2000"
+        min-width="5"
+        max-width="20"
+        v-model="signOut"
+      >
+        <div class="snackbar-text">Kijelentkezve</div>
       </v-snackbar>
     </v-container>
   </div>
@@ -85,6 +97,27 @@ export default {
   },
   computed: {
     ...mapGetters('registration', ['signupSuccessPresent']),
+    ...mapGetters('signIn', ['signOutSuccessPresent']),
+    signUp: {
+      get() {
+        return this.signupSuccessPresent;
+      },
+      set(value) {
+        this.toggleSignUpSuccessPresent(value);
+      },
+    },
+    signOut: {
+      get() {
+        return this.signOutSuccessPresent;
+      },
+      set(value) {
+        this.toggleSignOutSuccessPresent(value);
+      },
+    },
+  },
+  methods: {
+    ...mapActions('registration', ['toggleSignUpSuccessPresent']),
+    ...mapActions('signIn', ['toggleSignOutSuccessPresent']),
   },
 };
 </script>

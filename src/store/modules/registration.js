@@ -160,17 +160,25 @@ const actions = {
   togglePasswordShown(context) {
     context.commit('TOGGLE_PASSWORD_SHOWN');
   },
+
   togglePasswordAgainShown(context) {
     context.commit('TOGGLE_PASSWORD_AGAIN_SHOWN');
   },
+
   updateRegistrationData(context, { value, field, dataSet }) {
     context.commit('UPDATE_REGISTRATION_DATA', { value, field, dataSet });
   },
+
   updateDoctorRegistrationCost(context, value) {
     context.commit('UPDATE_DOCTOR_REGISTRATION_COST', value);
   },
+
   updateSponsorRegistrationCosts(context, { value, field }) {
     context.commit('UPDATE_SPONSOR_REGISTRATION_COSTS', { value, field });
+  },
+
+  toggleSignUpSuccessPresent(context, to) {
+    context.commit('TOGGLE_SIGNUP_SUCCESS_PRESENT', to);
   },
 
   async signUpDoctor(context) {

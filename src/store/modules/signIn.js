@@ -5,6 +5,7 @@ const state = () => ({
   email: '',
   password: '',
   signInSuccessPresent: false,
+  signOutSuccessPresent: false,
   signInFailPresent: false,
   signInFailMessage: '',
   passwordShown: false,
@@ -32,6 +33,9 @@ const mutations = {
   TOGGLE_SIGNIN_SUCCESS_PRESENT(state, to) {
     state.signInSuccessPresent = to;
   },
+  TOGGLE_SIGNOUT_SUCCESS_PRESENT(state, to) {
+    state.signOutSuccessPresent = to;
+  },
   TOGGLE_SIGNIN_FAIL_PRESENT(state, to) {
     state.signInFailPresent = to;
   },
@@ -52,6 +56,7 @@ const getters = {
   password: (state) => state.password,
   passwordShown: (state) => state.passwordShown,
   signInSuccessPresent: (state) => state.signInSuccessPresent,
+  signOutSuccessPresent: (state) => state.signOutSuccessPresent,
   signInFailPresent: (state) => state.signInFailPresent,
   signInFailMessage: (state) => state.signInFailMessage,
   signInLoading: (state) => state.signInLoading,
@@ -77,6 +82,10 @@ const actions = {
 
   toggleSignInSuccessPresent(context, to) {
     context.commit('TOGGLE_SIGNIN_SUCCESS_PRESENT', to);
+  },
+
+  toggleSignOutSuccessPresent(context, to) {
+    context.commit('TOGGLE_SIGNOUT_SUCCESS_PRESENT', to);
   },
 
   set(context, { token, redirect }) {
@@ -135,9 +144,15 @@ const actions = {
   },
 
   signOut(context) {
-    context.dispatch('set', { token: null, redirect: '/bejelentkezes' });
+    context.dispatch('set', { token: null, redirect: '/' });
+    context.commit('SET_USER_ROLE', null);
     context.dispatch('updateEmail', '');
     context.dispatch('updatePassword', '');
+    context.commit('TOGGLE_SIGNOUT_SUCCESS_PRESENT', true);
+    setTimeout(
+      () => context.commit('TOGGLE_SIGNOUT_SUCCESS_PRESENT', false),
+      4000
+    );
   },
 };
 
