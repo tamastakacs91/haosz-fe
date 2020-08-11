@@ -16,6 +16,7 @@ const state = () => ({
     registrationCost: 0,
     password: '',
     passwordAgain: '',
+    notes: '',
   },
   exhibitor: {
     companyName: '',
@@ -32,6 +33,7 @@ const state = () => ({
     totalPrice: 0,
     password: '',
     passwordAgain: '',
+    notes: '',
   },
   fees: {
     isMainSponsore: 500000,
@@ -104,6 +106,7 @@ const mutations = {
     state.doctor.registrationCost = 0;
     state.doctor.password = '';
     state.doctor.passwordAgain = '';
+    state.doctor.notes = '';
   },
   RESET_SPONSOR_DATA(state) {
     state.exhibitor.companyName = '';
@@ -120,6 +123,7 @@ const mutations = {
     state.exhibitor.totalPrice = 0;
     state.exhibitor.password = '';
     state.exhibitor.passwordAgain = '';
+    state.exhibitor.notes = '';
   },
   SET_ERROR_MESSAGE(state, to) {
     state.signupErrorMessage = to;
@@ -205,6 +209,7 @@ const actions = {
           billingEmail: user.billingEmail,
           registrationCost: user.registrationCost.toString(),
           userId: user.userId.toString(),
+          notes: user.notes,
         });
         context.commit('TOGGLE_SIGNUP_SUCCESS', true);
         this.$router.push('/');
@@ -264,6 +269,7 @@ const actions = {
           ticketCounts: user.ticketCounts.toString(),
           totalPrice: user.totalPrice,
           userId: user.userId.toString(),
+          notes: user.notes,
         });
         context.commit('TOGGLE_SIGNUP_SUCCESS', true);
         this.$router.push('/');

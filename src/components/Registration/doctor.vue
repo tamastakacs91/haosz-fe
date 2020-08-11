@@ -231,6 +231,25 @@
           :cost="doctor.registrationCost"
           @selected="emitSelectedValue"
         ></doctor-payables>
+
+        <v-card outlined class="mt-4">
+          <v-col cols="12" md="10" offset="md-1">
+            <v-text-field
+              label="MEGJEGYZÉS (OPCIONÁLIS)"
+              ref="notes"
+              filled
+              class="mt-4"
+              v-model="doc.notes"
+              @input="
+                $emit('input', {
+                  value: $event,
+                  field: 'notes',
+                  dataSet: 'doctor',
+                })
+              "
+            ></v-text-field>
+          </v-col>
+        </v-card>
       </v-col>
       <v-row>
         <v-col cols="12" md="8" offset="md-2" class="text-center">

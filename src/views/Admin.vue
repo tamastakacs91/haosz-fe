@@ -82,6 +82,13 @@
                     <td class="text-subtitle-1 text-center">
                       {{ sponsor.ticketCounts }}
                     </td>
+                    <td
+                      class="text-subtitle-1 text-center"
+                      v-if="sponsor.notes === '' || sponsor.notes === null"
+                    >
+                      X
+                    </td>
+                    <td class="text-subtitle-1" v-else>{{ sponsor.notes }}</td>
                     <td class="text-subtitle-1 text-center">
                       {{ sponsor.totalPrice }}
                     </td>
@@ -123,6 +130,13 @@
                     <td class="text-subtitle-1">{{ user.billingContact }}</td>
                     <td class="text-subtitle-1">{{ user.billingMobile }}</td>
                     <td class="text-subtitle-1">{{ user.billingEmail }}</td>
+                    <td
+                      class="text-subtitle-1 text-center"
+                      v-if="user.notes === '' || user.notes === null"
+                    >
+                      X
+                    </td>
+                    <td class="text-subtitle-1" v-else>{{ user.notes }}</td>
                     <td class="text-subtitle-1">{{ user.registrationCost }}</td>
                   </tr>
                 </tbody>
@@ -155,6 +169,7 @@ export default {
         '5 perc',
         'Kiállítói hely',
         'Plusz jegyek',
+        'Megjegyzés',
         'Összeg',
       ],
       userFields: [
@@ -170,6 +185,7 @@ export default {
         'Kapcsolattartó',
         'Cég mobil',
         'Cég email',
+        'Megjegyzés',
         'Regisztrációs díj',
       ],
     };
