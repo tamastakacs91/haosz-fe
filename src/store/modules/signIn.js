@@ -9,6 +9,7 @@ const state = () => ({
   signInFailMessage: '',
   passwordShown: false,
   signInLoading: false,
+  userRole: null,
 });
 
 const mutations = {
@@ -40,6 +41,9 @@ const mutations = {
   TOGGLE_SIGNIN_LOADING(state, to) {
     state.signInLoading = to;
   },
+  SET_USER_ROLE(state, to) {
+    state.userRole = to;
+  },
 };
 
 const getters = {
@@ -51,6 +55,7 @@ const getters = {
   signInFailPresent: (state) => state.signInFailPresent,
   signInFailMessage: (state) => state.signInFailMessage,
   signInLoading: (state) => state.signInLoading,
+  userRole: (state) => state.userRole,
 };
 
 const actions = {
@@ -84,7 +89,7 @@ const actions = {
       window.sessionStorage.removeItem('token');
       this.$api.signUpService.unAuthorize();
     }
-    if (redirect) this.$router.push(redirect).catch((err) => {});
+    if (redirect) this.$router.push(redirect).catch((error) => {});
   },
 
   async signIn(context) {
@@ -95,21 +100,28 @@ const actions = {
         email: context.getters['email'],
         password: context.getters['password'],
       });
-      console.log(response);
+
       const token = response.data.accessToken;
-      context.dispatch('set', { token, redirect: '/' });
+      context.dispatch('set', { token });
+
       context.commit('TOGGLE_SIGNIN_SUCCESS_PRESENT', true);
       setTimeout(
         () => context.commit('TOGGLE_SIGNIN_SUCCESS_PRESENT', false),
         4000
       );
+
       context.dispatch('updateEmail', '');
       context.dispatch('updatePassword', '');
-      console.log(window.sessionStorage.getItem('token'));
-      context.dispatch('admin/getDoctors', null, { root: true });
-      context.dispatch('admin/getSponsors', null, { root: true });
+
+      const profile = await this.$api.signUpService.getUserProfile();
+      context.commit('SET_USER_ROLE', profile.data.role);
+
+      if (context.getters['userRole'] === 'ADMIN') {
+        this.$router.push('/admin');
+      } else {
+        this.$router.push('/');
+      }
     } catch (error) {
-      console.log(error);
       context.dispatch('set', { token: null, redirect: '/bejelentkezes' });
       context.commit('SET_SIGNIN_FAIL_MESSAGE', 'Hibás email cím, vagy jelszó');
       context.commit('TOGGLE_SIGNIN_FAIL_PRESENT', true);

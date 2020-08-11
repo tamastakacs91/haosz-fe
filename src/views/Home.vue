@@ -68,18 +68,6 @@
       >
         <div class="snackbar-text">Sikeres regisztráció</div>
       </v-snackbar>
-      <v-snackbar
-        class="reg-snackbar"
-        right
-        color="success"
-        rounded="pill"
-        timeout="2000"
-        min-width="5"
-        max-width="20"
-        v-model="signIn"
-      >
-        <div class="snackbar-text">Sikeres bejelentkezés</div>
-      </v-snackbar>
     </v-container>
   </div>
 </template>
@@ -97,18 +85,6 @@ export default {
   },
   computed: {
     ...mapGetters('registration', ['signupSuccessPresent']),
-    ...mapGetters('signIn', ['signInSuccessPresent']),
-    signIn: {
-      get() {
-        return this.signInSuccessPresent;
-      },
-      set(value) {
-        this.toggleSignInSuccessPresent(value);
-      },
-    },
-  },
-  methods: {
-    ...mapActions('signIn', ['toggleSignInSuccessPresent']),
   },
 };
 </script>

@@ -25,6 +25,10 @@
         <v-icon class="mr-2">mdi-calendar-range-outline</v-icon>
         <span class="mr-2">Programok</span>
       </v-btn>
+      <v-btn class="font-weight-bold" text @click="$router.push('/admin')">
+        <v-icon class="mr-2">mdi-account-multiple-check-outline</v-icon>
+        <span class="mr-2">Admin</span>
+      </v-btn>
     </v-toolbar-items>
 
     <v-toolbar-items class="mr-5">
