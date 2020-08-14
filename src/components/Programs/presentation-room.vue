@@ -12,29 +12,19 @@
           <template v-slot:default>
             <thead>
               <tr>
-                <th
-                  v-for="item in heads"
-                  :key="item"
-                  class="text-h6 program-heads"
-                >
-                  {{ item }}
-                </th>
+                <th v-for="item in heads" :key="item" class="text-h6 program-heads">{{ item }}</th>
               </tr>
             </thead>
             <tbody>
               <tr v-for="item in data" :key="item.title">
-                <td class="font-weight-bold text-subtitle-1">
-                  {{ item.time }}
-                </td>
+                <td class="font-weight-bold text-subtitle-1">{{ item.time }}</td>
                 <td
                   v-if="
                     item.title === 'Megbeszélés/kérdések' ||
                     item.title.match('Szakmapolitikai fórum')
                   "
                   class="font-weight-bold text-subtitle-1"
-                >
-                  {{ item.title }}
-                </td>
+                >{{ item.title }}</td>
                 <td v-else class="text-subtitle-1">{{ item.title }}</td>
                 <td>
                   <div class="mt-1">{{ item.doctor }}</div>
