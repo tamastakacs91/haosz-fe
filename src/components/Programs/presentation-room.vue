@@ -12,7 +12,13 @@
           <template v-slot:default>
             <thead>
               <tr>
-                <th v-for="item in heads" :key="item">{{ item }}</th>
+                <th
+                  v-for="item in heads"
+                  :key="item"
+                  class="text-h6 program-heads"
+                >
+                  {{ item }}
+                </th>
               </tr>
             </thead>
             <tbody>
