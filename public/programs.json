@@ -2,11 +2,58 @@
     "presentations": [
         {
             "time": "Csütörtök",
-            "title": "Nemzetközi kitekintés: háziorvosok Eurpópában (szervezés, eszközpark, human erőforrás, kompetencia, hatáskör, co-payment)"
+            "title": "Nemzetközi kitekintés: háziorvoslás Skóciában",
+            "doctor": "Dr. Török Zsolt, háziorvos"
+        },
+        {
+            "time": "Csütörtök",
+            "title": "Nemzetközi kitekintés: háziorvoslás Svédországban",
+            "doctor": "Dr. Szántó Orsolya, háziorvos"
+        },
+        {
+            "time": "Csütörtök",
+            "title": "Nemzetközi kitekintés: háziorvoslás Németországban",
+            "doctor": "Dr. Laub Péter, háziorvos"
+        },
+        {
+            "time": "Csütörtök",
+            "title": "Nemzetközi kitekintés: háziorvoslás Svájcban",
+            "doctor": "Dr. Szöllősy Orsolya, háziorvos"
+        },
+        {
+            "time": "Csütörtök",
+            "title": "A pneumococcus betegségről. A megelőzés fontossága.",
+            "doctor": "Dr. Székely Éva, infektológus főorvos",
+            "hospital": "Jahn Ferenc Dél-pesti Kórház és Rendelőintézet"
+        },
+        {
+            "time": "Csütörtök",
+            "title": "A kullancsencephalitis Magyarországon, 2020",
+            "doctor": "Dr. Schneider Ferenc, infektológus főorvos",
+            "hospital": "Markusovszky Egyetemi Oktatókórház",
+            "department": "Infektológiai osztály"
         },
         {
             "time": "Péntek",
             "title": "Szakmai-, orvostechnikai előadások (szervezés alatt, folyamatosan frissítve)"
+        },
+        {
+            "time": "Péntek",
+            "title": "Rendelőn kívüli betegellátás korszerű eszközökkel",
+            "doctor": "Horváth Lajos",
+            "hospital": "Dericom Kft."
+        },
+        {
+            "time": "Péntek",
+            "title": "Erodium - sokkal több, mint egy online előjegyzési rendszer",
+            "doctor": "Dr. Cserni István, háziorvos",
+            "hospital": "Verőce"
+        },
+        {
+            "time": "Péntek",
+            "title": " Minőségbiztosított Point of care testing a háziorvosi gyakorlatban",
+            "doctor": "Dr. Cserni István, háziorvos",
+            "hospital": "Verőce"
         },
         {
             "time": "Szombat, 10.00-10.20",
