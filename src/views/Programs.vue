@@ -2,7 +2,12 @@
   <div>
     <mobile-header class="hidden-md-and-up"></mobile-header>
     <v-row class="d-flex justify-center mt-7">
-      <div class="text-h4 text-md-h3 mb-7">Programok</div>
+      <div class="text-h4 text-md-h3">Programok</div>
+    </v-row>
+    <v-row class="d-flex justify-center mt-2">
+      <div class="text-h7 text-md-h5 mb-7 font-italic">
+        A konferencia akkreditációja folyamatban van
+      </div>
     </v-row>
     <title-bar :title="'Előadóterem'"></title-bar>
     <presentation-room :data="data.presentations"></presentation-room>

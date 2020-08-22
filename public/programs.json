@@ -51,9 +51,22 @@
         },
         {
             "time": "Péntek",
-            "title": " Minőségbiztosított Point of care testing a háziorvosi gyakorlatban",
+            "title": "Minőségbiztosított Point of care testing a háziorvosi gyakorlatban",
             "doctor": "Dr. Cserni István, háziorvos",
             "hospital": "Verőce"
+        },
+        {
+            "time": "Péntek",
+            "title": "Kinek kell vércukor-önellenőrzést végezni?",
+            "doctor": "Dr. Oláh Ilona",
+            "hospital": "belgyógyász, háziorvos, diabetológus, hipertonológus",
+            "department": "Budapest"
+        },
+        {
+            "time": "Péntek",
+            "title": "A diabétesz ellátást és gondozást segítő innovatív vércukormérő eszközök",
+            "doctor": "Szécsényi János",
+            "hospital": "77 Elektronika Kft."
         },
         {
             "time": "Szombat, 10.00-10.20",
