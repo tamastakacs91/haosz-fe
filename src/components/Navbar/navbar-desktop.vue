@@ -81,7 +81,7 @@
     <v-toolbar-items>
       <a href="http://www.erodium.hu">
         <v-img
-          alt="HAOSZ logo"
+          alt="Erodium logo"
           class="shrink pointer mt-6"
           contain
           src="/erodium-logo.jpg"
