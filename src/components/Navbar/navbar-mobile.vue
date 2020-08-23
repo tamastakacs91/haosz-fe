@@ -10,6 +10,16 @@
         width="40"
         @click="$router.push('/')"
       />
+      <a href="http://www.erodium.hu">
+        <v-img
+          alt="Erodium logo"
+          class="shrink pointer"
+          contain
+          src="/erodium-logo.jpg"
+          transition="scale-transition"
+          width="100"
+        />
+      </a>
     </div>
 
     <v-spacer></v-spacer>

@@ -51,9 +51,30 @@
         },
         {
             "time": "Péntek",
-            "title": " Minőségbiztosított Point of care testing a háziorvosi gyakorlatban",
+            "title": "Minőségbiztosított Point of care testing a háziorvosi gyakorlatban",
             "doctor": "Dr. Cserni István, háziorvos",
             "hospital": "Verőce"
+        },
+        {
+            "time": "Péntek",
+            "title": "Kinek kell vércukor-önellenőrzést végezni?",
+            "doctor": "Dr. Oláh Ilona",
+            "hospital": "belgyógyász, háziorvos, diabetológus, hipertonológus",
+            "department": "Budapest"
+        },
+        {
+            "time": "Péntek",
+            "title": "A diabétesz ellátást és gondozást segítő innovatív vércukormérő eszközök",
+            "doctor": "Szécsényi János",
+            "hospital": "77 Elektronika Kft."
+        },
+        {
+            "time": "Péntek",
+            "title": "Mit tanul, mit  kap a háziorvos a Bálint-csoportban? A Bálint-csoportba járó orvosok élményeinek, tapasztalatainak megosztása."
+        },
+        {
+            "time": "Péntek",
+            "title": "Mitől lesz hatékonyabb és örömtelibb munkájában a \"Bálint-orvos\"? Ismertető, majd beszélgetés a Bálint-csoportról, a pszichoszomatikus szemléletű gyógyításról."
         },
         {
             "time": "Szombat, 10.00-10.20",

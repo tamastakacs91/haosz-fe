@@ -20,6 +20,7 @@
     </div>
 
     <v-spacer></v-spacer>
+
     <v-toolbar-items>
       <v-btn class="font-weight-bold" text @click="$router.push('/program')">
         <v-icon class="mr-2">mdi-calendar-range-outline</v-icon>
@@ -76,6 +77,18 @@
         <v-icon class="mr-2">mdi-logout</v-icon>
         <span class="mr-2">Kijelentkezés</span>
       </v-btn>
+    </v-toolbar-items>
+    <v-toolbar-items>
+      <a href="http://www.erodium.hu">
+        <v-img
+          alt="Erodium logo"
+          class="shrink pointer mt-6"
+          contain
+          src="/erodium-logo.jpg"
+          transition="scale-transition"
+          width="150"
+        />
+      </a>
     </v-toolbar-items>
   </v-row>
 </template>
