@@ -251,7 +251,7 @@ const actions = {
       const result = await this.$api.signUpService.initialSignup({
         email: user.companyEmail,
         password: user.password,
-        role: 'DOCTOR',
+        role: 'SPONSORE',
       });
       user.userId = result.data;
       try {
