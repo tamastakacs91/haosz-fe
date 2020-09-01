@@ -32,6 +32,8 @@ const components = [
   'Programs/title-bar',
   'Programs/presentation-room',
   'Programs/jazzpresso-topics',
+  'JazzPresso/jazzpresso-clickable',
+  'JazzPresso/topic01'
 ];
 components.forEach(register(Vue));
 

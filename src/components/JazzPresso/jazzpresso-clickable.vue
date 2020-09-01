@@ -6,7 +6,10 @@
           <v-container fill-height>
             <v-row justify="center" align="center">
               <div class="d-flex flex-column">
-                <div class="text-h6 font-weight-bold normal-break pa-1">{{ topic.name }}</div>
+                <div
+                  class="text-h6 font-weight-bold normal-break pa-1"
+                  @click="$router.push(`jazzpresszo/${topic.redirect}`)"
+                >{{ topic.name }}</div>
               </div>
             </v-row>
           </v-container>

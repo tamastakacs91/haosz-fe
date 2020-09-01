@@ -29,6 +29,11 @@ const routes = [
     name: 'Admin',
     component: () => import('../views/Admin.vue'),
   },
+  {
+    path: '/jazzpresszo',
+    name: 'JazzPresso',
+    component: () => import('../views/JazzPresso.vue'),
+  },
 ];
 
 const router = new VueRouter({

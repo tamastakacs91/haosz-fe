@@ -165,13 +165,37 @@
         }
     ],
     "jazzPresso": [
-        "Tőlünk nyugatabbra így csinálják... Mit kellene átvennünk?",
-        "Praxisközösség valóban a jövő egyik ellátási formája?",
-        "Innováció a háziorvoslásban - Mik a lehetőségeink, korlátaink?",
-        "COVID és az alapellátás - Hogy vizsgáztunk, miben kell fejlődnünk?",
-        "Alapellátási Módszertani Központ - mi legyen a célkitűzés?",
-        "Kollegiális vezetői rendszer - mi legyen a célkitűzés?",
-        "Szakmai alapellátási kihívások 2020",
-        "Mire kompetens a háziorvos, amit amúgy nem végezhet?"
+        {
+            "name": "Tőlünk nyugatabbra így csinálják... Mit kellene átvennünk?",
+            "redirect": "nyugatabbra-igy-csinaljak"
+        },
+        {
+            "name": "Praxisközösség valóban a jövő egyik ellátási formája?",
+            "redirect": "praxiskozosseg"
+        },
+        {
+            "name": "Innováció a háziorvoslásban - Mik a lehetőségeink, korlátaink?",
+            "redirect": "innovacio-a-haziorvoslasban"
+        },
+        {
+            "name": "COVID és az alapellátás - Hogy vizsgáztunk, miben kell fejlődnünk?",
+            "redirect": "covid-es-az-alapellatas"
+        },
+        {
+            "name": "Alapellátási Módszertani Központ - mi legyen a célkitűzés?",
+            "redirect": "alapelletasi-modszertani-kozpont"
+        },
+        {
+            "name": "Kollegiális vezetői rendszer - mi legyen a célkitűzés?",
+            "redirect": "kollegialis-vezetoi-rendszer"
+        },
+        {
+            "name": "Szakmai alapellátási kihívások 2020",
+            "redirect": "szakmai-alapellatais-kihivasok"
+        },
+        {
+            "name": "Mire kompetens a háziorvos, amit amúgy nem végezhet?",
+            "redirect": "mire-kompetens-a-haziorvos"
+        }
     ]
 }
