@@ -34,6 +34,18 @@
             "department": "Infektológiai osztály"
         },
         {
+            "time": "Csütörtök",
+            "title": "Praxisközösség - Hogyan illeszthető a jövő alapellátásába?",
+            "doctor": "Dr. Szabó János, háziorvos",
+            "hospital": "Heves"
+        },
+        {
+            "time": "Csütörtök",
+            "title": "Speciális fájdalomcsökkentő eljárások krónikus- és daganatos fájdalmak esetén",
+            "doctor": "Dr. Stogicza Ágnes",
+            "hospital": "fájdalomspecialista"
+        },
+        {
             "time": "Péntek",
             "title": "Szakmai-, orvostechnikai előadások (szervezés alatt, folyamatosan frissítve)"
         },
@@ -78,11 +90,15 @@
         },
         {
             "time": "Szombat, 10.00-10.20",
-            "title": "Praxisközösség - Hogyan illeszthető a jövő alapellátásába?"
+            "title": "Köszöntő",
+            "doctor": "Dr. Békássy Szabolcs, háziorvos",
+            "hospital": "Dunavarsány"
         },
         {
             "time": "Szombat, 10.20-10.40",
-            "title": "Milyen többletszolgáltatásokat beillesztése javasolt a praxisközösségi tapasztalatok alapján? "
+            "title": "Milyen többletszolgáltatásokat beillesztése javasolt a praxisközösségi tapasztalatok alapján?",
+            "doctor": "Dr. Dózsa Katalin, háziorvos",
+            "hospital": "Páty"
         },
         {
             "time": "Szombat, 10.40-11.00",
@@ -90,11 +106,17 @@
         },
         {
             "time": "Szombat, 11.00-11.20",
-            "title": "Hatósági feladatok a háziorvosi rendelőben (Ki? Mit? Mikor? Mennyiért?)"
+            "title": "Hatósági feladatok a háziorvosi rendelőben (Ki? Mit? Mikor? Mennyiért?)",
+            "doctor": "Dr. Homonnay Adrián",
+            "hospital": "háziorvos, traumatológus",
+            "department": "Keszthely"
         },
         {
             "time": "Szombat, 11.20-11.40",
-            "title": "Jogszerű helyettesítés feltételei"
+            "title": "Jogszerű helyettesítés feltételei",
+            "doctor": "Dr. Rósa Ágnes",
+            "hospital": "házi gyermekorvos",
+            "department": "Szeged"
         },
         {
             "time": "Szombat, 11.40-12.00",
@@ -113,7 +135,10 @@
         },
         {
             "time": "Szombat, 13.20-13.40",
-            "title": "Minőségi eszközpark az alapellátásban"
+            "title": "Minőségi eszközpark az alapellátásban",
+            "doctor": "Dr. Hasitz Ágnes",
+            "hospital": "háziorvos, diabetológus",
+            "department": "Szentendre"
         },
         {
             "time": "Szombat, 13.40-14.00",
@@ -121,11 +146,17 @@
         },
         {
             "time": "Szombat, 14.00-14.20",
-            "title": "COVID-19 és az alapellátás 2020-03.01-10.15"
+            "title": "COVID-19 és az alapellátás 2020-03.01-10.15",
+            "doctor": "Dr. Kovács Erzsébet",
+            "hospital": "háziorvos, belgyógyász",
+            "department": "Hajdúböszörmény"
         },
         {
             "time": "Szombat, 14.20-14.40",
-            "title": "COVID-19 és az alapellátás 2020.10.15 - Hogyan tovább?"
+            "title": "COVID-19 és az alapellátás 2020.10.15 - Hogyan tovább?",
+            "doctor": "Dr. Taller Gabriella",
+            "hospital": "háziorvos, fül-orr-gégész",
+            "department": "Solymár"
         },
         {
             "time": "Szombat, 14.40-15.00",
@@ -137,15 +168,22 @@
         },
         {
             "time": "Szombat, 15.20-15.40",
-            "title": "Háziorvoslás 2021-2025 A MOK jövőképe"
+            "title": "Háziorvoslás 2021-2025 A MOK jövőképe",
+            "doctor": "Dr. Soós Zoltán, háziorvos",
+            "hospital": "Nyíregyháza"
         },
         {
             "time": "Szombat, 15.40-16.00",
-            "title": "Háziorvoslás 2021-2025 Országos Házi gyermekorvos kollegiális vezető jövőképe"
+            "title": "Háziorvoslás 2021-2025 Országos Házi gyermekorvos kollegiális vezető jövőképe",
+            "doctor": "Dr. Muzsay Géza",
+            "hospital": "házi gyermekorvos",
+            "department": "Győr"
         },
         {
             "time": "Szombat, 16.00-16.20",
-            "title": "Háziorvoslás 2021-2025 HaOSz / Országos Háziorvos kollegiális vezető jövőképe"
+            "title": "Háziorvoslás 2021-2025 HaOSz / Országos Háziorvos kollegiális vezető jövőképe",
+            "doctor": "Dr. Békássy Szabolcs, háziorvos",
+            "hospital": "Dunavarsány"
         },
         {
             "time": "Szombat, 16.20-16.40",
