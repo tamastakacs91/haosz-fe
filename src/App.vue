@@ -9,12 +9,12 @@
       right
       color="success"
       rounded="pill"
-      timeout="2000"
+      timeout="5000"
       min-width="5"
-      max-width="20"
+      max-width="100"
       v-model="signIn"
     >
-      <div class="snackbar-text">Sikeres bejelentkezés</div>
+      <div class="snackbar-text-big">Sikeres bejelentkezés</div>
     </v-snackbar>
   </v-app>
 </template>

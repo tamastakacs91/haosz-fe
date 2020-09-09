@@ -61,24 +61,24 @@
         right
         color="success"
         rounded="pill"
-        timeout="2000"
+        timeout="5000"
         min-width="5"
-        max-width="20"
+        max-width="100"
         v-model="signUp"
       >
-        <div class="snackbar-text">Sikeres regisztráció</div>
+        <div class="snackbar-text-big">Sikeres regisztráció</div>
       </v-snackbar>
       <v-snackbar
         class="reg-snackbar"
         right
         color="success"
         rounded="pill"
-        timeout="2000"
+        timeout="5000"
         min-width="5"
-        max-width="20"
+        max-width="100"
         v-model="signOut"
       >
-        <div class="snackbar-text">Kijelentkezve</div>
+        <div class="snackbar-text-big">Kijelentkezve</div>
       </v-snackbar>
     </v-container>
   </div>

@@ -70,9 +70,9 @@ export const validationCheck = {
         'userId',
         'notes',
       ];
-  
+
       Object.keys(data).forEach((field) => {
-          if (!fieldsToSkip.includes(field)) {
+        if (!fieldsToSkip.includes(field)) {
           if (this.$refs[field].validate(true) === false) {
             this.errors = true;
           }

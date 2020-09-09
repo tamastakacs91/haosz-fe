@@ -216,7 +216,7 @@ const actions = {
         context.commit('TOGGLE_SIGNUP_SUCCESS_PRESENT', true);
         setTimeout(
           () => context.commit('TOGGLE_SIGNUP_SUCCESS_PRESENT', false),
-          4000
+          5000
         );
         context.commit('RESET_DOCTOR_DATA');
       } catch (error) {
@@ -276,7 +276,7 @@ const actions = {
         context.commit('TOGGLE_SIGNUP_SUCCESS_PRESENT', true);
         setTimeout(
           () => context.commit('TOGGLE_SIGNUP_SUCCESS_PRESENT', false),
-          4000
+          5000
         );
         context.commit('RESET_SPONSOR_DATA');
       } catch (error) {
