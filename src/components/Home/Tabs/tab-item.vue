@@ -3,9 +3,9 @@
     <v-container>
       <v-card flat>
         <v-list-item-content>
-          <v-list-item-title class="mb-5 mt-3 text-center text-h6 text-md-h5">{{
-            greeting
-          }}</v-list-item-title>
+          <v-list-item-title class="mb-5 mt-3 text-center text-h6 text-md-h5">
+            {{ greeting }}
+          </v-list-item-title>
           <div class="text-left">{{ invitation }}</div>
           <div class="mt-5 text-center">{{ listing }}</div>
           <v-row align="center" justify="center">
@@ -30,9 +30,9 @@
                       align="center"
                     >
                       <div>
-                        <v-icon size="50" color="primary">
-                          {{ program.icon }}
-                        </v-icon>
+                        <v-icon size="50" color="primary">{{
+                          returnProgramIcon(program.icon)
+                        }}</v-icon>
                       </div>
                       <div class="headline black-text normal-break">
                         {{ program.title }}
@@ -44,9 +44,9 @@
                     <v-row v-else justify="center" align="center">
                       <div class="d-flex flex-column mt-2">
                         <div>
-                          <v-icon size="50" color="primary">
-                            {{ program.icon }}
-                          </v-icon>
+                          <v-icon size="50" color="primary">{{
+                            mdiEarth
+                          }}</v-icon>
                         </div>
                         <div class="headline black-text normal-break">
                           {{ program.title }}
@@ -69,8 +69,53 @@
 </template>
 
 <script>
+import {
+  mdiTeach,
+  mdiEarth,
+  mdiPresentationPlay,
+  mdiMedicalBag,
+  mdiAccountGroup,
+  mdiMusicCircle,
+} from '@mdi/js';
+
 export default {
   name: 'tab-items',
   props: ['greeting', 'invitation', 'listing', 'programs', 'type'],
+  data() {
+    return {
+      mdiTeach,
+      mdiEarth,
+      mdiPresentationPlay,
+      mdiMedicalBag,
+      mdiAccountGroup,
+      mdiMusicCircle,
+    };
+  },
+  methods: {
+    returnProgramIcon(icon) {
+      let pIcon;
+      switch (icon) {
+        case 'mdiTeach':
+          pIcon = this.mdiTeach;
+          break;
+        case 'mdiEarth':
+          pIcon = this.mdiEarth;
+          break;
+        case 'mdiPresentationPlay':
+          pIcon = this.mdiPresentationPlay;
+          break;
+        case 'mdiMedicalBag':
+          pIcon = this.mdiMedicalBag;
+          break;
+        case 'mdiAccountGroup':
+          pIcon = this.mdiAccountGroup;
+          break;
+        case 'mdiMusicCircle':
+          pIcon = this.mdiMusicCircle;
+          break;
+      }
+      return pIcon;
+    },
+  },
 };
 </script>

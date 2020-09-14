@@ -22,7 +22,7 @@
                   hide-details
                   class="mt-4 mb-4"
                   @input="updatePassword"
-                  :append-icon="passwordShown ? 'mdi-eye' : 'mdi-eye-off'"
+                  :append-icon="passwordShown ? mdiEye : mdiEyeOff"
                   :type="passwordShown ? 'text' : 'password'"
                   @click:append="togglePasswordShown"
                   @keyup.native.enter="signIn"
@@ -68,11 +68,15 @@
 
 <script>
 import { mapGetters, mapActions } from 'vuex';
+import { mdiEyeOff, mdiEye } from '@mdi/js';
 
 export default {
   name: 'SignIn',
   data() {
-    return {};
+    return {
+      mdiEye,
+      mdiEyeOff,
+    };
   },
   computed: {
     ...mapGetters('signIn', [

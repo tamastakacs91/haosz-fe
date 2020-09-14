@@ -23,7 +23,7 @@
 
     <v-toolbar-items>
       <v-btn class="font-weight-bold" text @click="$router.push('/program')">
-        <v-icon class="mr-2">mdi-calendar-range-outline</v-icon>
+        <v-icon class="mr-2">{{ mdiCalendarRangeOutline }}</v-icon>
         <span class="mr-2">Programok</span>
       </v-btn>
       <v-btn
@@ -32,7 +32,7 @@
         @click="$router.push('/admin')"
         v-if="userRole === 'ADMIN'"
       >
-        <v-icon class="mr-2">mdi-account-multiple-check-outline</v-icon>
+        <v-icon class="mr-2">{{ mdiAccountMultipleCheckOutline }}</v-icon>
         <span class="mr-2">Admin</span>
       </v-btn>
     </v-toolbar-items>
@@ -46,7 +46,7 @@
             v-bind="attrs"
             v-on="on"
           >
-            <v-icon class="mr-2">mdi-account-check-outline</v-icon>
+            <v-icon class="mr-2">{{ mdiAccountCheckOutline }}</v-icon>
             <span class="mr-2">Regisztráció</span>
           </v-btn>
         </template>
@@ -74,7 +74,7 @@
     </v-toolbar-items>
     <v-toolbar-items v-if="isLoggedIn">
       <v-btn class="font-weight-bold" text @click="$emit('click')">
-        <v-icon class="mr-2">mdi-logout</v-icon>
+        <v-icon class="mr-2">{{ mdiLogout }}</v-icon>
         <span class="mr-2">Kijelentkezés</span>
       </v-btn>
     </v-toolbar-items>
@@ -94,7 +94,22 @@
 </template>
 
 <script>
+import {
+  mdiCalendarRangeOutline,
+  mdiAccountMultipleCheckOutline,
+  mdiAccountCheckOutline,
+  mdiLogout,
+} from '@mdi/js';
+
 export default {
   props: ['isLoggedIn', 'userRole'],
+  data() {
+    return {
+      mdiCalendarRangeOutline,
+      mdiAccountMultipleCheckOutline,
+      mdiAccountCheckOutline,
+      mdiLogout,
+    };
+  },
 };
 </script>

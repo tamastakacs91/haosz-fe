@@ -26,7 +26,7 @@
     <v-menu left bottom v-model="mainMenu">
       <template v-slot:activator="{ on, attrs }">
         <v-btn icon v-bind="attrs" v-on="on">
-          <v-icon>mdi-dots-vertical</v-icon>
+          <v-icon>{{ mdiDotsVertical }}</v-icon>
         </v-btn>
       </template>
 
@@ -36,14 +36,17 @@
           v-if="userRole === 'ADMIN'"
         >
           <v-list-item-title>
-            <v-icon class="mr-1" size="20px"
-              >mdi-account-multiple-check-outline</v-icon
+            <v-icon class="mr-1" size="20px">{{
+              mdiAccountMultipleCheckOutline
+            }}</v-icon
             >Admin
           </v-list-item-title>
         </v-list-item>
         <v-list-item @click="$router.push('/program')">
           <v-list-item-title>
-            <v-icon class="mr-1" size="20px">mdi-calendar-range-outline</v-icon
+            <v-icon class="mr-1" size="20px">{{
+              mdiCalendarRangeOutline
+            }}</v-icon
             >Programok
           </v-list-item-title>
         </v-list-item>
@@ -58,8 +61,9 @@
           <template v-slot:activator="{ on, attrs }">
             <v-list-item>
               <v-list-item-title v-bind="attrs" v-on="on">
-                <v-icon class="mr-1" size="20px"
-                  >mdi-account-check-outline</v-icon
+                <v-icon class="mr-1" size="20px">{{
+                  mdiAccountCheckOutline
+                }}</v-icon
                 >Regisztráció
               </v-list-item-title>
             </v-list-item>
@@ -75,7 +79,8 @@
         </v-menu>
         <v-list-item @click="$emit('click')" v-if="isLoggedIn">
           <v-list-item-title>
-            <v-icon class="mr-1" size="20px">mdi-logout</v-icon>Kijelentkezés
+            <v-icon class="mr-1" size="20px">{{ mdiLogout }}</v-icon
+            >Kijelentkezés
           </v-list-item-title>
         </v-list-item>
       </v-list>
@@ -84,11 +89,24 @@
 </template>
 
 <script>
+import {
+  mdiDotsVertical,
+  mdiCalendarRangeOutline,
+  mdiAccountMultipleCheckOutline,
+  mdiAccountCheckOutline,
+  mdiLogout,
+} from '@mdi/js';
+
 export default {
   props: ['isLoggedIn', 'userRole'],
   data() {
     return {
       mainMenu: false,
+      mdiCalendarRangeOutline,
+      mdiAccountMultipleCheckOutline,
+      mdiAccountCheckOutline,
+      mdiLogout,
+      mdiDotsVertical,
     };
   },
   methods: {

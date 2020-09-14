@@ -9,13 +9,23 @@
     max-width="20"
     v-model="error"
   >
-    <div><v-icon>mdi-exclamation</v-icon>Kötelező adatok hiányoznak!</div>
+    <div>
+      <v-icon>{{ mdiExclamation }}</v-icon
+      >Kötelező adatok hiányoznak!
+    </div>
   </v-snackbar>
 </template>
 
 <script>
+import { mdiExclamation } from '@mdi/js';
+
 export default {
   props: ['errors'],
+  data() {
+    return {
+      mdiExclamation,
+    };
+  },
   computed: {
     error: {
       get() {

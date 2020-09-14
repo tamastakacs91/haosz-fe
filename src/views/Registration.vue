@@ -50,7 +50,7 @@
       v-model="signupFailPresent"
     >
       <div class="snackbar-text">
-        <v-icon>mdi-exclamation</v-icon>
+        <v-icon>{{ mdiExclamation }}</v-icon>
         {{ signupErrorMessage }}
       </div>
     </v-snackbar>
@@ -60,10 +60,16 @@
 <script>
 import { mapGetters, mapActions } from 'vuex';
 import { validationCheck } from '@/mixins/validationCheck';
+import { mdiExclamation } from '@mdi/js';
 
 export default {
   name: 'Registration',
   mixins: [validationCheck],
+  data() {
+    return {
+      mdiExclamation,
+    };
+  },
   computed: {
     ...mapGetters('registration', [
       'doctor',

@@ -114,7 +114,7 @@
               :rules="[rules.required, rules.password]"
               v-model="sponsor.password"
               validate-on-blur
-              :append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
+              :append-icon="showPassword ? mdiEye : mdiEyeOff"
               :type="showPassword ? 'text' : 'password'"
               @click:append="$emit('togglePassword')"
               @input="
@@ -133,7 +133,7 @@
               :rules="[rules.required, rules.passwordAgainExhibitor]"
               v-model="sponsor.passwordAgain"
               validate-on-blur
-              :append-icon="showPasswordAgain ? 'mdi-eye' : 'mdi-eye-off'"
+              :append-icon="showPasswordAgain ? mdiEye : mdiEyeOff"
               :type="showPasswordAgain ? 'text' : 'password'"
               @click:append="$emit('togglePasswordAgain')"
               @input="
@@ -188,10 +188,17 @@
 
 <script>
 import { validationCheck } from '@/mixins/validationCheck';
+import { mdiEyeOff, mdiEye } from '@mdi/js';
 
 export default {
   props: ['exhibitor', 'showPassword', 'showPasswordAgain', 'fees'],
   mixins: [validationCheck],
+  data() {
+    return {
+      mdiEye,
+      mdiEyeOff,
+    };
+  },
   methods: {
     resetError(value) {
       this.errors = value;

@@ -193,7 +193,7 @@
               :rules="[rules.required, rules.password]"
               v-model="doc.password"
               validate-on-blur
-              :append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
+              :append-icon="showPassword ? mdiEye : mdiEyeOff"
               :type="showPassword ? 'text' : 'password'"
               @click:append="$emit('togglePassword')"
               @input="
@@ -212,7 +212,7 @@
               :rules="[rules.required, rules.passwordAgainDoctor]"
               v-model="doc.passwordAgain"
               validate-on-blur
-              :append-icon="showPasswordAgain ? 'mdi-eye' : 'mdi-eye-off'"
+              :append-icon="showPasswordAgain ? mdiEye : mdiEyeOff"
               :type="showPasswordAgain ? 'text' : 'password'"
               @click:append="$emit('togglePasswordAgain')"
               @input="
@@ -271,10 +271,17 @@
 
 <script>
 import { validationCheck } from '@/mixins/validationCheck';
+import { mdiEyeOff, mdiEye } from '@mdi/js';
 
 export default {
   props: ['doctor', 'showPassword', 'showPasswordAgain', 'date'],
   mixins: [validationCheck],
+  data() {
+    return {
+      mdiEye,
+      mdiEyeOff,
+    };
+  },
   methods: {
     emitSelectedValue(value) {
       this.errorMessage = '';

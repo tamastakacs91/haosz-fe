@@ -47,37 +47,37 @@
                       class="text-subtitle-1 text-center"
                       v-if="sponsor.isMainSponsore"
                     >
-                      <v-icon color="green">mdi-check</v-icon>
+                      <v-icon color="green">{{ mdiCheck }}</v-icon>
                     </td>
                     <td class="text-subtitle-1 text-center" v-else>
-                      <v-icon color="red">mdi-window-close</v-icon>
+                      <v-icon color="red">{{ mdiWindowClose }}</v-icon>
                     </td>
                     <td
                       class="text-subtitle-1 text-center"
                       v-if="sponsor.isThirtyMin"
                     >
-                      <v-icon color="green">mdi-check</v-icon>
+                      <v-icon color="green">{{ mdiCheck }}</v-icon>
                     </td>
                     <td class="text-subtitle-1 text-center" v-else>
-                      <v-icon color="red">mdi-window-close</v-icon>
+                      <v-icon color="red">{{ mdiWindowClose }}</v-icon>
                     </td>
                     <td
                       class="text-subtitle-1 text-center"
                       v-if="sponsor.isFiveMin"
                     >
-                      <v-icon color="green">mdi-check</v-icon>
+                      <v-icon color="green">{{ mdiCheck }}</v-icon>
                     </td>
                     <td class="text-subtitle-1 text-center" v-else>
-                      <v-icon color="red">mdi-window-close</v-icon>
+                      <v-icon color="red">{{ mdiWindowClose }}</v-icon>
                     </td>
                     <td
                       class="text-subtitle-1 text-center"
                       v-if="sponsor.isExhibitionPlace"
                     >
-                      <v-icon color="green">mdi-check</v-icon>
+                      <v-icon color="green">{{ mdiCheck }}</v-icon>
                     </td>
                     <td class="text-subtitle-1 text-center" v-else>
-                      <v-icon color="red">mdi-window-close</v-icon>
+                      <v-icon color="red">{{ mdiWindowClose }}</v-icon>
                     </td>
                     <td class="text-subtitle-1 text-center">
                       {{ sponsor.ticketCounts }}
@@ -151,6 +151,7 @@
 
 <script>
 import { mapGetters, mapActions } from 'vuex';
+import { mdiCheck, mdiWindowClose } from '@mdi/js';
 
 export default {
   name: 'SignIn',

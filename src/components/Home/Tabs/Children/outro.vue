@@ -2,9 +2,9 @@
   <v-row class="secondary-bg">
     <v-container fluid class="pa-0">
       <v-row class="ma-0">
-        <v-icon color="white" size="110" class="mt-n12 ml-auto mr-auto"
-          >mdi-menu-down</v-icon
-        >
+        <v-icon color="white" size="110" class="mt-n12 ml-auto mr-auto">{{
+          mdiMenuDown
+        }}</v-icon>
       </v-row>
     </v-container>
     <v-container class="pt-0 pb-0">
@@ -16,17 +16,24 @@
     </v-container>
     <v-container fluid class="pa-0">
       <v-row class="ma-0">
-        <v-icon color="secondary" size="110" class="mb-n16 ml-auto mr-auto"
-          >mdi-menu-down</v-icon
-        >
+        <v-icon color="secondary" size="110" class="mb-n16 ml-auto mr-auto">{{
+          mdiMenuDown
+        }}</v-icon>
       </v-row>
     </v-container>
   </v-row>
 </template>
 
 <script>
+import { mdiMenuDown } from '@mdi/js';
+
 export default {
   name: 'outro',
   props: ['outP1', 'outP2', 'outP3'],
+  data() {
+    return {
+      mdiMenuDown,
+    };
+  },
 };
 </script>
