@@ -1,12 +1,17 @@
 <template>
   <div>
     <mobile-header class="hidden-md-and-up"></mobile-header>
-    <v-row class="d-flex justify-center mt-7">
+    <v-row class="d-flex justify-center mt-7 mb-4">
       <div class="text-h4 text-md-h3">Programok</div>
     </v-row>
-    <v-row class="d-flex justify-center mt-2">
-      <div class="text-h7 text-md-h5 mb-7 font-italic">
-        A konferencia akkreditációja folyamatban van
+    <v-row class="d-flex justify-center">
+      <div class="text-h7 text-md-h5 font-italic">
+        A Konferencia akkreditált
+      </div>
+    </v-row>
+    <v-row class="d-flex justify-center">
+      <div class="text-h7 text-md-h5 mb-4 font-italic">
+        Részvétel: 18 kreditpont
       </div>
     </v-row>
     <title-bar :title="'Előadóterem'"></title-bar>
