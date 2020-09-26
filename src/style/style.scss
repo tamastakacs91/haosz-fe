@@ -113,3 +113,20 @@ tbody tr td:hover {
 .program-heads {
   color: black !important;
 }
+
+.scroll {
+  transform: translateX(100%);
+  animation: animate 30s linear infinite;
+}
+
+@keyframes animate {
+  0% {
+    transform: translateX(-20%);
+  }
+  50% {
+    transform: translateX(20%);
+  }
+  100% {
+    transform: translateX(-20%);
+  }
+}

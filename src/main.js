@@ -31,6 +31,7 @@ const components = [
   'Programs/title-bar',
   'Programs/presentation-room',
   'Programs/jazzpresso-topics',
+  'JazzPresso/audio-player',
 ];
 components.forEach(register(Vue));
 
