@@ -5,8 +5,9 @@
         <div class="text-h4 text-md-h3 mb-7 text-center">{{ topic }}</div>
       </v-row>
       <audio-player></audio-player>
-      <div id="disqus_thread"></div>
+      <div id="disqus_thread" class="mb-5"></div>
     </v-container>
+    <more-info></more-info>
   </div>
 </template>
 
