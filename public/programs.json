@@ -41,7 +41,7 @@
         },
         {
             "time": "Csütörtök",
-            "title": "Regeneratív medicína a gerincbántalmak kezelésében",
+            "title": "Gerincbántalmak. Milyen diagnózisokra kell gondoljunk és milyen új lehetőségeket ad a regeneratív medicina?",
             "doctor": "Dr. Stogicza Ágnes",
             "hospital": "fájdalomspecialista"
         },
@@ -89,6 +89,12 @@
             "title": "Mitől lesz hatékonyabb és örömtelibb munkájában a \"Bálint-orvos\"? Ismertető, majd beszélgetés a Bálint-csoportról, a pszichoszomatikus szemléletű gyógyításról."
         },
         {
+            "time": "Péntek",
+            "title": "Az érfali merevség vizsgálatának fontossága a háziorvosi praxisban",
+            "doctor": "Csuka Domonkos",
+            "hospital": "Arterial-Care Kft."
+        },
+        {
             "time": "Szombat, 10.00-10.20",
             "title": "Köszöntő",
             "doctor": "Dr. Békássy Szabolcs, háziorvos",
@@ -107,9 +113,9 @@
         {
             "time": "Szombat, 11.00-11.20",
             "title": "Hatósági feladatok a háziorvosi rendelőben (Ki? Mit? Mikor? Mennyiért?)",
-            "doctor": "Dr. Homonnay Adrián",
-            "hospital": "háziorvos, traumatológus",
-            "department": "Keszthely"
+            "doctor": "Dr. Becze Ádám",
+            "hospital": "háziorvos",
+            "department": "Budapest"
         },
         {
             "time": "Szombat, 11.20-11.40",
