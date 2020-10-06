@@ -13,6 +13,7 @@ const register = (Vue) => (path) => {
 const components = [
   'Navbar/navbar',
   'Navbar/navbar-desktop',
+  'Navbar/navbar-extension-desktop',
   'Navbar/navbar-mobile',
   'Home/mobile-header',
   'Home/Tabs/tabs',

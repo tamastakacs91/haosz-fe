@@ -24,7 +24,7 @@ var disqus_config = function () {
 (function () {
   var d = document,
     s = d.createElement('script');
-  s.src = 'https://thid-trial.disqus.com/embed.js';
+  s.src = 'https://haoszkonferencia.disqus.com/embed.js';
   s.setAttribute('data-timestamp', +new Date());
   (d.head || d.body).appendChild(s);
 })();
