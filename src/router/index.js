@@ -25,6 +25,11 @@ const routes = [
     component: () => import('../views/SignIn.vue'),
   },
   {
+    path: '/jazzpresszo',
+    name: 'JazzPressoPage',
+    component: () => import('../views/JazzPressoPage.vue'),
+  },
+  {
     path: '/jazzpresszo/:topic',
     name: 'JazzPresso',
     component: () => import('../views/JazzPresso.vue'),

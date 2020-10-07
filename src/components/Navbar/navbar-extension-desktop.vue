@@ -24,7 +24,11 @@
         </v-btn>
       </v-toolbar-items>
       <v-toolbar-items>
-        <v-btn class="font-weight-bold" text @click="$emit('click')">
+        <v-btn
+          class="font-weight-bold"
+          text
+          @click="$router.push('/jazzpresszo')"
+        >
           <v-icon class="mr-2">mdi-music-circle</v-icon>
           <span class="mr-2">Jazzpresszó</span>
         </v-btn>

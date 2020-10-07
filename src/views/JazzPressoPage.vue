@@ -1,0 +1,91 @@
+<template>
+  <div>
+    <v-container fluid>
+      <mobile-header></mobile-header>
+      <v-row class="d-flex justify-center mt-7 mb-4">
+        <div class="text-h4 text-md-h3">Jazzpresszó</div>
+      </v-row>
+      <v-row align="center" justify="center">
+        <v-col
+          cols="12"
+          md="4"
+          lg="3"
+          v-for="(topic, index) in pressoTopics"
+          :key="index"
+        >
+          <v-row align="center" justify="center" class="text-center ma-1">
+            <v-card width="300" height="130" outlined shaped>
+              <v-container fill-height>
+                <v-row justify="center" align="center">
+                  <div class="d-flex flex-column">
+                    <div
+                      class="text-h6 font-weight-bold normal-break pa-1"
+                      @click="redirectToTopic(topic.redirect)"
+                    >
+                      {{ topic.name }}
+                    </div>
+                  </div>
+                </v-row>
+              </v-container>
+            </v-card>
+          </v-row>
+        </v-col>
+      </v-row>
+    </v-container>
+    <more-info></more-info>
+  </div>
+</template>
+
+<script>
+import { titleGenerator } from '@/mixins/titleGenerator';
+import { getPageUrl, setIdentifier, setPageTitle } from '@/utils/disqsConfig';
+
+export default {
+  name: 'JazzPressoPage',
+  data() {
+    return {
+      pressoTopics: [
+        {
+          name: 'Tőlünk nyugatabbra így csinálják... Mit kellene átvennünk?',
+          redirect: 'tolunk-nyugatabbra-igy-csinaljak',
+        },
+        {
+          name: 'Praxisközösség valóban a jövő egyik ellátási formája?',
+          redirect: 'praxiskozosseg-valoban-a-jovo-egyik-ellatasi-formaja',
+        },
+        {
+          name:
+            'Innováció a háziorvoslásban - Mik a lehetőségeink, korlátaink?',
+          redirect: 'innovacio-a-haziorvoslasban',
+        },
+        {
+          name:
+            'COVID és az alapellátás - Hogy vizsgáztunk, miben kell fejlődnünk?',
+          redirect: 'covid-es-az-alapellatas',
+        },
+        {
+          name: 'Alapellátási Módszertani Központ - mi legyen a célkitűzés?',
+          redirect: 'alapellatasi-modszertani-kozpont',
+        },
+        {
+          name: 'Kollegiális vezetői rendszer - mi legyen a célkitűzés?',
+          redirect: 'kollegialis-vezetoi-rendszer',
+        },
+        {
+          name: 'Szakmai alapellátási kihívások 2020',
+          redirect: 'szakmai-alapellatasi-kihivasok-2020',
+        },
+        {
+          name: 'Mire kompetens a háziorvos, amit amúgy nem végezhet?',
+          redirect: 'mire-kompetens-a-haziorvos',
+        },
+      ],
+    };
+  },
+  methods: {
+    redirectToTopic(redirect) {
+      this.$router.push(`/jazzpresszo/${redirect}`);
+    },
+  },
+};
+</script>

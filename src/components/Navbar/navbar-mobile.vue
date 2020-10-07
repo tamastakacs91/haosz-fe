@@ -47,11 +47,11 @@
             >Programok
           </v-list-item-title>
         </v-list-item>
-        <v-list-item>
+        <v-list-item @click="$router.push('/bejelentkezes')">
           <v-list-item-title>
             <v-icon class="mr-1" size="20px"
               >mdi-account-arrow-right-outline</v-icon
-            >Belépés
+            >Bejelentkezés
           </v-list-item-title>
         </v-list-item>
         <v-menu left bottom v-if="!isLoggedIn">
