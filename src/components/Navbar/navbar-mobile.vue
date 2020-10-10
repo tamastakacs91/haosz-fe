@@ -67,7 +67,7 @@
         </v-list-item>
         <v-list-item @click="$emit('openLivestorm')" v-if="isLoggedIn">
           <v-list-item-title>
-            <v-icon class="mr-1" size="20px">mdi-accent-group</v-icon>Élő
+            <v-icon class="mr-1" size="20px">mdi-account-group</v-icon>Élő
             kiállítóterem
           </v-list-item-title>
         </v-list-item>
