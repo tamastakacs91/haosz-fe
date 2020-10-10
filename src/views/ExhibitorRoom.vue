@@ -95,11 +95,6 @@ export default {
           this.aidian = false;
           this.genext = false;
           this.richter = false;
-          // element.scrollIntoView({
-          //   behavior: 'smooth',
-          //   block: 'end',
-          //   inline: 'nearest',
-          // });
           break;
         case 'ge':
           this.erodium = false;
@@ -107,11 +102,6 @@ export default {
           this.aidian = false;
           this.genext = false;
           this.richter = false;
-          // element.scrollIntoView({
-          //   behavior: 'smooth',
-          //   block: 'end',
-          //   inline: 'nearest',
-          // });
           break;
         case 'aidian':
           this.erodium = false;
@@ -119,11 +109,6 @@ export default {
           this.aidian = true;
           this.genext = false;
           this.richter = false;
-          // element.scrollIntoView({
-          //   behavior: 'smooth',
-          //   block: 'end',
-          //   inline: 'nearest',
-          // });
           break;
         case 'genext':
           this.erodium = false;
@@ -131,11 +116,6 @@ export default {
           this.aidian = false;
           this.genext = true;
           this.richter = false;
-          // element.scrollIntoView({
-          //   behavior: 'smooth',
-          //   block: 'end',
-          //   inline: 'nearest',
-          // });
           break;
         case 'richter':
           this.erodium = false;
@@ -143,11 +123,6 @@ export default {
           this.aidian = false;
           this.genext = false;
           this.richter = true;
-          // element.scrollIntoView({
-          //   behavior: 'smooth',
-          //   block: 'end',
-          //   inline: 'nearest',
-          // });
           break;
         default:
           this.erodium = false;

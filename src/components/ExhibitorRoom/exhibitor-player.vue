@@ -26,19 +26,8 @@
         <div v-if="!shown" class="mt-5">{{ title }}</div>
         <div :id="exhibitor">
           <iframe
-            class="hidden-sm-and-down"
+            class="frame"
             v-if="shown"
-            width="450"
-            height="300"
-            frameborder="0"
-            allowfullscreen
-            :src="vidSrc"
-          ></iframe>
-          <iframe
-            class="hidden-md-and-up"
-            v-if="shown"
-            width="350"
-            height="200"
             frameborder="0"
             allowfullscreen
             :src="vidSrc"

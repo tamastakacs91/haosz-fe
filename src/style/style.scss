@@ -118,3 +118,16 @@ tbody tr td:hover {
 .program-heads {
   color: black !important;
 }
+
+@media only screen and (min-width: 1264px) {
+  .frame {
+    width: 450px;
+    height: 300px;
+  }
+}
+@media only screen and (max-width: 1263px) {
+  .frame {
+    width: 350px;
+    height: 200px;
+  }
+}
