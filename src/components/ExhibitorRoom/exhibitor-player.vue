@@ -19,7 +19,7 @@
           contain
           :src="picSrc"
           transition="scale-transition"
-          :max-height="height"
+          max-height="200"
           max-width="300"
           @click="$emit('click', exhibitor)"
         />
