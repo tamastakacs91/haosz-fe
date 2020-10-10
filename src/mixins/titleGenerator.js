@@ -22,7 +22,7 @@ export const titleGenerator = {
         case 'covid-es-az-alapellatas':
           title = this.topics[3];
           break;
-        case 'alapellatasi-modszertani-kozpont':
+        case 'haziorvosi-finanszirozas':
           title = this.topics[4];
           break;
         case 'kollegialis-vezetoi-rendszer':

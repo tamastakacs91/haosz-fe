@@ -10,7 +10,7 @@
         </v-col>
       </v-row>
       <audio-player></audio-player>
-      <Disqus shortname="trial-website" />
+      <Disqus shortname="haosz-demo" />
     </v-container>
     <more-info></more-info>
   </div>
