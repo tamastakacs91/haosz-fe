@@ -10,6 +10,21 @@
         </v-col>
       </v-row>
       <presentation-player :date="dateToday"></presentation-player>
+      <v-row align="center" justify="center">
+        <v-col v-for="(logo, index) in logos" :key="index" cols="6" md="2">
+          <div class="d-flex justify-center">
+            <v-img
+              class="shrink"
+              contain
+              :alt="logo"
+              :src="`/logos/${logo}`"
+              transition="scale-transition"
+              max-height="150"
+              max-width="200"
+            />
+          </div>
+        </v-col>
+      </v-row>
     </v-container>
     <more-info></more-info>
   </div>
@@ -18,6 +33,26 @@
 <script>
 export default {
   name: 'PresentationRoom',
+  data() {
+    return {
+      logos: [
+        '1Erodium.png',
+        '2Roche.png',
+        '3Pfizer.png',
+        '4-77elektronika.jpg',
+        '5Netdoktor.jpg',
+        '6Richter.jpg',
+        '7Arterial-care.png',
+        '8medio.png',
+        '9-Aidian_logo.png',
+        '10MED-EN_LOGO.png',
+        // 'logo_transparent_background.png',
+        // 'logo_white_background.jpg',
+        // 'white_logo_color_background.jpg',
+        // 'white_logo_transparent_background.png',
+      ],
+    };
+  },
   computed: {
     dateToday() {
       const splitDate = new Date().toISOString().split('-');
