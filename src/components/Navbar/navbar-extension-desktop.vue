@@ -18,7 +18,7 @@
         </v-btn>
       </v-toolbar-items>
       <v-toolbar-items>
-        <v-btn class="font-weight-bold" text @click="$emit('click')">
+        <v-btn class="font-weight-bold" text @click="openLivestorm">
           <v-icon class="mr-2">mdi-account-group</v-icon>
           <span class="mr-2">Élő Kiállítóterem</span>
         </v-btn>
@@ -36,3 +36,13 @@
     </v-row>
   </v-container>
 </template>
+
+<script>
+export default {
+  methods: {
+    openLivestorm() {
+      window.open('https://livestorm.co/', '_blank');
+    },
+  },
+};
+</script>

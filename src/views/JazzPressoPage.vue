@@ -13,15 +13,23 @@
           v-for="(topic, index) in pressoTopics"
           :key="index"
         >
-          <v-row align="center" justify="center" class="text-center ma-1">
-            <v-card width="300" height="130" outlined shaped>
+          <v-row
+            align="center"
+            justify="center"
+            class="text-center ma-1"
+            @click="redirectToTopic(topic.redirect)"
+          >
+            <v-card
+              width="300"
+              height="130"
+              outlined
+              shaped
+              class="presso-pointer"
+            >
               <v-container fill-height>
                 <v-row justify="center" align="center">
                   <div class="d-flex flex-column">
-                    <div
-                      class="text-h6 font-weight-bold normal-break pa-1"
-                      @click="redirectToTopic(topic.redirect)"
-                    >
+                    <div class="text-h6 font-weight-bold normal-break pa-1">
                       {{ topic.name }}
                     </div>
                   </div>

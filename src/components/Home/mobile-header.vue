@@ -1,5 +1,5 @@
 <template>
-  <div class="hidden-md-and-up mt-3">
+  <div class="hidden-md-and-up mt-n3">
     <div class="d-flex justify-center">
       <v-img
         alt="HAOSZ logo"
