@@ -5,11 +5,22 @@
         <v-img
           v-if="!shown"
           :alt="alt"
-          class="shrink mt-5 mr-5 ml-5 pointer"
+          class="shrink mt-5 mr-5 ml-5 pointer hidden-sm-and-down"
           contain
           :src="picSrc"
           transition="scale-transition"
-          :height="height"
+          :max-height="height"
+          @click="$emit('click', exhibitor)"
+        />
+        <v-img
+          v-if="!shown"
+          :alt="alt"
+          class="shrink mt-5 mr-5 ml-5 pointer hidden-md-and-up"
+          contain
+          :src="picSrc"
+          transition="scale-transition"
+          :max-height="height"
+          max-width="300"
           @click="$emit('click', exhibitor)"
         />
         <div v-if="!shown" class="mt-5">{{ title }}</div>
