@@ -25,14 +25,24 @@ const routes = [
     component: () => import('../views/SignIn.vue'),
   },
   {
+    path: '/eloadoterem',
+    name: 'PresentationRoom',
+    component: () => import('../views/PresentationRoom.vue'),
+  },
+  {
+    path: '/bemutatoterem',
+    name: 'ExhibitorRoom',
+    component: () => import('../views/ExhibitorRoom.vue'),
+  },
+  {
     path: '/jazzpresszo',
-    name: 'JazzPressoPage',
-    component: () => import('../views/JazzPressoPage.vue'),
+    name: 'JazzPressoMain',
+    component: () => import('../views/JazzPressoMain.vue'),
   },
   {
     path: '/jazzpresszo/:topic',
-    name: 'JazzPresso',
-    component: () => import('../views/JazzPresso.vue'),
+    name: 'JazzPressoTopic',
+    component: () => import('../views/JazzPressoTopic.vue'),
   },
   {
     path: '/admin',

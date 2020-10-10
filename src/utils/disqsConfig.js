@@ -20,8 +20,8 @@ export const setPageTitle = () => {
       pageTitle =
         'COVID és az alapellátás - Hogy vizsgáztunk, miben kell fejlődnünk?';
       break;
-    case '/jazzpresszo/alapellatasi-modszertani-kozpont':
-      pageTitle = 'Alapellátási Módszertani Központ - mi legyen a célkitűzés?';
+    case '/jazzpresszo/haziorvosi-finanszirozas':
+      pageTitle = 'Háziorvosi finanszírozás, béremelés 2021-2023?';
       break;
     case '/jazzpresszo/kollegialis-vezetoi-rendszer':
       pageTitle = 'Kollegiális vezetői rendszer - mi legyen a célkitűzés?';

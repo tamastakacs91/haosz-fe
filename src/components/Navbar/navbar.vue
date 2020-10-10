@@ -11,6 +11,7 @@
           :isLoggedIn="isLoggedIn"
           :userRole="userRole"
           @click="signOut"
+          @openLivestorm="openLivestorm"
         ></navbar-mobile>
       </v-container>
     </v-app-bar>
@@ -24,7 +25,9 @@
         ></navbar-desktop>
       </v-container>
       <template v-slot:extension v-if="isLoggedIn">
-        <navbar-extension-desktop></navbar-extension-desktop>
+        <navbar-extension-desktop
+          @openLivestorm="openLivestorm"
+        ></navbar-extension-desktop>
       </template>
     </v-app-bar>
   </div>
@@ -39,6 +42,9 @@ export default {
   },
   methods: {
     ...mapActions('signIn', ['signOut']),
+    openLivestorm() {
+      window.open('https://livestorm.co/', '_blank');
+    },
   },
 };
 </script>

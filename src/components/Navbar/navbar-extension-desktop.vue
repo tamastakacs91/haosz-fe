@@ -5,20 +5,24 @@
         <v-btn
           class="font-weight-bold pa-4"
           text
-          @click="$router.push('/program')"
+          @click="$router.push('/eloadoterem')"
         >
           <v-icon class="mr-2">mdi-teach</v-icon>
           <span class="mr-2">Előadóterem</span>
         </v-btn>
       </v-toolbar-items>
       <v-toolbar-items>
-        <v-btn class="font-weight-bold" text @click="$emit('click')">
+        <v-btn
+          class="font-weight-bold"
+          text
+          @click="$router.push('/bemutatoterem')"
+        >
           <v-icon class="mr-2">mdi-presentation-play</v-icon>
           <span class="mr-2">Bemutatóterem</span>
         </v-btn>
       </v-toolbar-items>
       <v-toolbar-items>
-        <v-btn class="font-weight-bold" text @click="openLivestorm">
+        <v-btn class="font-weight-bold" text @click="$emit('openLivestorm')">
           <v-icon class="mr-2">mdi-account-group</v-icon>
           <span class="mr-2">Élő Kiállítóterem</span>
         </v-btn>
@@ -36,13 +40,3 @@
     </v-row>
   </v-container>
 </template>
-
-<script>
-export default {
-  methods: {
-    openLivestorm() {
-      window.open('https://livestorm.co/', '_blank');
-    },
-  },
-};
-</script>

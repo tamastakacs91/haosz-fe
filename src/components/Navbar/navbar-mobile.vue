@@ -47,11 +47,34 @@
             >Programok
           </v-list-item-title>
         </v-list-item>
-        <v-list-item @click="$router.push('/bejelentkezes')">
+        <v-list-item @click="$router.push('/bejelentkezes')" v-if="!isLoggedIn">
           <v-list-item-title>
             <v-icon class="mr-1" size="20px"
               >mdi-account-arrow-right-outline</v-icon
             >Bejelentkezés
+          </v-list-item-title>
+        </v-list-item>
+        <v-list-item @click="$router.push('/eloadoterem')" v-if="isLoggedIn">
+          <v-list-item-title>
+            <v-icon class="mr-1" size="20px">mdi-teach</v-icon>Előadóterem
+          </v-list-item-title>
+        </v-list-item>
+        <v-list-item @click="$router.push('/bemutatoterem')" v-if="isLoggedIn">
+          <v-list-item-title>
+            <v-icon class="mr-1" size="20px">mdi-presentation-play</v-icon
+            >Bemutatóterem
+          </v-list-item-title>
+        </v-list-item>
+        <v-list-item @click="$emit('openLivestorm')" v-if="isLoggedIn">
+          <v-list-item-title>
+            <v-icon class="mr-1" size="20px">mdi-accent-group</v-icon>Élő
+            kiállítóterem
+          </v-list-item-title>
+        </v-list-item>
+        <v-list-item @click="$router.push('/jazzpresszo')" v-if="isLoggedIn">
+          <v-list-item-title>
+            <v-icon class="mr-1" size="20px">mdi-music-circle</v-icon
+            >Jazzpresszó
           </v-list-item-title>
         </v-list-item>
         <v-menu left bottom v-if="!isLoggedIn">

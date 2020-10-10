@@ -72,8 +72,8 @@ export default {
           redirect: 'covid-es-az-alapellatas',
         },
         {
-          name: 'Alapellátási Módszertani Központ - mi legyen a célkitűzés?',
-          redirect: 'alapellatasi-modszertani-kozpont',
+          name: 'Háziorvosi finanszírozás, béremelés 2021-2023?',
+          redirect: 'haziorvosi-finanszirozas',
         },
         {
           name: 'Kollegiális vezetői rendszer - mi legyen a célkitűzés?',
