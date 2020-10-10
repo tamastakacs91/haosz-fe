@@ -24,24 +24,26 @@
           @click="$emit('click', exhibitor)"
         />
         <div v-if="!shown" class="mt-5">{{ title }}</div>
-        <iframe
-          class="hidden-sm-and-down"
-          v-if="shown"
-          width="450"
-          height="300"
-          frameborder="0"
-          allowfullscreen
-          :src="vidSrc"
-        ></iframe>
-        <iframe
-          class="hidden-md-and-up"
-          v-if="shown"
-          width="350"
-          height="200"
-          frameborder="0"
-          allowfullscreen
-          :src="vidSrc"
-        ></iframe>
+        <div :id="exhibitor">
+          <iframe
+            class="hidden-sm-and-down"
+            v-if="shown"
+            width="450"
+            height="300"
+            frameborder="0"
+            allowfullscreen
+            :src="vidSrc"
+          ></iframe>
+          <iframe
+            class="hidden-md-and-up"
+            v-if="shown"
+            width="350"
+            height="200"
+            frameborder="0"
+            allowfullscreen
+            :src="vidSrc"
+          ></iframe>
+        </div>
       </div>
     </v-row>
   </v-col>
