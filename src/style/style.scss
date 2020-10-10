@@ -120,13 +120,29 @@ tbody tr td:hover {
 }
 
 @media only screen and (min-width: 1264px) {
-  .frame {
+  .presentation-frame {
+    width: 1000px;
+    height: 600px;
+  }
+  .exhibitor-frame {
     width: 450px;
     height: 300px;
   }
 }
+@media only screen and (min-width: 960px) and (max-width: 1263px) {
+  .presentation-frame {
+    width: 850px;
+    height: 600px;
+  }
+}
+@media only screen and (max-width: 959px) {
+  .presentation-frame {
+    width: 350px;
+    height: 200px;
+  }
+}
 @media only screen and (max-width: 1263px) {
-  .frame {
+  .exhibitor-frame {
     width: 350px;
     height: 200px;
   }

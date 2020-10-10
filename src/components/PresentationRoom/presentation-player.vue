@@ -14,30 +14,11 @@
     <v-row align="center" justify="center">
       <v-col class="text-center">
         <iframe
-          class="hidden-md-and-down"
-          width="1000"
-          height="600"
+          class="presentation-frame"
           frameborder="0"
           allowfullscreen
           :src="`https://www.youtube.com/embed/${videoId}`"
-        >
-        </iframe>
-        <iframe
-          class="d-none d-md-flex d-lg-none"
-          width="850"
-          height="600"
-          frameborder="0"
-          allowfullscreen
-          :src="`https://www.youtube.com/embed/${videoId}`"
-        >
-        </iframe>
-        <iframe
-          class="hidden-md-and-up"
-          width="300"
-          height="200"
-          frameborder="0"
-          allowfullscreen
-          :src="`https://www.youtube.com/embed/${videoId}`"
+          encrypted-media
         >
         </iframe>
       </v-col>

@@ -26,7 +26,7 @@
         <div v-if="!shown" class="mt-5">{{ title }}</div>
         <div :id="exhibitor">
           <iframe
-            class="frame"
+            class="exhibitor-frame"
             v-if="shown"
             frameborder="0"
             allowfullscreen
