@@ -86,17 +86,13 @@
         },
         {
             "time": "Péntek",
-            "title": "Mitől lesz hatékonyabb és örömtelibb munkájában a \"Bálint-orvos\"? Ismertető, majd beszélgetés a Bálint-csoportról, a pszichoszomatikus szemléletű gyógyításról."
-        },
-        {
-            "time": "Péntek",
             "title": "Az érfali merevség vizsgálatának fontossága a háziorvosi praxisban",
             "doctor": "Csuka Domonkos",
             "hospital": "Arterial-Care Kft."
         },
         {
             "time": "Szombat, 10.00-10.20",
-            "title": "Köszöntő",
+            "title": "Köszöntő, Háziorvoslás 2021-2025 HaOSz / Országos Háziorvos kollegiális vezető jövőképe",
             "doctor": "Dr. Békássy Szabolcs, háziorvos",
             "hospital": "Dunavarsány"
         },
@@ -187,9 +183,9 @@
         },
         {
             "time": "Szombat, 16.00-16.20",
-            "title": "Háziorvoslás 2021-2025 HaOSz / Országos Háziorvos kollegiális vezető jövőképe",
-            "doctor": "Dr. Békássy Szabolcs, háziorvos",
-            "hospital": "Dunavarsány"
+            "title": "A háziorvosi ellátás finanszírozásának új elvei",
+            "doctor": "Dr. Sinkó Eszter",
+            "hospital": "Egészségügyi szakközgazdász"
         },
         {
             "time": "Szombat, 16.20-16.40",
@@ -205,7 +201,7 @@
         },
         {
             "time": "Szombat, 17.30-19.00",
-            "title": "Szakmapolitikai fórum - Fókuszban: Önálló Alapellátási Módszertani Központ"
+            "title": "Szakmapolitikai fórum - Fókuszban: Háziorvosi finanszírozás, béremelés"
         }
     ],
     "jazzPresso": [
