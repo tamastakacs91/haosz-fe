@@ -1,5 +1,5 @@
 <template>
-  <v-row class="secondary-bg">
+  <v-row class="secondary-bg footer-element">
     <v-col class="text-center">
       <div>További információ:</div>
       <div>CSERNI MED BT. – Dr. Havas Adrien</div>
@@ -13,3 +13,10 @@
     </v-col>
   </v-row>
 </template>
+
+<style scoped>
+.footer-element {
+  bottom: 0;
+  border-top: 1px solid white;
+}
+</style>

@@ -46,3 +46,9 @@ export default {
 <style lang="scss">
 @import './style/style.scss';
 </style>
+
+<style scoped>
+v-main {
+  min-height: 100%;
+}
+</style>

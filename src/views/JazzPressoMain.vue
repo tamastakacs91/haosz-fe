@@ -5,6 +5,22 @@
       <v-row class="d-flex justify-center mt-7 mb-4">
         <div class="text-h4 text-md-h3">Jazzpresszó</div>
       </v-row>
+      <v-container>
+        <v-row align="center" justify="center">
+          <v-col>
+            <div class="d-flex justify-center">
+              <v-img
+                src="/Jazzpresszo.jpg"
+                alt="Jazzpresszo"
+                class="shrink rounded"
+                contain
+                transition="scale-transition"
+                max-width="500"
+              ></v-img>
+            </div>
+          </v-col>
+        </v-row>
+      </v-container>
       <v-row align="center" justify="center">
         <v-col
           cols="12"
