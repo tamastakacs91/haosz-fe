@@ -1,7 +1,7 @@
 <template>
   <div>
     <mobile-header></mobile-header>
-    <v-container fluid>
+    <v-container fluid class="exhibitor-container">
       <v-container>
         <v-row class="d-flex justify-center mt-5">
           <v-col cols="12">
