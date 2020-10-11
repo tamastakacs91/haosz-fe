@@ -12,10 +12,18 @@
               <v-img
                 src="/Jazzpresszo.jpg"
                 alt="Jazzpresszo"
-                class="shrink rounded"
+                class="shrink rounded hidden-sm-and-down"
                 contain
                 transition="scale-transition"
-                max-width="500"
+                max-width="700"
+              ></v-img>
+              <v-img
+                src="/Jazzpresszo.jpg"
+                alt="Jazzpresszo"
+                class="shrink rounded hidden-md-and-up"
+                contain
+                transition="scale-transition"
+                max-width="300"
               ></v-img>
             </div>
           </v-col>
