@@ -25,6 +25,7 @@
               outlined
               shaped
               class="presso-pointer"
+              :color="topic.color"
             >
               <v-container fill-height>
                 <v-row justify="center" align="center">
@@ -56,36 +57,44 @@ export default {
         {
           name: 'Tőlünk nyugatabbra így csinálják... Mit kellene átvennünk?',
           redirect: 'tolunk-nyugatabbra-igy-csinaljak',
+          color: '#FFECB3',
         },
         {
           name: 'Praxisközösség valóban a jövő egyik ellátási formája?',
           redirect: 'praxiskozosseg-valoban-a-jovo-egyik-ellatasi-formaja',
+          color: '#F0F4C3',
         },
         {
           name:
             'Innováció a háziorvoslásban - Mik a lehetőségeink, korlátaink?',
           redirect: 'innovacio-a-haziorvoslasban',
+          color: '#F3E5F5',
         },
         {
           name:
             'COVID és az alapellátás - Hogy vizsgáztunk, miben kell fejlődnünk?',
           redirect: 'covid-es-az-alapellatas',
+          color: '#FFE0B2',
         },
         {
           name: 'Háziorvosi finanszírozás, béremelés 2021-2023?',
           redirect: 'haziorvosi-finanszirozas',
+          color: '#C5E1A5',
         },
         {
           name: 'Kollegiális vezetői rendszer - mi legyen a célkitűzés?',
           redirect: 'kollegialis-vezetoi-rendszer',
+          color: '#E1BEE7',
         },
         {
           name: 'Szakmai alapellátási kihívások 2020',
           redirect: 'szakmai-alapellatasi-kihivasok-2020',
+          color: '#FFECB3',
         },
         {
           name: 'Mire kompetens a háziorvos, amit amúgy nem végezhet?',
           redirect: 'mire-kompetens-a-haziorvos',
+          color: '#F0F4C3',
         },
       ],
     };

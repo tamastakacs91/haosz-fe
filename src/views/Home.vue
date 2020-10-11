@@ -2,6 +2,7 @@
   <div>
     <v-container fluid>
       <mobile-header></mobile-header>
+      <main-greeting></main-greeting>
       <tabs>
         <tab-item
           :greeting="data.greeting.doctor"

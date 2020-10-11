@@ -38,7 +38,7 @@
         </v-btn>
       </v-toolbar-items>
 
-      <v-toolbar-items v-if="!isLoggedIn" class="mr-1">
+      <!-- <v-toolbar-items v-if="!isLoggedIn" class="mr-1">
         <div class="d-flex flex-column justify-space-between">
           <v-menu left bottom>
             <template v-slot:activator="{ on, attrs }">
@@ -73,16 +73,19 @@
               </v-list-item>
             </v-list>
           </v-menu>
-          <v-btn
-            class="font-weight-bold"
-            text
-            @click="$router.push('/bejelentkezes')"
-          >
-            <v-icon class="mr-2">mdi-logout</v-icon>
-            <span class="mr-2">Bejelentkezés</span>
-          </v-btn>
         </div>
+      </v-toolbar-items> -->
+      <v-toolbar-items v-if="!isLoggedIn">
+        <v-btn
+          class="font-weight-bold"
+          text
+          @click="$router.push('/bejelentkezes')"
+        >
+          <v-icon class="mr-2">mdi-logout</v-icon>
+          <span class="mr-2">Bejelentkezés</span>
+        </v-btn>
       </v-toolbar-items>
+
       <v-toolbar-items v-if="isLoggedIn">
         <v-btn class="font-weight-bold" text @click="$emit('click')">
           <v-icon class="mr-2">mdi-logout</v-icon>

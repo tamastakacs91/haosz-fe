@@ -18,7 +18,6 @@ body {
 }
 
 .presso-pointer:hover {
-  background-color: $secondary-color !important;
   cursor: pointer;
 }
 
@@ -147,4 +146,8 @@ tbody tr td:hover {
     width: 350px;
     height: 200px;
   }
+}
+
+.exhibitor-container {
+  background-color: rgba(52, 105, 175, 0.2);
 }
