@@ -16,10 +16,11 @@
           <v-img
             src="/haosz-group-photo.jpg"
             alt="HAOSZ group photo"
-            class="shrink"
+            class="shrink rounded"
             contain
             transition="scale-transition"
             max-width="600"
+            max-height="500"
           ></v-img>
         </div>
       </v-col>
