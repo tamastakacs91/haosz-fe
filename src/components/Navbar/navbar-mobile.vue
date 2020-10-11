@@ -54,7 +54,7 @@
             >Belépés
           </v-list-item-title>
         </v-list-item>-->
-        <v-menu left bottom v-if="!isLoggedIn">
+        <!-- <v-menu left bottom v-if="!isLoggedIn">
           <template v-slot:activator="{ on, attrs }">
             <v-list-item>
               <v-list-item-title v-bind="attrs" v-on="on">
@@ -72,7 +72,7 @@
               <v-list-item-title>Kiállítóknak</v-list-item-title>
             </v-list-item>
           </v-list>
-        </v-menu>
+        </v-menu> -->
         <v-list-item @click="$emit('click')" v-if="isLoggedIn">
           <v-list-item-title>
             <v-icon class="mr-1" size="20px">mdi-logout</v-icon>Kijelentkezés

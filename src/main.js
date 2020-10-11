@@ -15,6 +15,7 @@ const components = [
   'Navbar/navbar-desktop',
   'Navbar/navbar-mobile',
   'Home/mobile-header',
+  'Home/main-greeting',
   'Home/Tabs/tabs',
   'Home/Tabs/tab-item',
   'Home/Tabs/Children/event-summary',

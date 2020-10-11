@@ -37,7 +37,7 @@
       </v-btn>
     </v-toolbar-items>
 
-    <v-toolbar-items class="mr-5" v-if="!isLoggedIn">
+    <!-- <v-toolbar-items class="mr-5" v-if="!isLoggedIn">
       <v-menu left bottom>
         <template v-slot:activator="{ on, attrs }">
           <v-btn
@@ -71,7 +71,7 @@
           </v-list-item>
         </v-list>
       </v-menu>
-    </v-toolbar-items>
+    </v-toolbar-items> -->
     <v-toolbar-items v-if="isLoggedIn">
       <v-btn class="font-weight-bold" text @click="$emit('click')">
         <v-icon class="mr-2">mdi-logout</v-icon>
