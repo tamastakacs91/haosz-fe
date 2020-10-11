@@ -11,7 +11,13 @@
       </v-row>
       <presentation-player :date="dateToday"></presentation-player>
       <v-row align="center" justify="center">
-        <v-col v-for="(logo, index) in logos" :key="index" cols="12" md="6" lg="2">
+        <v-col
+          v-for="(logo, index) in logos"
+          :key="index"
+          cols="12"
+          md="6"
+          lg="2"
+        >
           <div class="d-flex justify-center mt-5">
             <v-img
               class="shrink"
