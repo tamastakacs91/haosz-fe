@@ -2,7 +2,6 @@
 
 body {
   box-sizing: border-box !important;
-  min-height: 100% !important;
 }
 
 .secondary-bg {
@@ -150,4 +149,8 @@ tbody tr td:hover {
 
 .exhibitor-container {
   background-color: rgba(52, 105, 175, 0.2);
+}
+
+.main-container {
+  min-height: 80vh;
 }

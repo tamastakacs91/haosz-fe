@@ -48,7 +48,7 @@ export default {
 </style>
 
 <style scoped>
-v-main {
-  min-height: 100%;
+.v-main {
+  height: 100% !important;
 }
 </style>

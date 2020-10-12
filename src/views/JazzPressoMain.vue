@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-container fluid>
+    <v-container fluid class="main-container">
       <mobile-header></mobile-header>
       <v-row class="d-flex justify-center mt-7 mb-4">
         <div class="text-h4 text-md-h3">Jazzpresszó</div>

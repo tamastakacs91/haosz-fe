@@ -1,7 +1,7 @@
 <template>
   <div>
     <mobile-header></mobile-header>
-    <v-container>
+    <v-container class="main-container">
       <v-row class="d-flex justify-center mt-5">
         <v-col cols="12">
           <div class="text-h5 text-md-h3 text-center">
