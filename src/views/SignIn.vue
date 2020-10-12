@@ -5,6 +5,8 @@
       <v-container>
         <v-row>
           <v-col class="text-center text-h5 text-md-h4">Bejelentkezés</v-col>
+        </v-row>
+        <v-row>
           <v-col cols="12" md="8" offset="md-2">
             <v-card outlined ref="form">
               <v-col cols="12" md="10" offset="md-1">
