@@ -27,8 +27,9 @@
           />
         </v-row>
         <div v-if="!shown" class="mt-5 align-end">{{ title }}</div>
-        <div :id="exhibitor">
+        <div>
           <iframe
+            :id="exhibitor"
             class="exhibitor-frame"
             v-if="shown"
             frameborder="0"

@@ -11,7 +11,7 @@
           </v-col>
         </v-row>
         <audio-player></audio-player>
-        <Disqus shortname="haosz-demo" />
+        <Disqus shortname="final-trial" />
       </v-container>
     </v-container>
     <more-info></more-info>

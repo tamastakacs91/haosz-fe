@@ -2,7 +2,7 @@
   <div>
     <mobile-header></mobile-header>
     <v-container>
-      <v-row class="d-flex justify-center mt-5">
+      <v-row class="d-flex justify-center mt-3">
         <v-col cols="12">
           <div class="text-h5 text-md-h3 text-center">
             Előadóterem

@@ -10,11 +10,21 @@
           class="white--text mb-10 mt-3"
           @click="$emit('openLivestorm')"
         >
-          <v-icon color="red" size="30" class="mr-1"
-            >mdi-record-circle-outline</v-icon
-          >
-          Élő előadás</v-btn
-        >
+          <v-row align="center" justify="center">
+            <v-col cols="2">
+              <div class="d-flex justify-end">
+                <v-icon color="red" size="30" id="presentation-icon"
+                  >mdi-record-circle-outline</v-icon
+                >
+              </div>
+            </v-col>
+            <v-col cols="6">
+              <div class="d-flex justify-start">
+                Élő előadás
+              </div>
+            </v-col>
+          </v-row>
+        </v-btn>
       </v-col>
     </v-row>
     <v-row align="center" justify="center">
@@ -81,5 +91,18 @@ export default {
       this.currentVideo = value;
     },
   },
+  mounted() {
+    let icon = document.getElementById('presentation-icon');
+    icon.classList.add('no-show');
+    setInterval(() => {
+      icon.classList.toggle('no-show');
+    }, 1000);
+  },
 };
 </script>
+
+<style scoped>
+.no-show {
+  display: none;
+}
+</style>

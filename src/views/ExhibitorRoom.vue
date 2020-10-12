@@ -3,7 +3,7 @@
     <mobile-header></mobile-header>
     <v-container fluid class="exhibitor-container">
       <v-container>
-        <v-row class="d-flex justify-center mt-5">
+        <v-row class="d-flex justify-center">
           <v-col cols="12">
             <div class="text-h5 text-md-h3 text-center">
               Bemutatóterem
@@ -37,7 +37,7 @@
         </v-row>
         <v-row align="center" justify="center">
           <exhibitor-player
-            :lg="4"
+            :lg="6"
             :exhibitor="'aidian'"
             :shown="aidian"
             :title="'Aidian - CRP'"
@@ -49,7 +49,7 @@
             @click="playVideo"
           ></exhibitor-player>
           <exhibitor-player
-            :lg="4"
+            :lg="6"
             :exhibitor="'genext'"
             :shown="genext"
             :title="'Genext - MicroINR'"
@@ -60,14 +60,28 @@
             :width="300"
             @click="playVideo"
           ></exhibitor-player>
+        </v-row>
+        <v-row>
           <exhibitor-player
-            :lg="4"
+            :lg="6"
             :exhibitor="'richter'"
             :shown="richter"
             :title="'Richter - Aksolin'"
             :picSrc="'/exhibitors/Richter.png'"
             :alt="'Richter'"
             :vidSrc="'https://www.youtube.com/embed/eMuqjtkJhjQ?autoplay=1'"
+            :height="200"
+            :width="340"
+            @click="playVideo"
+          ></exhibitor-player>
+          <exhibitor-player
+            :lg="6"
+            :exhibitor="'arterial'"
+            :shown="arterial"
+            :title="'Arterial Care'"
+            :picSrc="'/exhibitors/Arterial-Care.png'"
+            :alt="'Arterial Care'"
+            :vidSrc="'https://www.youtube.com/embed/xleNH2ZzI7c?autoplay=1'"
             :height="200"
             :width="340"
             @click="playVideo"
@@ -89,6 +103,7 @@ export default {
       aidian: false,
       genext: false,
       richter: false,
+      arterial: false,
     };
   },
   methods: {
@@ -101,6 +116,7 @@ export default {
           this.aidian = false;
           this.genext = false;
           this.richter = false;
+          this.arterial = false;
           break;
         case 'ge':
           this.erodium = false;
@@ -108,6 +124,7 @@ export default {
           this.aidian = false;
           this.genext = false;
           this.richter = false;
+          this.arterial = false;
           break;
         case 'aidian':
           this.erodium = false;
@@ -115,6 +132,7 @@ export default {
           this.aidian = true;
           this.genext = false;
           this.richter = false;
+          this.arterial = false;
           break;
         case 'genext':
           this.erodium = false;
@@ -122,6 +140,7 @@ export default {
           this.aidian = false;
           this.genext = true;
           this.richter = false;
+          this.arterial = false;
           break;
         case 'richter':
           this.erodium = false;
@@ -129,6 +148,15 @@ export default {
           this.aidian = false;
           this.genext = false;
           this.richter = true;
+          this.arterial = false;
+          break;
+        case 'arterial':
+          this.erodium = false;
+          this.ge = false;
+          this.aidian = false;
+          this.genext = false;
+          this.richter = false;
+          this.arterial = true;
           break;
         default:
           this.erodium = false;
@@ -136,6 +164,7 @@ export default {
           this.aidian = false;
           this.genext = false;
           this.richter = false;
+          this.arterial = false;
           break;
       }
     },
