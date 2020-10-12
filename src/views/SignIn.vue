@@ -27,6 +27,12 @@
                   @click:append="togglePasswordShown"
                   @keyup.native.enter="signIn"
                 ></v-text-field>
+                <div
+                  class="primary--text pointer"
+                  @click="$router.push('/uj-jelszo-beallitasa')"
+                >
+                  Elfelejtett jelszó
+                </div>
                 <v-card-actions>
                   <v-spacer></v-spacer>
 

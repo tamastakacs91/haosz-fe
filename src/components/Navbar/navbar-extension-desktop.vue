@@ -22,7 +22,11 @@
         </v-btn>
       </v-toolbar-items>
       <v-toolbar-items>
-        <v-btn class="font-weight-bold" text @click="$emit('openLivestorm')">
+        <v-btn
+          class="font-weight-bold"
+          text
+          @click="$router.push('/elo-kiallitoterem')"
+        >
           <v-icon class="mr-2">mdi-account-group</v-icon>
           <span class="mr-2">Élő Kiállítóterem</span>
         </v-btn>

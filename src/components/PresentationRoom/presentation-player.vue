@@ -1,6 +1,23 @@
 <template>
   <v-container>
     <v-row align="center" justify="center">
+      <v-col class="text-center">
+        <v-btn
+          rounded
+          color="green"
+          x-large
+          width="300"
+          class="white--text mb-10 mt-3"
+          @click="$emit('openLivestorm')"
+        >
+          <v-icon color="red" size="30" class="mr-1"
+            >mdi-record-circle-outline</v-icon
+          >
+          Élő előadás</v-btn
+        >
+      </v-col>
+    </v-row>
+    <v-row align="center" justify="center">
       <v-col cols="11" class="col-md-6 mb-5">
         <v-select
           outlined

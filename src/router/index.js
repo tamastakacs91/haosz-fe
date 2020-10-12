@@ -25,6 +25,11 @@ const routes = [
     component: () => import('../views/SignIn.vue'),
   },
   {
+    path: '/uj-jelszo-beallitasa',
+    name: 'NewPassword',
+    component: () => import('../views/NewPassword.vue'),
+  },
+  {
     path: '/eloadoterem',
     name: 'PresentationRoom',
     component: () => import('../views/PresentationRoom.vue'),
@@ -43,6 +48,11 @@ const routes = [
     path: '/jazzpresszo/:topic',
     name: 'JazzPressoTopic',
     component: () => import('../views/JazzPressoTopic.vue'),
+  },
+  {
+    path: '/elo-kiallitoterem',
+    name: 'LiveExhibitorRoom',
+    component: () => import('../views/LiveExhibitorRoom.vue'),
   },
   {
     path: '/admin',

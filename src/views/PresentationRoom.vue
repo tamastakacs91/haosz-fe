@@ -9,7 +9,10 @@
           </div>
         </v-col>
       </v-row>
-      <presentation-player :date="dateToday"></presentation-player>
+      <presentation-player
+        :date="dateToday"
+        @openLivestorm="openLivestorm"
+      ></presentation-player>
       <v-row align="center" justify="center">
         <v-col
           v-for="(logo, index) in logos"
@@ -52,6 +55,7 @@ export default {
         '8medio.png',
         '9-Aidian_logo.png',
         '10MED-EN_LOGO.png',
+        'Genext.png',
         // 'logo_transparent_background.png',
         // 'logo_white_background.jpg',
         // 'white_logo_color_background.jpg',
@@ -64,6 +68,11 @@ export default {
       const splitDate = new Date().toISOString().split('-');
       const date = splitDate[2].split('T');
       return splitDate[0] + splitDate[1] + date[0];
+    },
+  },
+  methods: {
+    openLivestorm() {
+      window.open('https://livestorm.co/', '_blank');
     },
   },
 };
