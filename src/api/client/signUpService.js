@@ -83,6 +83,10 @@ export default class SignUpService extends Service {
     return this.http.get('/user/profile');
   }
 
+  resetPassword({ email, password }) {
+    return this.http.post('/user/password-reset', { email, password });
+  }
+
   getDoctors() {
     return this.http.get('/doctor');
   }

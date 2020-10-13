@@ -11,9 +11,13 @@
           @click="$emit('openLivestorm')"
         >
           <v-row align="center" justify="center">
-            <v-col cols="2">
+            <v-col cols="1">
               <div class="d-flex justify-end">
-                <v-icon color="red" size="30" id="presentation-icon"
+                <v-icon
+                  color="red"
+                  size="30"
+                  id="presentation-icon"
+                  class="mr-n4"
                   >mdi-record-circle-outline</v-icon
                 >
               </div>

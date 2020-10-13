@@ -28,7 +28,7 @@
               :alt="logo"
               :src="`/logos/${logo}`"
               transition="scale-transition"
-              max-height="150"
+              max-height="110"
               max-width="200"
             />
           </div>
@@ -56,6 +56,7 @@ export default {
         '9-Aidian_logo.png',
         '10MED-EN_LOGO.png',
         'Genext.png',
+        'medical-point.png',
         // 'logo_transparent_background.png',
         // 'logo_white_background.jpg',
         // 'white_logo_color_background.jpg',

@@ -87,6 +87,19 @@
             @click="playVideo"
           ></exhibitor-player>
         </v-row>
+        <v-row>
+          <exhibitor-player
+            :exhibitor="'medicalPoint'"
+            :shown="medicalPoint"
+            :title="'Medical Point'"
+            :picSrc="'/exhibitors/Medical-point.jpg'"
+            :alt="'Medical Point'"
+            :vidSrc="'https://www.youtube.com/embed/urRY27qOTH8?autoplay=1'"
+            :height="350"
+            :width="340"
+            @click="playVideo"
+          ></exhibitor-player>
+        </v-row>
       </v-container>
     </v-container>
     <more-info></more-info>
@@ -104,6 +117,7 @@ export default {
       genext: false,
       richter: false,
       arterial: false,
+      medicalPoint: false,
     };
   },
   methods: {
@@ -117,6 +131,7 @@ export default {
           this.genext = false;
           this.richter = false;
           this.arterial = false;
+          this.medicalPoint = false;
           break;
         case 'ge':
           this.erodium = false;
@@ -125,6 +140,7 @@ export default {
           this.genext = false;
           this.richter = false;
           this.arterial = false;
+          this.medicalPoint = false;
           break;
         case 'aidian':
           this.erodium = false;
@@ -133,6 +149,7 @@ export default {
           this.genext = false;
           this.richter = false;
           this.arterial = false;
+          this.medicalPoint = false;
           break;
         case 'genext':
           this.erodium = false;
@@ -141,6 +158,7 @@ export default {
           this.genext = true;
           this.richter = false;
           this.arterial = false;
+          this.medicalPoint = false;
           break;
         case 'richter':
           this.erodium = false;
@@ -149,6 +167,7 @@ export default {
           this.genext = false;
           this.richter = true;
           this.arterial = false;
+          this.medicalPoint = false;
           break;
         case 'arterial':
           this.erodium = false;
@@ -157,6 +176,16 @@ export default {
           this.genext = false;
           this.richter = false;
           this.arterial = true;
+          this.medicalPoint = false;
+          break;
+        case 'medicalPoint':
+          this.erodium = false;
+          this.ge = false;
+          this.aidian = false;
+          this.genext = false;
+          this.richter = false;
+          this.arterial = false;
+          this.medicalPoint = true;
           break;
         default:
           this.erodium = false;
@@ -165,6 +194,7 @@ export default {
           this.genext = false;
           this.richter = false;
           this.arterial = false;
+          this.medicalPoint = false;
           break;
       }
     },

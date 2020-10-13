@@ -11,7 +11,7 @@
           </v-col>
         </v-row>
         <audio-player></audio-player>
-        <Disqus shortname="final-trial" />
+        <Disqus shortname="language-two" :pageConfig="pageCongi" />
       </v-container>
     </v-container>
     <more-info></more-info>
@@ -28,8 +28,12 @@ export default {
   components: {
     Disqus,
   },
-  created() {
-    document.title = setPageTitle();
+  data() {
+    return {
+      pageConfig: {
+        language: 'hu',
+      },
+    };
   },
   methods: {
     getTitle() {
@@ -67,6 +71,9 @@ export default {
   },
   mounted() {
     this.setBackground();
+  },
+  created() {
+    document.title = setPageTitle();
   },
 };
 </script>

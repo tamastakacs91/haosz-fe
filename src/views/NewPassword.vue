@@ -50,7 +50,11 @@
                 <v-card-actions>
                   <v-spacer></v-spacer>
 
-                  <v-btn rounded color="primary" @click="validate"
+                  <v-btn
+                    rounded
+                    color="primary"
+                    @click="validateAndResetPassword"
+                    :loading="pwLoading"
                     >Új jelszó beállítása</v-btn
                   >
                 </v-card-actions>
@@ -59,7 +63,7 @@
           </v-col>
         </v-row>
 
-        <!-- <v-snackbar
+        <v-snackbar
           id="error-snackbar"
           top
           color="error"
@@ -73,7 +77,7 @@
             <v-icon>mdi-exclamation</v-icon>
             {{ signInFailMessage }}
           </div>
-        </v-snackbar> -->
+        </v-snackbar>
       </v-container>
     </div>
     <div class="height-30">
@@ -111,10 +115,27 @@ export default {
     };
   },
   computed: {
-    ...mapGetters('signIn', ['passwordShown']),
+    ...mapGetters('signIn', [
+      'passwordShown',
+      'signInFailMessage',
+      'signInFailPresent',
+      'pwLoading',
+    ]),
+    error: {
+      get() {
+        return this.signInFailPresent;
+      },
+      set(value) {
+        this.toggleSignInFailPresent(value);
+      },
+    },
   },
   methods: {
-    ...mapActions('signIn', ['togglePasswordShown']),
+    ...mapActions('signIn', [
+      'togglePasswordShown',
+      'setNewPassword',
+      'toggleSignInFailPresent',
+    ]),
     checkFieldValidity() {
       Object.keys(this.data).forEach((field) => {
         if (this.$refs[field].validate(true) === false) {
@@ -127,13 +148,14 @@ export default {
         this.data[prop] = '';
       }
     },
-    validate() {
+    validateAndResetPassword() {
       this.errors = false;
       this.checkFieldValidity();
-      if (this.errors === true) {
-        return console.log('valami nem jó');
-      }
-      console.log('minden ok!!');
+      if (this.errors === true) return;
+      this.setNewPassword({
+        email: this.data.email,
+        password: this.data.password,
+      });
     },
   },
 };

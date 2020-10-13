@@ -11,6 +11,8 @@ const state = () => ({
   passwordShown: false,
   signInLoading: false,
   userRole: null,
+  pwSuccessPresent: false,
+  pwLoading: false,
 });
 
 const mutations = {
@@ -48,6 +50,12 @@ const mutations = {
   SET_USER_ROLE(state, to) {
     state.userRole = to;
   },
+  TOGGLE_PW_SUCCESS_PRESENT(state, to) {
+    state.pwSuccessPresent = to;
+  },
+  TOGGLE_PW_LOADING(state, to) {
+    state.pwLoading = to;
+  },
 };
 
 const getters = {
@@ -61,6 +69,8 @@ const getters = {
   signInFailMessage: (state) => state.signInFailMessage,
   signInLoading: (state) => state.signInLoading,
   userRole: (state) => state.userRole,
+  pwSuccessPresent: (state) => state.pwSuccessPresent,
+  pwLoading: (state) => state.pwLoading,
 };
 
 const actions = {
@@ -153,6 +163,36 @@ const actions = {
       () => context.commit('TOGGLE_SIGNOUT_SUCCESS_PRESENT', false),
       4000
     );
+  },
+
+  async setNewPassword(context, email, password) {
+    context.commit('TOGGLE_PW_SUCCESS_PRESENT', false);
+    context.commit('TOGGLE_PW_LOADING', true);
+    try {
+      await this.$api.signUpService.resetPassword({
+        email,
+        password,
+      });
+      context.commit('TOGGLE_PW_SUCCESS_PRESENT', true);
+      setTimeout(
+        () => context.commit('TOGGLE_PW_SUCCESS_PRESENT', false),
+        4000
+      );
+      this.$router.push('/bejelentkezes');
+    } catch (error) {
+      context.commit('SET_SIGNIN_FAIL_MESSAGE', 'Hibás email cím, vagy jelszó');
+      context.commit('TOGGLE_SIGNIN_FAIL_PRESENT', true);
+      setTimeout(
+        () => context.commit('TOGGLE_SIGNIN_FAIL_PRESENT', false),
+        4000
+      );
+    } finally {
+      context.commit('TOGGLE_PW_LOADING', false);
+    }
+  },
+
+  togglePwSuccessPresent(context, to) {
+    context.commit('TOGGLE_PW_SUCCESS_PRESENT', to);
   },
 };
 

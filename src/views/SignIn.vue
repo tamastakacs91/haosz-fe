@@ -66,6 +66,18 @@
             {{ signInFailMessage }}
           </div>
         </v-snackbar>
+        <v-snackbar
+          class="reg-snackbar"
+          right
+          color="success"
+          rounded="pill"
+          timeout="5000"
+          min-width="5"
+          max-width="100"
+          v-model="pwReset"
+        >
+          <div class="snackbar-text-big">Sikeresen megváltoztatva</div>
+        </v-snackbar>
       </v-container>
     </div>
     <div class="height-30">
@@ -90,6 +102,7 @@ export default {
       'signInFailMessage',
       'signInFailPresent',
       'signInLoading',
+      'pwSuccessPresent',
     ]),
     error: {
       get() {
@@ -97,6 +110,14 @@ export default {
       },
       set(value) {
         this.toggleSignInFailPresent(value);
+      },
+    },
+    pwReset: {
+      get() {
+        return this.pwSuccessPresent;
+      },
+      set(value) {
+        this.togglePwSuccessPresent(value);
       },
     },
   },
@@ -107,6 +128,7 @@ export default {
       'togglePasswordShown',
       'toggleSignInFailPresent',
       'signIn',
+      'togglePwSuccessPresent',
     ]),
   },
 };
