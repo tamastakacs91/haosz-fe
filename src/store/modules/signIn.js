@@ -165,7 +165,7 @@ const actions = {
     );
   },
 
-  async setNewPassword(context, email, password) {
+  async setNewPassword(context, { email, password }) {
     context.commit('TOGGLE_PW_SUCCESS_PRESENT', false);
     context.commit('TOGGLE_PW_LOADING', true);
     try {
