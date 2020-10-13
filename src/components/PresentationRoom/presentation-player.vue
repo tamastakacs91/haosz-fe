@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <v-row align="center" justify="center">
+    <!-- <v-row align="center" justify="center">
       <v-col class="text-center">
         <v-btn
           rounded
@@ -30,7 +30,7 @@
           </v-row>
         </v-btn>
       </v-col>
-    </v-row>
+    </v-row> -->
     <v-row align="center" justify="center">
       <v-col cols="11" class="col-md-6 mb-5">
         <v-select
@@ -95,13 +95,13 @@ export default {
       this.currentVideo = value;
     },
   },
-  mounted() {
-    let icon = document.getElementById('presentation-icon');
-    icon.classList.add('no-show');
-    setInterval(() => {
-      icon.classList.toggle('no-show');
-    }, 1000);
-  },
+  // mounted() {
+  //   let icon = document.getElementById('presentation-icon');
+  //   icon.classList.add('no-show');
+  //   setInterval(() => {
+  //     icon.classList.toggle('no-show');
+  //   }, 1000);
+  // },
 };
 </script>
 

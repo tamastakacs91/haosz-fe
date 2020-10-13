@@ -32,7 +32,6 @@
                   :type="passwordShown ? 'text' : 'password'"
                   :hint="'Legalább 8 karakter, tartalmaznia kell kisbetűt, nagybetűt, számot és egy különleges karaktert.'"
                   @click:append="togglePasswordShown"
-                  @keyup.native.enter="signIn"
                 ></v-text-field>
                 <v-text-field
                   ref="passwordAgain"
@@ -44,7 +43,7 @@
                   :append-icon="passwordShown ? 'mdi-eye' : 'mdi-eye-off'"
                   :type="passwordShown ? 'text' : 'password'"
                   @click:append="togglePasswordShown"
-                  @keyup.native.enter="signIn"
+                  @keyup.native.enter="validateAndResetPassword"
                 ></v-text-field>
 
                 <v-card-actions>

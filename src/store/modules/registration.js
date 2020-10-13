@@ -212,7 +212,7 @@ const actions = {
           notes: user.notes,
         });
         context.commit('TOGGLE_SIGNUP_SUCCESS', true);
-        this.$router.push('/');
+        this.$router.push('/site');
         context.commit('TOGGLE_SIGNUP_SUCCESS_PRESENT', true);
         setTimeout(
           () => context.commit('TOGGLE_SIGNUP_SUCCESS_PRESENT', false),
@@ -272,7 +272,7 @@ const actions = {
           notes: user.notes,
         });
         context.commit('TOGGLE_SIGNUP_SUCCESS', true);
-        this.$router.push('/');
+        this.$router.push('/site');
         context.commit('TOGGLE_SIGNUP_SUCCESS_PRESENT', true);
         setTimeout(
           () => context.commit('TOGGLE_SIGNUP_SUCCESS_PRESENT', false),

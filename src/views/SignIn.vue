@@ -31,7 +31,7 @@
                 ></v-text-field>
                 <div
                   class="primary--text pointer"
-                  @click="$router.push('/uj-jelszo-beallitasa')"
+                  @click="$router.push('/site/uj-jelszo-beallitasa')"
                 >
                   Elfelejtett jelszó
                 </div>

@@ -11,7 +11,7 @@
           </v-col>
         </v-row>
         <audio-player></audio-player>
-        <Disqus shortname="language-two" :pageConfig="pageCongi" />
+        <Disqus shortname="language-two" :pageConfig="pageConfig" />
       </v-container>
     </v-container>
     <more-info></more-info>
@@ -19,6 +19,7 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
 import { Disqus } from 'vue-disqus';
 import { titleGenerator } from '@/mixins/titleGenerator';
 import { getPageUrl, setIdentifier, setPageTitle } from '@/utils/disqsConfig';
@@ -34,6 +35,9 @@ export default {
         language: 'hu',
       },
     };
+  },
+  computed: {
+    ...mapGetters('signIn', ['isLoggedIn']),
   },
   methods: {
     getTitle() {
@@ -70,6 +74,11 @@ export default {
     },
   },
   mounted() {
+    const token = window.sessionStorage.getItem('token');
+
+    if (!token || !this.isLoggedIn) {
+      return this.$router.push('/site/bejelentkezes');
+    }
     this.setBackground();
   },
   created() {

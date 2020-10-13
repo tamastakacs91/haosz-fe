@@ -9,7 +9,7 @@
           src="/haosz-logo.png"
           transition="scale-transition"
           width="60"
-          @click="$router.push('/')"
+          @click="$router.push('/site')"
         />
         <div class="d-flex flex-column">
           <h5 class="text-caption text-md-h5 font-weight-bold">
@@ -23,14 +23,18 @@
       <v-spacer></v-spacer>
 
       <v-toolbar-items>
-        <v-btn class="font-weight-bold" text @click="$router.push('/program')">
+        <v-btn
+          class="font-weight-bold"
+          text
+          @click="$router.push('/site/program')"
+        >
           <v-icon class="mr-2">mdi-calendar-range-outline</v-icon>
           <span class="mr-2">Programok</span>
         </v-btn>
         <v-btn
           class="font-weight-bold"
           text
-          @click="$router.push('/admin')"
+          @click="$router.push('/site/admin')"
           v-if="userRole === 'ADMIN'"
         >
           <v-icon class="mr-2">mdi-account-multiple-check-outline</v-icon>
@@ -79,7 +83,7 @@
         <v-btn
           class="font-weight-bold"
           text
-          @click="$router.push('/bejelentkezes')"
+          @click="$router.push('/site/bejelentkezes')"
         >
           <v-icon class="mr-2">mdi-logout</v-icon>
           <span class="mr-2">Bejelentkezés</span>

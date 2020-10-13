@@ -107,6 +107,8 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
+
 export default {
   name: 'ExhibitorRoom',
   data() {
@@ -119,6 +121,9 @@ export default {
       arterial: false,
       medicalPoint: false,
     };
+  },
+  computed: {
+    ...mapGetters('signIn', ['isLoggedIn']),
   },
   methods: {
     playVideo(exhibitor) {
@@ -198,6 +203,13 @@ export default {
           break;
       }
     },
+  },
+  created() {
+    const token = window.sessionStorage.getItem('token');
+
+    if (!token || !this.isLoggedIn) {
+      return this.$router.push('/site/bejelentkezes');
+    }
   },
 };
 </script>

@@ -3,9 +3,20 @@ import VueRouter from 'vue-router';
 
 Vue.use(VueRouter);
 
+function checkIsLoggedIn(to, from, next) {
+  var isLoggedIn = false;
+  if (window.sessionStorage.getItem('token')) isLoggedIn = true;
+  else isLoggedIn = false;
+  if (isLoggedIn) {
+    next();
+  } else {
+    next('/bejelentkezes');
+  }
+}
+
 const routes = [
   {
-    path: '/',
+    path: '/site',
     name: 'Home',
     component: () => import('../views/Home.vue'),
   },
@@ -15,47 +26,52 @@ const routes = [
     component: () => import('../views/Registration.vue'),
   },
   {
-    path: '/program',
+    path: '/site/program',
     name: 'Programs',
     component: () => import('../views/Programs.vue'),
   },
   {
-    path: '/bejelentkezes',
+    path: '/site/bejelentkezes',
     name: 'SignIn',
     component: () => import('../views/SignIn.vue'),
   },
   {
-    path: '/uj-jelszo-beallitasa',
+    path: '/site/uj-jelszo-beallitasa',
     name: 'NewPassword',
     component: () => import('../views/NewPassword.vue'),
   },
   {
-    path: '/eloadoterem',
+    path: '/site/eloadoterem',
     name: 'PresentationRoom',
+    beforeEnter: checkIsLoggedIn,
     component: () => import('../views/PresentationRoom.vue'),
   },
   {
-    path: '/bemutatoterem',
+    path: '/site/bemutatoterem',
     name: 'ExhibitorRoom',
+    beforeEnter: checkIsLoggedIn,
     component: () => import('../views/ExhibitorRoom.vue'),
   },
   {
-    path: '/jazzpresszo',
+    path: '/site/jazzpresszo',
     name: 'JazzPressoMain',
+    beforeEnter: checkIsLoggedIn,
     component: () => import('../views/JazzPressoMain.vue'),
   },
   {
-    path: '/jazzpresszo/:topic',
+    path: '/site/jazzpresszo/:topic',
     name: 'JazzPressoTopic',
+    beforeEnter: checkIsLoggedIn,
     component: () => import('../views/JazzPressoTopic.vue'),
   },
   {
-    path: '/elo-kiallitoterem',
+    path: '/site/elo-kiallitoterem',
     name: 'LiveExhibitorRoom',
+    beforeEnter: checkIsLoggedIn,
     component: () => import('../views/LiveExhibitorRoom.vue'),
   },
   {
-    path: '/admin',
+    path: '/site/admin',
     name: 'Admin',
     component: () => import('../views/Admin.vue'),
   },

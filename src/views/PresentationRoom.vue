@@ -40,6 +40,8 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
+
 export default {
   name: 'PresentationRoom',
   data() {
@@ -65,6 +67,7 @@ export default {
     };
   },
   computed: {
+    ...mapGetters('signIn', ['isLoggedIn']),
     dateToday() {
       const splitDate = new Date().toISOString().split('-');
       const date = splitDate[2].split('T');
@@ -75,6 +78,13 @@ export default {
     openLivestorm() {
       window.open('https://livestorm.co/', '_blank');
     },
+  },
+  created() {
+    const token = window.sessionStorage.getItem('token');
+
+    if (!token || !this.isLoggedIn) {
+      return this.$router.push('/site/bejelentkezes');
+    }
   },
 };
 </script>

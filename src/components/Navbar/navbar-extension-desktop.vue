@@ -5,7 +5,7 @@
         <v-btn
           class="font-weight-bold pa-4"
           text
-          @click="$router.push('/eloadoterem')"
+          @click="$router.push('/site/eloadoterem')"
         >
           <v-icon class="mr-2">mdi-teach</v-icon>
           <span class="mr-2">Előadóterem</span>
@@ -15,7 +15,7 @@
         <v-btn
           class="font-weight-bold"
           text
-          @click="$router.push('/bemutatoterem')"
+          @click="$router.push('/site/bemutatoterem')"
         >
           <v-icon class="mr-2">mdi-presentation-play</v-icon>
           <span class="mr-2">Bemutatóterem</span>
@@ -25,7 +25,7 @@
         <v-btn
           class="font-weight-bold"
           text
-          @click="$router.push('/elo-kiallitoterem')"
+          @click="$router.push('/site/elo-kiallitoterem')"
         >
           <v-icon class="mr-2">mdi-account-group</v-icon>
           <span class="mr-2">Élő Kiállítóterem</span>
@@ -35,7 +35,7 @@
         <v-btn
           class="font-weight-bold"
           text
-          @click="$router.push('/jazzpresszo')"
+          @click="$router.push('/site/jazzpresszo')"
         >
           <v-icon class="mr-2">mdi-music-circle</v-icon>
           <span class="mr-2">Jazzpresszó</span>

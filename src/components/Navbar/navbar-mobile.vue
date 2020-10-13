@@ -8,7 +8,7 @@
         src="/haosz-logo.png"
         transition="scale-transition"
         width="40"
-        @click="$router.push('/')"
+        @click="$router.push('/site')"
       />
       <a href="http://www.erodium.hu">
         <v-img
@@ -32,7 +32,7 @@
 
       <v-list>
         <v-list-item
-          @click="$router.push('/admin')"
+          @click="$router.push('/site/admin')"
           v-if="userRole === 'ADMIN'"
         >
           <v-list-item-title>
@@ -41,32 +41,41 @@
             >Admin
           </v-list-item-title>
         </v-list-item>
-        <v-list-item @click="$router.push('/program')">
+        <v-list-item @click="$router.push('/site/program')">
           <v-list-item-title>
             <v-icon class="mr-1" size="20px">mdi-calendar-range-outline</v-icon
             >Programok
           </v-list-item-title>
         </v-list-item>
-        <v-list-item @click="$router.push('/bejelentkezes')" v-if="!isLoggedIn">
+        <v-list-item
+          @click="$router.push('/site/bejelentkezes')"
+          v-if="!isLoggedIn"
+        >
           <v-list-item-title>
             <v-icon class="mr-1" size="20px"
               >mdi-account-arrow-right-outline</v-icon
             >Bejelentkezés
           </v-list-item-title>
         </v-list-item>
-        <v-list-item @click="$router.push('/eloadoterem')" v-if="isLoggedIn">
+        <v-list-item
+          @click="$router.push('/site/eloadoterem')"
+          v-if="isLoggedIn"
+        >
           <v-list-item-title>
             <v-icon class="mr-1" size="20px">mdi-teach</v-icon>Előadóterem
           </v-list-item-title>
         </v-list-item>
-        <v-list-item @click="$router.push('/bemutatoterem')" v-if="isLoggedIn">
+        <v-list-item
+          @click="$router.push('/site/bemutatoterem')"
+          v-if="isLoggedIn"
+        >
           <v-list-item-title>
             <v-icon class="mr-1" size="20px">mdi-presentation-play</v-icon
             >Bemutatóterem
           </v-list-item-title>
         </v-list-item>
         <v-list-item
-          @click="$router.push('/elo-kiallitoterem')"
+          @click="$router.push('/site/elo-kiallitoterem')"
           v-if="isLoggedIn"
         >
           <v-list-item-title>
@@ -74,7 +83,10 @@
             kiállítóterem
           </v-list-item-title>
         </v-list-item>
-        <v-list-item @click="$router.push('/jazzpresszo')" v-if="isLoggedIn">
+        <v-list-item
+          @click="$router.push('/site/jazzpresszo')"
+          v-if="isLoggedIn"
+        >
           <v-list-item-title>
             <v-icon class="mr-1" size="20px">mdi-music-circle</v-icon
             >Jazzpresszó

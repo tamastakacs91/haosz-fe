@@ -201,7 +201,7 @@ export default {
     const token = window.sessionStorage.getItem('token');
 
     if (!token || !this.isLoggedIn || this.userRole != 'ADMIN') {
-      this.$router.push('/bejelentkezes');
+      this.$router.push('/site/bejelentkezes');
       return;
     } else {
       this.getUserData();

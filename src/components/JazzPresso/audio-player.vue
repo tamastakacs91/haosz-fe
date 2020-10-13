@@ -2,17 +2,22 @@
   <v-container class="mb-10 mt-10 pb-10">
     <v-row align="center" justify="center">
       <v-col cols="11" class="col-md-6">
-        <v-select
-          outlined
-          hide-details
-          :items="playlist"
-          :value="currentSong"
-          @change="changeSong"
-        ></v-select>
+        <v-card>
+          <v-select
+            outlined
+            hide-details
+            :items="playlist"
+            :value="currentSong"
+            @change="changeSong"
+          ></v-select>
+        </v-card>
       </v-col>
     </v-row>
     <v-row align="center" justify="center">
-      <v-icon @click="setPreviousSong()" class="mr-2 hidden-sm-and-down"
+      <v-icon
+        @click="setPreviousSong()"
+        class="mr-2 hidden-sm-and-down"
+        color="black"
         >mdi-skip-backward</v-icon
       >
       <audio
@@ -33,18 +38,23 @@
         />
         Your browser does not support the audio element.
       </audio>
-      <v-icon @click="setNextSong()" class="ml-2 hidden-sm-and-down"
+      <v-icon
+        @click="setNextSong()"
+        class="ml-2 hidden-sm-and-down"
+        color="black"
         >mdi-skip-forward</v-icon
       >
     </v-row>
     <v-row class="hidden-md-and-up">
       <v-col class="text-center">
-        <v-icon @click="setPreviousSong()" class="mr-2"
+        <v-icon @click="setPreviousSong()" class="mr-2" color="black"
           >mdi-skip-backward</v-icon
         >
       </v-col>
       <v-col class="text-center">
-        <v-icon @click="setNextSong()" class="ml-2">mdi-skip-forward</v-icon>
+        <v-icon @click="setNextSong()" class="ml-2" color="black"
+          >mdi-skip-forward</v-icon
+        >
       </v-col>
     </v-row>
   </v-container>

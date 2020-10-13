@@ -1,7 +1,7 @@
 const namespaced = true;
 
 const state = () => ({
-  isLoggedIn: true,
+  isLoggedIn: false,
   email: '',
   password: '',
   signInSuccessPresent: false,
@@ -136,12 +136,12 @@ const actions = {
       context.commit('SET_USER_ROLE', profile.data.role);
 
       if (context.getters['userRole'] === 'ADMIN') {
-        this.$router.push('/admin');
+        this.$router.push('/site/admin');
       } else {
-        this.$router.push('/');
+        this.$router.push('/site');
       }
     } catch (error) {
-      context.dispatch('set', { token: null, redirect: '/bejelentkezes' });
+      context.dispatch('set', { token: null, redirect: '/site/bejelentkezes' });
       context.commit('SET_SIGNIN_FAIL_MESSAGE', 'Hibás email cím, vagy jelszó');
       context.commit('TOGGLE_SIGNIN_FAIL_PRESENT', true);
       setTimeout(
@@ -154,7 +154,7 @@ const actions = {
   },
 
   signOut(context) {
-    context.dispatch('set', { token: null, redirect: '/' });
+    context.dispatch('set', { token: null, redirect: '/site' });
     context.commit('SET_USER_ROLE', null);
     context.dispatch('updateEmail', '');
     context.dispatch('updatePassword', '');
@@ -178,7 +178,7 @@ const actions = {
         () => context.commit('TOGGLE_PW_SUCCESS_PRESENT', false),
         4000
       );
-      this.$router.push('/bejelentkezes');
+      this.$router.push('/site/bejelentkezes');
     } catch (error) {
       context.commit('SET_SIGNIN_FAIL_MESSAGE', 'Hibás email cím, vagy jelszó');
       context.commit('TOGGLE_SIGNIN_FAIL_PRESENT', true);
