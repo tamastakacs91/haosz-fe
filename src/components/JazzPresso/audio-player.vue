@@ -23,6 +23,7 @@
       <audio
         id="audio-player"
         controls
+        autoplay
         controlsList="nodownload"
         @ended="setNextSong()"
       >
@@ -64,20 +65,20 @@
 export default {
   data() {
     return {
-      currentSong: '1. Michel Legrand - I Will Wait for You(VNQ)',
+      currentSong: 'Michel Legrand - I Will Wait for You(VNQ)',
       playlist: [
-        '1. Michel Legrand - I Will Wait for You(VNQ)',
-        '2. Joe Farrell - Outback(Kvartonus)',
-        '3. Abbey Lincoln -  - Throw it away(VNQ)',
-        '4. Vörös László_Antré(Red Stone Quartet)',
-        '5. Abbey Lincoln - Being me(VNQ)',
-        '6. Michel Legrand - Sea and Sky(VNQ)',
-        '7. Vörös László - Questions (Strausz Eszter, Vörös László)',
-        '8. Michel Legrand - Watch What Happens(VNQ)',
-        '9. Vörös László - Samba(Red Stones Quartet)',
-        '10. Michel Legrand - The Summer Knows(VNQ)',
-        '11. Michel Legrand - The Windmills of Your Mind(VNQ)',
-        '12. Michel Legrand - Ask Yourself Why(VNQ)',
+        'Michel Legrand - I Will Wait for You(VNQ)',
+        'Joe Farrell - Outback(Kvartonus)',
+        'Abbey Lincoln - Throw it away(VNQ)',
+        'Vörös László_Antré(Red Stone Quartet)',
+        'Abbey Lincoln - Being me(VNQ)',
+        'Michel Legrand - Sea and Sky(VNQ)',
+        'Vörös László - Questions (Strausz Eszter, Vörös László)',
+        'Michel Legrand - Watch What Happens(VNQ)',
+        'Vörös László - Samba(Red Stones Quartet)',
+        'Michel Legrand - The Summer Knows(VNQ)',
+        'Michel Legrand - The Windmills of Your Mind(VNQ)',
+        'Michel Legrand - Ask Yourself Why(VNQ)',
       ],
     };
   },
@@ -93,7 +94,7 @@ export default {
     },
     setPreviousSong() {
       if (this.currentSongIndex === 0) {
-        this.currentSong = '12. Michel Legrand - Ask Yourself Why(VNQ)';
+        this.currentSong = 'Michel Legrand - Ask Yourself Why(VNQ)';
       } else {
         this.currentSong = this.playlist[this.currentSongIndex - 1];
       }
@@ -101,7 +102,7 @@ export default {
     },
     setNextSong() {
       if (this.currentSongIndex === 11) {
-        this.currentSong = '1. Michel Legrand - I Will Wait for You(VNQ)';
+        this.currentSong = 'Michel Legrand - I Will Wait for You(VNQ)';
       } else {
         this.currentSong = this.playlist[this.currentSongIndex + 1];
       }
@@ -116,6 +117,9 @@ export default {
       player.load();
       player.play();
     },
+  },
+  created() {
+    this.currentSong = this.playlist[Math.floor(Math.random() * 11)];
   },
 };
 </script>
