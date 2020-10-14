@@ -81,7 +81,7 @@
       >
         <div class="snackbar-text-big">Kijelentkezve</div>
       </v-snackbar>
-      <more-info></more-info>
+      <more-info class="mr-n3 mb-n4"></more-info>
     </v-container>
   </div>
 </template>
