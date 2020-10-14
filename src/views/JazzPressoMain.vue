@@ -30,6 +30,12 @@
         </v-row>
       </v-container>
       <v-row align="center" justify="center">
+        <v-col class="text-center"
+          >Kattintson az egyik témára a beszélgetéshez való
+          csatlakozáshoz.</v-col
+        >
+      </v-row>
+      <v-row align="center" justify="center">
         <v-col
           cols="12"
           md="4"

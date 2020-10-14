@@ -32,7 +32,7 @@
       </v-col>
     </v-row> -->
     <v-row align="center" justify="center">
-      <v-col cols="11" class="col-md-6 mb-5">
+      <v-col cols="11" class="col-md-6">
         <v-select
           outlined
           hide-details
@@ -42,14 +42,20 @@
         ></v-select>
       </v-col>
     </v-row>
+    <v-row align="center" justify="center" class="mb-3 mt-n3">
+      <v-col class="text-center"
+        >Válassza ki a listából a lejátszani kívánt videót, majd kattintson a
+        videó képére a lejátszás elindításához.</v-col
+      >
+    </v-row>
     <v-row align="center" justify="center">
       <v-col class="text-center">
         <iframe
           class="presentation-frame"
           frameborder="0"
           allowfullscreen
-          :src="`https://www.youtube.com/embed/${videoId}`"
-          encrypted-media
+          :src="`https://www.youtube-nocookie.com/embed/${videoId}?modestbranding=1&enablejsapi=1&disablekb=1&autoplay=1&iv_load_policy=3&vq=hd1080`"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         >
         </iframe>
       </v-col>

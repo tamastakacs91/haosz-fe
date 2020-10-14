@@ -13,6 +13,7 @@
         :date="dateToday"
         @openLivestorm="openLivestorm"
       ></presentation-player>
+
       <v-row align="center" justify="center">
         <v-col
           v-for="(logo, index) in logos"
@@ -79,12 +80,12 @@ export default {
       window.open('https://livestorm.co/', '_blank');
     },
   },
-  created() {
-    const token = window.sessionStorage.getItem('token');
+  // created() {
+  //   const token = window.sessionStorage.getItem('token');
 
-    if (!token || !this.isLoggedIn) {
-      return this.$router.push('/site/bejelentkezes');
-    }
-  },
+  //   if (!token || !this.isLoggedIn) {
+  //     return this.$router.push('/site/bejelentkezes');
+  //   }
+  // },
 };
 </script>
