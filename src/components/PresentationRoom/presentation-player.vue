@@ -34,6 +34,8 @@
     <v-row align="center" justify="center">
       <v-col cols="11" class="col-md-6">
         <v-select
+          id="presentation-select"
+          dense
           outlined
           hide-details
           :items="videoList"

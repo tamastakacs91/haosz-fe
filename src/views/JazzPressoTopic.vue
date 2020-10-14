@@ -13,10 +13,11 @@
         <audio-player></audio-player>
         <div class="d-flex justify-end text-caption">
           <div class="d-flex flex-column align-end">
-            <span>
+            <div>
               Hozzászóláshoz jelentkezzen be Gmail, vagy Facebook fiókjába.
-            </span>
+            </div>
             <jazz-modal></jazz-modal>
+            <jazz-modal-mobile></jazz-modal-mobile>
           </div>
         </div>
         <Disqus shortname="haosz-konferencia" :pageConfig="pageConfig" />

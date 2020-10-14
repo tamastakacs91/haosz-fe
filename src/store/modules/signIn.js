@@ -1,7 +1,7 @@
 const namespaced = true;
 
 const state = () => ({
-  isLoggedIn: false,
+  isLoggedIn: true,
   email: '',
   password: '',
   signInSuccessPresent: false,
@@ -138,7 +138,7 @@ const actions = {
       if (context.getters['userRole'] === 'ADMIN') {
         this.$router.push('/site/admin');
       } else {
-        this.$router.push('/site');
+        this.$router.push('/');
       }
     } catch (error) {
       context.dispatch('set', { token: null, redirect: '/site/bejelentkezes' });
@@ -154,7 +154,7 @@ const actions = {
   },
 
   signOut(context) {
-    context.dispatch('set', { token: null, redirect: '/site' });
+    context.dispatch('set', { token: null, redirect: '/' });
     context.commit('SET_USER_ROLE', null);
     context.dispatch('updateEmail', '');
     context.dispatch('updatePassword', '');

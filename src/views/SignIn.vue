@@ -11,6 +11,8 @@
             <v-card outlined ref="form">
               <v-col cols="12" md="10" offset="md-1">
                 <v-text-field
+                  id="email"
+                  name="email"
                   autofocus
                   outlined
                   label="EMAIL CÍM"
@@ -19,6 +21,8 @@
                   @input="updateEmail"
                 ></v-text-field>
                 <v-text-field
+                  id="password"
+                  name="password"
                   outlined
                   label="JELSZÓ"
                   hide-details

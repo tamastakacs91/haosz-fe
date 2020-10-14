@@ -1,9 +1,9 @@
 <template>
   <div class="text-center">
-    <v-dialog v-model="dialog" width="800">
+    <v-dialog v-model="mobileDialog" width="350">
       <template v-slot:activator="{ on, attrs }">
         <div
-          class="blue--text text--darken-3 text-decoration-underline hidden-sm-and-down"
+          class="blue--text text--darken-3 text-decoration-underline hidden-md-and-up"
           v-bind="attrs"
           v-on="on"
         >
@@ -12,7 +12,7 @@
       </template>
 
       <v-card>
-        <video width="800" controls autoplay>
+        <video width="350" controls autoplay>
           <source src="/HAOSZ-help.mp4" type="video/mp4" />
           <source src="HAOSZ-help.ogg" type="video/ogg" />
           Your browser does not support the video tag.
@@ -33,7 +33,7 @@
 export default {
   data() {
     return {
-      dialog: false,
+      mobileDialog: false,
     };
   },
   methods: {
@@ -41,7 +41,7 @@ export default {
       let video = document.querySelector('video');
       video.pause();
       video.currentTime = 0;
-      this.dialog = false;
+      this.mobileDialog = false;
     },
   },
 };

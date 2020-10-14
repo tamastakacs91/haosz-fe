@@ -35,6 +35,7 @@ const components = [
   'Programs/jazzpresso-topics',
   'JazzPresso/audio-player',
   'JazzPresso/jazz-modal',
+  'JazzPresso/jazz-modal-mobile',
   'PresentationRoom/presentation-player',
   'ExhibitorRoom/exhibitor-player',
 ];

@@ -8,7 +8,7 @@
         src="/haosz-logo.png"
         transition="scale-transition"
         width="40"
-        @click="$router.push('/site')"
+        @click="$router.push('/')"
       />
       <a href="http://www.erodium.hu">
         <v-img

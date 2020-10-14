@@ -9,7 +9,7 @@
           src="/haosz-logo.png"
           transition="scale-transition"
           width="60"
-          @click="$router.push('/site')"
+          @click="$router.push('/')"
         />
         <div class="d-flex flex-column">
           <h5 class="text-caption text-md-h5 font-weight-bold">

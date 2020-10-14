@@ -16,7 +16,7 @@ function checkIsLoggedIn(to, from, next) {
 
 const routes = [
   {
-    path: '/site',
+    path: '/',
     name: 'Home',
     component: () => import('../views/Home.vue'),
   },
