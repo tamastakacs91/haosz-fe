@@ -12,7 +12,7 @@
       </template>
 
       <v-card>
-        <video width="800" controls>
+        <video width="800" controls autoplay>
           <source src="/HAOSZ-help.mp4" type="video/mp4" />
           <source src="HAOSZ-help.ogg" type="video/ogg" />
           Your browser does not support the video tag.
@@ -20,7 +20,7 @@
 
         <v-card-actions>
           <v-spacer></v-spacer>
-          <v-btn color="primary" text @click="dialog = false">
+          <v-btn color="primary" text @click="closeModalAndStopVideo">
             Bezár
           </v-btn>
         </v-card-actions>
@@ -35,6 +35,14 @@ export default {
     return {
       dialog: false,
     };
+  },
+  methods: {
+    closeModalAndStopVideo() {
+      let video = document.querySelector('video');
+      video.pause();
+      video.currentTime = 0;
+      this.dialog = false;
+    },
   },
 };
 </script>

@@ -80,12 +80,12 @@ export default {
       window.open('https://livestorm.co/', '_blank');
     },
   },
-  // created() {
-  //   const token = window.sessionStorage.getItem('token');
+  created() {
+    const token = window.sessionStorage.getItem('token');
 
-  //   if (!token || !this.isLoggedIn) {
-  //     return this.$router.push('/site/bejelentkezes');
-  //   }
-  // },
+    if (!token || !this.isLoggedIn) {
+      return this.$router.push('/site/bejelentkezes');
+    }
+  },
 };
 </script>

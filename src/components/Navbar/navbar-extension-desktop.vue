@@ -11,6 +11,16 @@
           <span class="mr-2">Előadóterem</span>
         </v-btn>
       </v-toolbar-items>
+      <!-- <v-toolbar-items>
+        <v-btn
+          class="font-weight-bold"
+          text
+          @click="$router.push('/site/elo-kiallitoterem')"
+        >
+          <v-icon class="mr-2">mdi-record-circle-outline</v-icon>
+          <span class="mr-2">Élő Követítés</span>
+        </v-btn>
+      </v-toolbar-items> -->
       <v-toolbar-items>
         <v-btn
           class="font-weight-bold"
@@ -21,7 +31,7 @@
           <span class="mr-2">Bemutatóterem</span>
         </v-btn>
       </v-toolbar-items>
-      <v-toolbar-items>
+      <!-- <v-toolbar-items>
         <v-btn
           class="font-weight-bold"
           text
@@ -30,7 +40,7 @@
           <v-icon class="mr-2">mdi-account-group</v-icon>
           <span class="mr-2">Élő Kiállítóterem</span>
         </v-btn>
-      </v-toolbar-items>
+      </v-toolbar-items> -->
       <v-toolbar-items>
         <v-btn
           class="font-weight-bold"

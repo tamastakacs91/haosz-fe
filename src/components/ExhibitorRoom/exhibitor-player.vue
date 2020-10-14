@@ -35,6 +35,7 @@
             frameborder="0"
             allowfullscreen
             :src="vidSrc"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           ></iframe>
         </div>
       </div>

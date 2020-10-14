@@ -65,6 +65,14 @@
             <v-icon class="mr-1" size="20px">mdi-teach</v-icon>Előadóterem
           </v-list-item-title>
         </v-list-item>
+        <!-- <v-list-item
+          @click="$router.push('/site/eloadoterem')"
+          v-if="isLoggedIn"
+        >
+          <v-list-item-title>
+            <v-icon class="mr-1" size="20px">mdi-record-circle-outline</v-icon>Élő Közvetítés
+          </v-list-item-title>
+        </v-list-item> -->
         <v-list-item
           @click="$router.push('/site/bemutatoterem')"
           v-if="isLoggedIn"
@@ -74,7 +82,7 @@
             >Bemutatóterem
           </v-list-item-title>
         </v-list-item>
-        <v-list-item
+        <!-- <v-list-item
           @click="$router.push('/site/elo-kiallitoterem')"
           v-if="isLoggedIn"
         >
@@ -82,7 +90,7 @@
             <v-icon class="mr-1" size="20px">mdi-account-group</v-icon>Élő
             kiállítóterem
           </v-list-item-title>
-        </v-list-item>
+        </v-list-item> -->
         <v-list-item
           @click="$router.push('/site/jazzpresszo')"
           v-if="isLoggedIn"

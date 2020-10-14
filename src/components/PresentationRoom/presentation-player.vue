@@ -42,7 +42,7 @@
         ></v-select>
       </v-col>
     </v-row>
-    <v-row align="center" justify="center" class="mb-3 mt-n3">
+    <v-row align="center" justify="center" class="mt-n3">
       <v-col class="text-center"
         >Válassza ki a listából a lejátszani kívánt videót, majd kattintson a
         videó képére a lejátszás elindításához.</v-col
@@ -54,7 +54,7 @@
           class="presentation-frame"
           frameborder="0"
           allowfullscreen
-          :src="`https://www.youtube-nocookie.com/embed/${videoId}?modestbranding=1&enablejsapi=1&disablekb=1&autoplay=1&iv_load_policy=3&vq=hd1080`"
+          :src="`https://www.youtube-nocookie.com/embed/${videoId}?modestbranding=1&enablejsapi=1&disablekb=1&iv_load_policy=3&vq=hd1080`"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         >
         </iframe>
@@ -68,21 +68,92 @@ export default {
   props: ['date'],
   data() {
     return {
-      currentVideo: 'Snowboard',
-      videosForThursday: ['Snowboard', 'Ski', 'Pennyboard', 'Surf'],
+      currentVideo: 'Nemzetközi kitekintés - Háziorvoslás Skóciában',
+      videosForThursday: [
+        'Nemzetközi kitekintés - Háziorvoslás Skóciában',
+        'Nemzetközi kitekintés - Háziorvoslás Svédországban',
+        'Nemzetközi kitekintés - Háziorvoslás Svájcban',
+        'A pneumococcus betegségről - A megelőzés fontossága',
+        'A kullancsencephalitis Magyarországon, 2020',
+        'Praxisközösség - Hogyan illeszthető a jövő alapellátásába',
+        'Gerincbántalmak - Milyen diagnózisokra kell gondoljunk és milyen új lehetőségeket ad a regeneratív medicina?',
+      ],
       videosForBothDays: [
-        'Snowboard',
-        'Ski',
-        'Pennyboard',
-        'Surf',
-        'Wakeboard',
-        'Cycling',
+        'Nemzetközi kitekintés - Háziorvoslás Skóciában',
+        'Nemzetközi kitekintés - Háziorvoslás Svédországban',
+        'Nemzetközi kitekintés - Háziorvoslás Svájcban',
+        'A pneumococcus betegségről - A megelőzés fontossága',
+        'A kullancsencephalitis Magyarországon, 2020',
+        'Praxisközösség - Hogyan illeszthető a jövő alapellátásába',
+        'Gerincbántalmak - Milyen diagnózisokra kell gondoljunk és milyen új lehetőségeket ad a regeneratív medicina?',
+        'Mit tanul, mit kap a háziorvos a Bálint csoportban?',
+        'Rendelőn kívüli betegellátás korszerű eszközökkel',
+        'Erodium sokkal több, mint egy online előjegyzési rendszer',
+        'Minőségbiztosított POCT a háziorvosi gyakorlatban',
+        'Kinek kell vércukor ellenőrzést végeznie',
+        'A diabétesz ellátást és gondozást segítő innovatív vércukormérő eszközökkel',
+        'Az érfali merevség vizsgálatának fontossága a háziorvosi praxisban',
       ],
       videos: [
-        { name: 'Snowboard', id: 'AzJPhQdTRQQ' },
-        { name: 'Ski', id: 'YXWJe71IxMA' },
-        { name: 'Pennyboard', id: 'J0cK2IUvLXE' },
-        { name: 'Surf', id: 'nkhpGC10OVw' },
+        {
+          name: 'Nemzetközi kitekintés - Háziorvoslás Skóciában',
+          id: '7vEAZK70Lb4',
+        },
+        {
+          name: 'Nemzetközi kitekintés - Háziorvoslás Svédországban',
+          id: 'ZnCNxJ5o3Cw',
+        },
+        {
+          name: 'Nemzetközi kitekintés - Háziorvoslás Svájcban',
+          id: 'LDzTDqoTSNE',
+        },
+        {
+          name: 'A pneumococcus betegségről - A megelőzés fontossága',
+          id: '_WXd3nDfJo4',
+        },
+        {
+          name: 'A kullancsencephalitis Magyarországon, 2020',
+          id: '4vBZvxwMPz8',
+        },
+        {
+          name: 'Praxisközösség - Hogyan illeszthető a jövő alapellátásába',
+          id: '0bmsP5AVfH0',
+        },
+        {
+          name:
+            'Gerincbántalmak - Milyen diagnózisokra kell gondoljunk és milyen új lehetőségeket ad a regeneratív medicina?',
+          id: 'gGXAsN4qI8U',
+        },
+        {
+          name: 'Mit tanul, mit kap a háziorvos a Bálint csoportban?',
+          id: 'xoAWJn643mo',
+        },
+        {
+          name: 'Rendelőn kívüli betegellátás korszerű eszközökkel',
+          id: 'LxToadXLGB8',
+        },
+        {
+          name: 'Erodium sokkal több, mint egy online előjegyzési rendszer',
+          id: 'zDAdLud07SE',
+        },
+        {
+          name: 'Minőségbiztosított POCT a háziorvosi gyakorlatban',
+          id: '7bDtdKCf9cI',
+        },
+        {
+          name: 'Kinek kell vércukor ellenőrzést végeznie',
+          id: 'AryoXRUDMSs',
+        },
+        {
+          name:
+            'A diabétesz ellátást és gondozást segítő innovatív vércukormérő eszközökkel',
+          id: 'bKWpB_PQLjE',
+        },
+        {
+          name:
+            'Az érfali merevség vizsgálatának fontossága a háziorvosi praxisban',
+          id: 'gGXAsN4qI8U',
+        },
       ],
     };
   },

@@ -10,7 +10,7 @@ function checkIsLoggedIn(to, from, next) {
   if (isLoggedIn) {
     next();
   } else {
-    next('/bejelentkezes');
+    next('/site/bejelentkezes');
   }
 }
 
@@ -43,31 +43,31 @@ const routes = [
   {
     path: '/site/eloadoterem',
     name: 'PresentationRoom',
-    //beforeEnter: checkIsLoggedIn,
+    beforeEnter: checkIsLoggedIn,
     component: () => import('../views/PresentationRoom.vue'),
   },
   {
     path: '/site/bemutatoterem',
     name: 'ExhibitorRoom',
-    //beforeEnter: checkIsLoggedIn,
+    beforeEnter: checkIsLoggedIn,
     component: () => import('../views/ExhibitorRoom.vue'),
   },
   {
     path: '/site/jazzpresszo',
     name: 'JazzPressoMain',
-    //beforeEnter: checkIsLoggedIn,
+    beforeEnter: checkIsLoggedIn,
     component: () => import('../views/JazzPressoMain.vue'),
   },
   {
     path: '/site/jazzpresszo/:topic',
     name: 'JazzPressoTopic',
-    //beforeEnter: checkIsLoggedIn,
+    beforeEnter: checkIsLoggedIn,
     component: () => import('../views/JazzPressoTopic.vue'),
   },
   {
     path: '/site/elo-kiallitoterem',
     name: 'LiveExhibitorRoom',
-    //beforeEnter: checkIsLoggedIn,
+    beforeEnter: checkIsLoggedIn,
     component: () => import('../views/LiveExhibitorRoom.vue'),
   },
   {

@@ -19,7 +19,7 @@
             <jazz-modal></jazz-modal>
           </div>
         </div>
-        <Disqus shortname="language-two" :pageConfig="pageConfig" />
+        <Disqus shortname="haosz-konferencia" :pageConfig="pageConfig" />
       </v-container>
     </v-container>
     <more-info></more-info>
@@ -82,11 +82,11 @@ export default {
     },
   },
   mounted() {
-    // const token = window.sessionStorage.getItem('token');
+    const token = window.sessionStorage.getItem('token');
 
-    // if (!token || !this.isLoggedIn) {
-    //   return this.$router.push('/site/bejelentkezes');
-    // }
+    if (!token || !this.isLoggedIn) {
+      return this.$router.push('/site/bejelentkezes');
+    }
     this.setBackground();
   },
   created() {

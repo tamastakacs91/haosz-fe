@@ -18,7 +18,7 @@
             :title="'Erodium - Orvosi Betegirányító Rendszer'"
             :picSrc="'/exhibitors/Erodium.png'"
             :alt="'Erodium'"
-            :vidSrc="'https://www.youtube.com/embed/gsMIRPnqO6I?autoplay=1'"
+            :vidSrc="'https://www.youtube-nocookie.com/embed/gsMIRPnqO6I?modestbranding=1&enablejsapi=1&disablekb=1&iv_load_policy=3&vq=hd1080'"
             :height="300"
             @click="playVideo"
           ></exhibitor-player>
@@ -29,7 +29,7 @@
             :title="'GE - Vscan'"
             :picSrc="'/exhibitors/GE.png'"
             :alt="'GE'"
-            :vidSrc="'https://www.youtube.com/embed/dFYdiVBUPEM?autoplay=1'"
+            :vidSrc="'https://www.youtube-nocookie.com/embed/dFYdiVBUPEM?modestbranding=1&enablejsapi=1&disablekb=1&iv_load_policy=3&vq=hd1080'"
             :height="300"
             :width="190"
             @click="playVideo"
@@ -43,7 +43,7 @@
             :title="'Aidian - CRP'"
             :picSrc="'/exhibitors/Aidian.png'"
             :alt="'Aidian'"
-            :vidSrc="'https://www.youtube.com/embed/CrFzR7Rg8Tk?autoplay=1'"
+            :vidSrc="'https://www.youtube-nocookie.com/embed/CrFzR7Rg8Tk?modestbranding=1&enablejsapi=1&disablekb=1&iv_load_policy=3&vq=hd1080'"
             :height="200"
             :width="360"
             @click="playVideo"
@@ -52,10 +52,10 @@
             :lg="6"
             :exhibitor="'genext'"
             :shown="genext"
-            :title="'Genext - MicroINR'"
+            :title="'Genext Hungary Kft. - MicroINR'"
             :picSrc="'/exhibitors/Genext.jpg'"
             :alt="'Genext'"
-            :vidSrc="'https://www.youtube.com/embed/CkevE2_Uu9I?autoplay=1'"
+            :vidSrc="'https://www.youtube-nocookie.com/embed/CkevE2_Uu9I?modestbranding=1&enablejsapi=1&disablekb=1&iv_load_policy=3&vq=hd1080'"
             :height="200"
             :width="300"
             @click="playVideo"
@@ -69,7 +69,7 @@
             :title="'Richter - Aksolin'"
             :picSrc="'/exhibitors/Richter.png'"
             :alt="'Richter'"
-            :vidSrc="'https://www.youtube.com/embed/eMuqjtkJhjQ?autoplay=1'"
+            :vidSrc="'https://www.youtube-nocookie.com/embed/eMuqjtkJhjQ?modestbranding=1&enablejsapi=1&disablekb=1&iv_load_policy=3&vq=hd1080'"
             :height="200"
             :width="340"
             @click="playVideo"
@@ -81,7 +81,7 @@
             :title="'Arterial Care'"
             :picSrc="'/exhibitors/Arterial-Care.png'"
             :alt="'Arterial Care'"
-            :vidSrc="'https://www.youtube.com/embed/xleNH2ZzI7c?autoplay=1'"
+            :vidSrc="'https://www.youtube-nocookie.com/embed/xleNH2ZzI7c?modestbranding=1&enablejsapi=1&disablekb=1&iv_load_policy=3&vq=hd1080'"
             :height="200"
             :width="340"
             @click="playVideo"
@@ -89,14 +89,27 @@
         </v-row>
         <v-row>
           <exhibitor-player
+            :lg="6"
             :exhibitor="'medicalPoint'"
             :shown="medicalPoint"
             :title="'Medical Point'"
             :picSrc="'/exhibitors/Medical-point.jpg'"
             :alt="'Medical Point'"
-            :vidSrc="'https://www.youtube.com/embed/urRY27qOTH8?autoplay=1'"
+            :vidSrc="'https://www.youtube-nocookie.com/embed/urRY27qOTH8?modestbranding=1&enablejsapi=1&disablekb=1&iv_load_policy=3&vq=hd1080'"
             :height="350"
             :width="340"
+            @click="playVideo"
+          ></exhibitor-player>
+          <exhibitor-player
+            :lg="6"
+            :exhibitor="'medio'"
+            :shown="medio"
+            :title="'Medio Páciens Közvetítés'"
+            :picSrc="'/exhibitors/Medio.png'"
+            :alt="'Medio'"
+            :vidSrc="'https://www.youtube-nocookie.com/embed/XHKfD1Dsiq0?modestbranding=1&enablejsapi=1&disablekb=1&iv_load_policy=3&vq=hd1080'"
+            :height="350"
+            :width="390"
             @click="playVideo"
           ></exhibitor-player>
         </v-row>
@@ -120,6 +133,7 @@ export default {
       richter: false,
       arterial: false,
       medicalPoint: false,
+      medio: false,
     };
   },
   computed: {
@@ -137,6 +151,7 @@ export default {
           this.richter = false;
           this.arterial = false;
           this.medicalPoint = false;
+          this.medio = false;
           break;
         case 'ge':
           this.erodium = false;
@@ -146,6 +161,7 @@ export default {
           this.richter = false;
           this.arterial = false;
           this.medicalPoint = false;
+          this.medio = false;
           break;
         case 'aidian':
           this.erodium = false;
@@ -155,6 +171,7 @@ export default {
           this.richter = false;
           this.arterial = false;
           this.medicalPoint = false;
+          this.medio = false;
           break;
         case 'genext':
           this.erodium = false;
@@ -164,6 +181,7 @@ export default {
           this.richter = false;
           this.arterial = false;
           this.medicalPoint = false;
+          this.medio = false;
           break;
         case 'richter':
           this.erodium = false;
@@ -173,6 +191,7 @@ export default {
           this.richter = true;
           this.arterial = false;
           this.medicalPoint = false;
+          this.medio = false;
           break;
         case 'arterial':
           this.erodium = false;
@@ -182,6 +201,7 @@ export default {
           this.richter = false;
           this.arterial = true;
           this.medicalPoint = false;
+          this.medio = false;
           break;
         case 'medicalPoint':
           this.erodium = false;
@@ -191,6 +211,17 @@ export default {
           this.richter = false;
           this.arterial = false;
           this.medicalPoint = true;
+          this.medio = false;
+          break;
+        case 'medio':
+          this.erodium = false;
+          this.ge = false;
+          this.aidian = false;
+          this.genext = false;
+          this.richter = false;
+          this.arterial = false;
+          this.medicalPoint = false;
+          this.medio = true;
           break;
         default:
           this.erodium = false;
@@ -200,13 +231,13 @@ export default {
           this.richter = false;
           this.arterial = false;
           this.medicalPoint = false;
+          this.medio = false;
           break;
       }
     },
   },
   created() {
     const token = window.sessionStorage.getItem('token');
-
     if (!token || !this.isLoggedIn) {
       return this.$router.push('/site/bejelentkezes');
     }
