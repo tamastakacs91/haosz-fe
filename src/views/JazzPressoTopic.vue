@@ -28,7 +28,7 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
+import { mapGetters, mapActions } from 'vuex';
 import { Disqus } from 'vue-disqus';
 import { titleGenerator } from '@/mixins/titleGenerator';
 import { getPageUrl, setIdentifier, setPageTitle } from '@/utils/disqsConfig';
@@ -49,6 +49,8 @@ export default {
     ...mapGetters('signIn', ['isLoggedIn']),
   },
   methods: {
+    ...mapActions('signIn', ['set']),
+
     getTitle() {
       return setPageTitle();
     },
@@ -84,10 +86,8 @@ export default {
   },
   mounted() {
     const token = window.sessionStorage.getItem('token');
-
-    if (!token || !this.isLoggedIn) {
-      return this.$router.push('/site/bejelentkezes');
-    }
+    if (!token) return this.$router.push('/site/bejelentkezes');
+    this.set({ token });
     this.setBackground();
   },
   created() {

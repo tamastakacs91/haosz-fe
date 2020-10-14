@@ -10,6 +10,11 @@
             </div>
           </v-col>
         </v-row>
+        <v-row align="center" justify="center">
+          <v-col class="text-center">
+            Kattintson a képekre a videók megtekintéséhez
+          </v-col>
+        </v-row>
         <v-row align="center" justify="center" class="mt-5">
           <exhibitor-player
             :lg="6"
@@ -120,7 +125,7 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
+import { mapGetters, mapActions } from 'vuex';
 
 export default {
   name: 'ExhibitorRoom',
@@ -140,6 +145,7 @@ export default {
     ...mapGetters('signIn', ['isLoggedIn']),
   },
   methods: {
+    ...mapActions('signIn', ['set']),
     playVideo(exhibitor) {
       let element = document.getElementById(exhibitor);
       switch (exhibitor) {
@@ -238,9 +244,8 @@ export default {
   },
   created() {
     const token = window.sessionStorage.getItem('token');
-    if (!token || !this.isLoggedIn) {
-      return this.$router.push('/site/bejelentkezes');
-    }
+    if (!token) return this.$router.push('/site/bejelentkezes');
+    this.set({ token });
   },
 };
 </script>

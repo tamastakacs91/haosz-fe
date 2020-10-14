@@ -79,7 +79,7 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
+import { mapGetters, mapActions } from 'vuex';
 
 export default {
   name: 'ExhibitorRoom',
@@ -89,12 +89,13 @@ export default {
   computed: {
     ...mapGetters('signIn', ['isLoggedIn']),
   },
+  methods: {
+    ...mapActions('signIn', ['set']),
+  },
   created() {
     const token = window.sessionStorage.getItem('token');
-
-    if (!token || !this.isLoggedIn) {
-      return this.$router.push('/site/bejelentkezes');
-    }
+    if (!token) return this.$router.push('/site/bejelentkezes');
+    this.set({ token });
   },
 };
 </script>

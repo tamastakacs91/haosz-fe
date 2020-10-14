@@ -41,7 +41,7 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
+import { mapGetters, mapActions } from 'vuex';
 
 export default {
   name: 'PresentationRoom',
@@ -76,16 +76,15 @@ export default {
     },
   },
   methods: {
+    ...mapActions('signIn', ['set']),
     openLivestorm() {
       window.open('https://livestorm.co/', '_blank');
     },
   },
   created() {
     const token = window.sessionStorage.getItem('token');
-
-    if (!token || !this.isLoggedIn) {
-      return this.$router.push('/site/bejelentkezes');
-    }
+    if (!token) return this.$router.push('/site/bejelentkezes');
+    this.set({ token });
   },
 };
 </script>

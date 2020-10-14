@@ -21,7 +21,7 @@ const routes = [
     component: () => import('../views/Home.vue'),
   },
   {
-    path: '/regisztracio/:type',
+    path: '/site/regisztracio/:type',
     name: 'Registration',
     component: () => import('../views/Registration.vue'),
   },

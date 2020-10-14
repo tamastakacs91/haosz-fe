@@ -76,7 +76,7 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
+import { mapGetters, mapActions } from 'vuex';
 import { titleGenerator } from '@/mixins/titleGenerator';
 import { getPageUrl, setIdentifier, setPageTitle } from '@/utils/disqsConfig';
 
@@ -134,16 +134,15 @@ export default {
     ...mapGetters('signIn', ['isLoggedIn']),
   },
   methods: {
+    ...mapActions('signIn', ['set']),
     redirectToTopic(redirect) {
       this.$router.push(`/site/jazzpresszo/${redirect}`);
     },
   },
   created() {
     const token = window.sessionStorage.getItem('token');
-
-    if (!token || !this.isLoggedIn) {
-      return this.$router.push('/site/bejelentkezes');
-    }
+    if (!token) return this.$router.push('/site/bejelentkezes');
+    this.set({ token });
   },
 };
 </script>

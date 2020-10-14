@@ -196,16 +196,14 @@ export default {
   },
   methods: {
     ...mapActions('admin', ['getUserData']),
+    ...mapActions('signIn', ['set']),
   },
   created() {
     const token = window.sessionStorage.getItem('token');
-
-    if (!token || !this.isLoggedIn || this.userRole != 'ADMIN') {
-      this.$router.push('/site/bejelentkezes');
-      return;
-    } else {
-      this.getUserData();
-    }
+    if (!token) return this.$router.push('/site/bejelentkezes');
+    this.set({ token });
+    if (this.userRole != 'ADMIN') return this.$router.push('/');
+    this.getUserData();
   },
 };
 </script>
