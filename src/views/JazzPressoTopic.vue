@@ -11,6 +11,14 @@
           </v-col>
         </v-row>
         <audio-player></audio-player>
+        <div class="d-flex justify-end text-caption">
+          <div class="d-flex flex-column align-end">
+            <span>
+              Hozzászóláshoz jelentkezzen be Gmail, vagy Facebook fiókjába.
+            </span>
+            <jazz-modal></jazz-modal>
+          </div>
+        </div>
         <Disqus shortname="language-two" :pageConfig="pageConfig" />
       </v-container>
     </v-container>
