@@ -3,7 +3,7 @@
     <v-container fluid>
       <mobile-header></mobile-header>
       <main-greeting></main-greeting>
-      <tabs>
+      <!-- <tabs>
         <tab-item
           :greeting="data.greeting.doctor"
           :invitation="data.invitation.doctor"
@@ -56,7 +56,7 @@
             :name="data.signature.name"
           ></signature>
         </tab-item>
-      </tabs>
+      </tabs> -->
       <v-snackbar
         class="reg-snackbar"
         right
@@ -81,6 +81,7 @@
       >
         <div class="snackbar-text-big">Kijelentkezve</div>
       </v-snackbar>
+      <more-info></more-info>
     </v-container>
   </div>
 </template>
