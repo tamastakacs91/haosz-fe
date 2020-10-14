@@ -74,11 +74,11 @@ export default {
     },
   },
   mounted() {
-    const token = window.sessionStorage.getItem('token');
+    // const token = window.sessionStorage.getItem('token');
 
-    if (!token || !this.isLoggedIn) {
-      return this.$router.push('/site/bejelentkezes');
-    }
+    // if (!token || !this.isLoggedIn) {
+    //   return this.$router.push('/site/bejelentkezes');
+    // }
     this.setBackground();
   },
   created() {

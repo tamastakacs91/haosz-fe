@@ -132,12 +132,12 @@ export default {
       this.$router.push(`/site/jazzpresszo/${redirect}`);
     },
   },
-  created() {
-    const token = window.sessionStorage.getItem('token');
+  // created() {
+  //   const token = window.sessionStorage.getItem('token');
 
-    if (!token || !this.isLoggedIn) {
-      return this.$router.push('/site/bejelentkezes');
-    }
-  },
+  //   if (!token || !this.isLoggedIn) {
+  //     return this.$router.push('/site/bejelentkezes');
+  //   }
+  // },
 };
 </script>

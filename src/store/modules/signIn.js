@@ -1,7 +1,7 @@
 const namespaced = true;
 
 const state = () => ({
-  isLoggedIn: false,
+  isLoggedIn: true,
   email: '',
   password: '',
   signInSuccessPresent: false,
