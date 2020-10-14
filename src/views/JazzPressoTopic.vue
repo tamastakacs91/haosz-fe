@@ -11,7 +11,7 @@
           </v-col>
         </v-row>
         <audio-player></audio-player>
-        <div class="d-flex justify-end text-caption">
+        <div class="d-flex justify-end text-subtitle-1 font-weight-bold mb-2">
           <div class="d-flex flex-column align-end">
             <div>
               Hozzászóláshoz jelentkezzen be Gmail, vagy Facebook fiókjába.

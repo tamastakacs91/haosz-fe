@@ -3,7 +3,7 @@
     <v-dialog v-model="dialog" width="800">
       <template v-slot:activator="{ on, attrs }">
         <div
-          class="blue--text text--darken-3 text-decoration-underline hidden-sm-and-down"
+          class="blue--text text--darken-3 text-decoration-underline hidden-sm-and-down disqus-help-text"
           v-bind="attrs"
           v-on="on"
         >
