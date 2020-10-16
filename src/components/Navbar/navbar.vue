@@ -35,15 +35,31 @@
 
 <script>
 import { mapGetters, mapActions } from 'vuex';
+import users from '../../../public/livestormLink.json';
 
 export default {
+  data() {
+    return {
+      users,
+    };
+  },
   computed: {
     ...mapGetters('signIn', ['isLoggedIn', 'userRole']),
   },
   methods: {
     ...mapActions('signIn', ['signOut']),
+    liveStormLink() {
+      if (!window.sessionStorage.getItem('email')) return;
+      let link;
+      this.users.links.forEach((user) => {
+        if (user.email == window.sessionStorage.getItem('email')) {
+          link = user.link;
+        }
+      });
+      return link;
+    },
     openLivestorm() {
-      window.open('https://livestorm.co/', '_blank');
+      window.open(this.liveStormLink(), '_blank');
     },
   },
 };

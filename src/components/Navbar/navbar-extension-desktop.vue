@@ -12,13 +12,9 @@
         </v-btn>
       </v-toolbar-items>
       <v-toolbar-items>
-        <v-btn
-          class="font-weight-bold"
-          text
-          @click="$router.push('/site/elo-kiallitoterem')"
-        >
+        <v-btn class="font-weight-bold" text @click="$emit('openLivestorm')">
           <v-icon class="mr-2">mdi-record-circle-outline</v-icon>
-          <span class="mr-2">Élő Követítés</span>
+          <span class="mr-2">Élő Közvetítés</span>
         </v-btn>
       </v-toolbar-items>
       <v-toolbar-items>
