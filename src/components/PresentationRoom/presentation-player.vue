@@ -154,7 +154,7 @@ export default {
         {
           name:
             'Az érfali merevség vizsgálatának fontossága a háziorvosi praxisban',
-          id: 'gGXAsN4qI8U',
+          id: 'hdYgTnRDSGo',
         },
       ],
     };
