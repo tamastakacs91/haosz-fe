@@ -55,7 +55,7 @@
           <v-row align="center" justify="center">
             <div class="d-flex flex-column">
               <v-img
-                alt="Erodium"
+                alt="NetDoktor"
                 class="shrink pointer rounded-lg hidden-sm-and-down mb-n2"
                 contain
                 src="/logos/5Netdoktor.jpg"
@@ -68,7 +68,7 @@
                 "
               />
               <v-img
-                alt="Erodium"
+                alt="NetDoktor"
                 class="shrink pointer rounded-lg hidden-md-and-up"
                 contain
                 src="/logos/5Netdoktor.jpg"
@@ -90,7 +90,7 @@
           <v-row align="center" justify="center">
             <div class="mt-15">
               <v-img
-                alt="Erodium"
+                alt="Roche"
                 class="shrink pointer rounded-lg hidden-sm-and-down mt-16"
                 contain
                 src="/logos/2Roche.png"
@@ -103,7 +103,7 @@
                 "
               />
               <v-img
-                alt="Erodium"
+                alt="Roche"
                 class="shrink pointer rounded-lg hidden-md-and-up"
                 contain
                 src="/logos/2Roche.png"
