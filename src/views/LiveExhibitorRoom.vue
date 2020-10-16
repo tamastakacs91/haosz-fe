@@ -15,10 +15,11 @@
           csatlakozáshoz</v-col
         >
       </v-row>
+
       <v-row align="center" justify="center" class="mt-10">
-        <v-col>
+        <v-col cols="12">
           <v-row align="center" justify="center">
-            <div class="d-flex flex-column">
+            <div class="d-flex flex-column text-center">
               <v-img
                 alt="Erodium"
                 class="shrink pointer rounded-lg hidden-sm-and-down"
@@ -45,18 +46,18 @@
                   )
                 "
               />
-              <div class="text-center mt-4 text-h5">Betegirányítás</div>
+              <div class="text-center mt-4 text-h5 on-image">
+                Betegirányítás
+              </div>
             </div>
           </v-row>
         </v-col>
-      </v-row>
-      <v-row align="center" justify="center">
-        <v-col md="6">
+        <v-col cols="12">
           <v-row align="center" justify="center">
-            <div class="d-flex flex-column">
+            <div class="d-flex flex-column text-center">
               <v-img
                 alt="NetDoktor"
-                class="shrink pointer rounded-lg hidden-sm-and-down mb-n2"
+                class="shrink pointer rounded-lg hidden-sm-and-down mb-n2 mt-n8"
                 contain
                 src="/logos/5Netdoktor.jpg"
                 transition="scale-transition"
@@ -81,41 +82,6 @@
                 "
               />
               <div class="text-center mt-md-n16 mt-n13 text-h5 on-image">
-                Korszerű Háziorvosi Szoftver
-              </div>
-            </div>
-          </v-row>
-        </v-col>
-        <v-col md="6">
-          <v-row align="center" justify="center">
-            <div class="mt-15">
-              <v-img
-                alt="Roche"
-                class="shrink pointer rounded-lg hidden-sm-and-down mt-16"
-                contain
-                src="/logos/2Roche.png"
-                transition="scale-transition"
-                max-width="350"
-                @click="
-                  openLiveRoom(
-                    'https://app.livestorm.co/vet-webinar-hungary/meet/roche-diagnosztika-point-of-care-testing'
-                  )
-                "
-              />
-              <v-img
-                alt="Roche"
-                class="shrink pointer rounded-lg hidden-md-and-up"
-                contain
-                src="/logos/2Roche.png"
-                transition="scale-transition"
-                max-width="300"
-                @click="
-                  openLiveRoom(
-                    'https://app.livestorm.co/vet-webinar-hungary/meet/roche-diagnosztika-point-of-care-testing'
-                  )
-                "
-              />
-              <div class="text-center mt-3 text-h5">
                 Korszerű Háziorvosi Szoftver
               </div>
             </div>
