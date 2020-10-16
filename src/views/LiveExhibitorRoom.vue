@@ -11,7 +11,7 @@
       </v-row>
       <v-row align="center" justify="center" class="mt-n3">
         <v-col class="text-center"
-          >Kattintson a kiállító logójára a kiállítóterembe való
+          >Kattintson a kiállító logójára az élő kiállítóterembe való
           csatlakozáshoz</v-col
         >
       </v-row>
