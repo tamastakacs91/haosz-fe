@@ -119,7 +119,13 @@ export default {
   },
   methods: {
     ...mapActions('registration', ['toggleSignUpSuccessPresent']),
-    ...mapActions('signIn', ['toggleSignOutSuccessPresent']),
+    ...mapActions('signIn', ['toggleSignOutSuccessPresent', 'set']),
+  },
+  created() {
+    const token = window.sessionStorage.getItem('token');
+    if (token) {
+      this.set({ token });
+    }
   },
 };
 </script>

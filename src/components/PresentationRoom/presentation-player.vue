@@ -47,7 +47,7 @@
     <v-row align="center" justify="center" class="mt-n3">
       <v-col class="text-center"
         >Válassza ki a listából a lejátszani kívánt videót, majd kattintson a
-        videó képére a lejátszás elindításához.</v-col
+        videó képére a lejátszás elindításához</v-col
       >
     </v-row>
     <v-row align="center" justify="center">
