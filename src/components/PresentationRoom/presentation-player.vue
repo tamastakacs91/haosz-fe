@@ -47,8 +47,10 @@
     <v-row align="center" justify="center" class="mt-n3">
       <v-col class="text-center"
         >Válassza ki a listából a lejátszani kívánt videót, majd kattintson a
-        videó képére a lejátszás elindításához</v-col
-      >
+        videó képére a lejátszás elindításához. <br />
+        A szombati élő közvetítés a lista végén találálható! <br />
+        A videók október 26-a estig lesznek elérhetőek.
+      </v-col>
     </v-row>
     <v-row align="center" justify="center">
       <v-col class="text-center">
@@ -56,7 +58,11 @@
           class="presentation-frame"
           frameborder="0"
           allowfullscreen
-          :src="`https://www.youtube-nocookie.com/embed/${videoId}?modestbranding=1&enablejsapi=1&disablekb=1&iv_load_policy=3&vq=hd1080`"
+          :src="
+            videoId === 'cto8oIMdVRA'
+              ? `https://www.youtube-nocookie.com/embed/${videoId}?start=750&modestbranding=1&enablejsapi=1&disablekb=1&iv_load_policy=3&vq=hd1080`
+              : `https://www.youtube-nocookie.com/embed/${videoId}?modestbranding=1&enablejsapi=1&disablekb=1&iv_load_policy=3&vq=hd1080`
+          "
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         >
         </iframe>
@@ -95,6 +101,7 @@ export default {
         'Kinek kell vércukor ellenőrzést végeznie',
         'A diabétesz ellátást és gondozást segítő innovatív vércukormérő eszközökkel',
         'Az érfali merevség vizsgálatának fontossága a háziorvosi praxisban',
+        'A szombati élő közvetítés teljes, vágatlan felvétele',
       ],
       videos: [
         {
@@ -155,6 +162,10 @@ export default {
           name:
             'Az érfali merevség vizsgálatának fontossága a háziorvosi praxisban',
           id: 'hdYgTnRDSGo',
+        },
+        {
+          name: 'A szombati élő közvetítés teljes, vágatlan felvétele',
+          id: 'cto8oIMdVRA',
         },
       ],
     };

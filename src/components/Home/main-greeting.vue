@@ -26,7 +26,7 @@
       </v-col>
       <v-col cols="12" md="4"
         ><div class="text-center text-h5">Konferencia zárás</div>
-        <div class="text-center text-h5">2020. október 18. 23:59</div></v-col
+        <div class="text-center text-h5">2020. október 26. 23:59</div></v-col
       >
     </v-row>
   </v-container>
